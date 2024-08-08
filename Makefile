@@ -23,7 +23,7 @@ COMPILER := gcc
 VERSION := hackeroot-mq
 
 # Enable optimization flags to use GDB on Ares
-ARES_GDB := 1
+ARES_GDB := 0
 
 # Toggle release or debug mode. 1=Release, 0=Debug
 # Note: currently only used for HackerOoT

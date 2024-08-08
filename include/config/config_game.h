@@ -33,25 +33,25 @@
 #define ENABLE_MEMPAK false
 
 // Configure dialogue print speed (1 is vanilla)
-// #define DIALOGUE_PRINT_SPEED 2
+#define DIALOGUE_PRINT_SPEED 2
 
 // Rupee counter icon changes color with wallet upgrades like in MM
 #define MM_WALLET_ICON_COLORS true
 
 // Configure block push speed multiplier
-#define BLOCK_PUSH_SPEED 1.0f
+#define BLOCK_PUSH_SPEED 1.8f
 
 // Enables the beep sound at low health (vanilla behavior)
-#define ENABLE_LOW_HEALTH_BEEP true
+#define ENABLE_LOW_HEALTH_BEEP false
 
 // Make the Bunny Hood Mask behave like in Majora's Mask where it increases Link's speed when equipped.
-#define MM_BUNNY_HOOD false
-#define MM_BUNNY_HOOD_SPEED 1.5f
+#define MM_BUNNY_HOOD true
+#define MM_BUNNY_HOOD_SPEED 1.8f
 
 /**
  * Enable fast text
  */
-#define ENABLE_FAST_TEXT false
+#define ENABLE_FAST_TEXT true
 
 /**
  * Splits Farore's Wind warp point across ages. One point for child Link, one point for adult Link.
