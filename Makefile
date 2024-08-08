@@ -201,7 +201,7 @@ OBJCOPY := $(MIPS_BINUTILS_PREFIX)objcopy
 OBJDUMP := $(MIPS_BINUTILS_PREFIX)objdump
 NM      := $(MIPS_BINUTILS_PREFIX)nm
 
-N64_EMULATOR ?= 
+N64_EMULATOR ?= /var/lib/flatpak/app/dev.ares.ares/x86_64/stable/558987c91a21fcf3ac3aade07ebc25ea00457ecf647eafd76de2848a649470f0/export/bin/dev.ares.ares
 
 INC := -Iinclude -Iinclude/libc -Isrc -I$(BUILD_DIR) -I. -I$(EXTRACTED_DIR)
 
