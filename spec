@@ -3949,6 +3949,14 @@ beginseg
 endseg
 
 beginseg
+    name "ovl_Tree_Elevator"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Tree_Elevator/z_tree_elevator.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Tree_Elevator/ovl_Tree_Elevator_reloc.o"
+endseg
+
+
+beginseg
     name "gameplay_keep"
     compress
     romalign 0x1000
