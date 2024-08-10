@@ -5,6 +5,7 @@
  */
 
 #include "z_tree_elevator.h"
+#include "assets/objects/gameplay_keep/gameplay_keep.h"
 
 // Flag 4 - update actor while off screen, flag 5 - draw actor while offscreen
 #define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
@@ -39,5 +40,5 @@ void TreeElevator_Update(Actor* thisx, PlayState* play) {
 }
 
 void TreeElevator_Draw(Actor* thisx, PlayState* play){
-
+    Gfx_DrawDListOpa(play, gBombchuDL);
 }
