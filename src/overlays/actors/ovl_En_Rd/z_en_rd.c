@@ -331,6 +331,7 @@ void EnRd_SetupWalkToPlayer(EnRd* this, PlayState* play) {
     Animation_Change(&this->skelAnime, &gGibdoRedeadWalkAnim, 1.0f, 4.0f, Animation_GetLastFrame(&gGibdoRedeadWalkAnim),
                      ANIMMODE_LOOP_INTERP, -4.0f);
     this->actor.speed = 0.4f;
+//    this->actor.speed = 0.4f;
     this->action = REDEAD_ACTION_WALK_TO_PLAYER_OR_RELEASE_GRAB;
     EnRd_SetupAction(this, EnRd_WalkToPlayer);
 }
