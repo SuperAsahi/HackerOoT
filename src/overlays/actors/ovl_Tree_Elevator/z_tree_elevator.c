@@ -32,13 +32,18 @@ const ActorInit Tree_Elevator_InitVars = {
 
 void TreeElevator_Init(Actor* thisx, PlayState* play) {
     TreeElevator* this = (TreeElevator*)thisx;
+    this->dyna.actor.world.pos.y += 10.0f;
 
-    this->actor.world.pos.y += 10.0f;
+    CollisionHeader* colHeader = NULL;
+    CollisionHeader_GetVirtual(&gTreeElevatorDL_collisionHeader, &colHeader);
+
+    this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
 
 }
 
 void TreeElevator_Destroy(Actor* thisx, PlayState* play) {
     TreeElevator* this = (TreeElevator*)thisx;
+    DynaPoly_DeleteBgActor(play, &play->colCtx.dyna, this->dyna.bgId);
     
 }
 
@@ -60,7 +65,7 @@ void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play) {
     Color_RGBA8 primColor = {255, 255, 255, 255 };
     Color_RGBA8 envColor = {255, 255, 255, 255 };
 
-    Vec3f pos = this->actor.world.pos;
+    Vec3f pos = this->dyna.actor.world.pos;
     Vec3f velocity = { 0.0f, 1.0f, 0.0f };
     Vec3f accel = { 0.0f, 0.0f, 0.0f };
     s16 scale = 10;
