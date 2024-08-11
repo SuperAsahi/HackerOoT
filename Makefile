@@ -305,9 +305,9 @@ endif
 
 #### Main Targets ###
 
-all:
+mod:
 	python3 install_mod_assets.py
-	make -j$(nproc) build
+	make -j$(nproc)
 
 build: rom compress
 

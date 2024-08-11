@@ -5,7 +5,8 @@
  */
 
 #include "z_tree_elevator.h"
-#include "assets/objects/gameplay_keep/gameplay_keep.h"
+#include "assets/objects/object_tree_elevator/gTreeElevatorDL.h"
+#include "assets/objects/object_tree_elevator/gTreeElevatorDL_collision.h"
 
 // Flag 4 - update actor while off screen, flag 5 - draw actor while offscreen
 #define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
@@ -15,11 +16,13 @@ void TreeElevator_Destroy(Actor* thisx, PlayState* play);
 void TreeElevator_Update(Actor* thisx, PlayState* play);
 void TreeElevator_Draw(Actor* thisx, PlayState* play);
 
+void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play);
+
 const ActorInit Tree_Elevator_InitVars = {
     ACTOR_TREE_ELEVATOR,
     ACTORCAT_BG,
     FLAGS,
-    OBJECT_GAMEPLAY_KEEP,
+    OBJECT_TREE_ELEVATOR,
     sizeof(TreeElevator),
     (ActorFunc)TreeElevator_Init,
     (ActorFunc)TreeElevator_Destroy,
@@ -28,17 +31,41 @@ const ActorInit Tree_Elevator_InitVars = {
 };
 
 void TreeElevator_Init(Actor* thisx, PlayState* play) {
+    TreeElevator* this = (TreeElevator*)thisx;
+
+    this->actor.world.pos.y += 10.0f;
 
 }
 
 void TreeElevator_Destroy(Actor* thisx, PlayState* play) {
-
+    TreeElevator* this = (TreeElevator*)thisx;
+    
 }
 
 void TreeElevator_Update(Actor* thisx, PlayState* play) {
+    TreeElevator* this = (TreeElevator*)thisx;
+    TreeElevator_SpawnDust(this, play);
 
 }
 
 void TreeElevator_Draw(Actor* thisx, PlayState* play){
-    Gfx_DrawDListOpa(play, gBombchuDL);
+    TreeElevator* this = (TreeElevator*)thisx;
+    Gfx_DrawDListOpa(play, gTreeElevatorDL);
+    
+    
+}
+
+
+void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play) {
+    Color_RGBA8 primColor = {255, 255, 255, 255 };
+    Color_RGBA8 envColor = {255, 255, 255, 255 };
+
+    Vec3f pos = this->actor.world.pos;
+    Vec3f velocity = { 0.0f, 1.0f, 0.0f };
+    Vec3f accel = { 0.0f, 0.0f, 0.0f };
+    s16 scale = 10;
+    s16 scaleStep = 10;
+    s16 life = 40;
+    
+    EffectSsDust_Spawn(play, 0, &pos, &velocity, &accel, &primColor, &envColor, scale, scaleStep, life, 0);
 }

@@ -1,0 +1,7 @@
+extern u64 gTreeElevatorDL_ydan_room_0Tex_0109C0_ci8_ci8[];
+extern u64 gTreeElevatorDL_ydan_room_0Tex_0109C0_ci8_pal_rgba16[];
+extern Vtx gTreeElevatorDL_gTreeElevatorDL_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx gTreeElevatorDL_gTreeElevatorDL_mesh_layer_Opaque_vtx_0[27];
+extern Gfx gTreeElevatorDL_gTreeElevatorDL_mesh_layer_Opaque_tri_0[];
+extern Gfx mat_gTreeElevatorDL_f3dlite_material_layerOpaque[];
+extern Gfx gTreeElevatorDL[];
