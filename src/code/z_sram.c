@@ -221,7 +221,7 @@ static Inventory sDebugSaveInventory = {
         ITEM_BOTTLE_POTION_GREEN, // SLOT_BOTTLE_3
         ITEM_BOTTLE_POTION_BLUE,  // SLOT_BOTTLE_4
         ITEM_POCKET_EGG,          // SLOT_TRADE_ADULT
-        ITEM_MASK_BUNNY_HOOD,     // SLOT_TRADE_CHILD
+        ITEM_MASK_KEATON,     // SLOT_TRADE_CHILD
     },
     // ammo
     {

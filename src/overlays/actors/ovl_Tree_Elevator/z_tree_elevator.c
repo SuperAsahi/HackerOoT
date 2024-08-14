@@ -18,6 +18,14 @@ void TreeElevator_Draw(Actor* thisx, PlayState* play);
 
 void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play);
 
+void TreeElevator_SetupWaitForSwitch(TreeElevator* this, PlayState* play);
+void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play);
+
+// Wait for switch
+// raise
+// wait to lower
+// lower
+
 const ActorInit Tree_Elevator_InitVars = {
     ACTOR_TREE_ELEVATOR,
     ACTORCAT_BG,
@@ -39,6 +47,8 @@ void TreeElevator_Init(Actor* thisx, PlayState* play) {
 
     this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
 
+    TreeElevator_SetupWaitForSwitch(this, play);
+
 }
 
 void TreeElevator_Destroy(Actor* thisx, PlayState* play) {
@@ -49,8 +59,8 @@ void TreeElevator_Destroy(Actor* thisx, PlayState* play) {
 
 void TreeElevator_Update(Actor* thisx, PlayState* play) {
     TreeElevator* this = (TreeElevator*)thisx;
-    TreeElevator_SpawnDust(this, play);
 
+    this->actionFunc(this, play);
 }
 
 void TreeElevator_Draw(Actor* thisx, PlayState* play){
@@ -73,4 +83,14 @@ void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play) {
     s16 life = 40;
     
     EffectSsDust_Spawn(play, 0, &pos, &velocity, &accel, &primColor, &envColor, scale, scaleStep, life, 0);
+}
+
+void TreeElevator_SetupWaitForSwitch(TreeElevator* this, PlayState* play) {
+    this->actionFunc = TreeElevator_WaitForSwitch;
+}
+
+void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play) {
+    // do nothing
+    TreeElevator_SpawnDust(this, play);
+
 }
