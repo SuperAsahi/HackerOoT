@@ -307,7 +307,7 @@ endif
 
 mod:
 	python3 install_mod_assets.py
-	make -j$(nproc)
+	make -j$(nproc) run
 
 build: rom compress
 

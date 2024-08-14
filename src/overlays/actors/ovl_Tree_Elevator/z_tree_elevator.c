@@ -11,6 +11,8 @@
 // Flag 4 - update actor while off screen, flag 5 - draw actor while offscreen
 #define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
 
+#define SWITCH_FLAG(this) (this->dyna.actor.params & 0x3F)
+
 void TreeElevator_Init(Actor* thisx, PlayState* play);
 void TreeElevator_Destroy(Actor* thisx, PlayState* play);
 void TreeElevator_Update(Actor* thisx, PlayState* play);
@@ -20,6 +22,15 @@ void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play);
 
 void TreeElevator_SetupWaitForSwitch(TreeElevator* this, PlayState* play);
 void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play);
+
+void TreeElevator_SetupRaise(TreeElevator* this, PlayState* play);
+void TreeElevator_Raise(TreeElevator* this, PlayState* play);
+
+void TreeElevator_SetupWaitToLower(TreeElevator* this, PlayState* play);
+void TreeElevator_WaitToLower(TreeElevator* this, PlayState* play);
+
+void TreeElevator_SetupLower(TreeElevator* this, PlayState* play);
+void TreeElevator_Lower(TreeElevator* this, PlayState* play);
 
 // Wait for switch
 // raise
@@ -48,7 +59,7 @@ void TreeElevator_Init(Actor* thisx, PlayState* play) {
     this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
 
     TreeElevator_SetupWaitForSwitch(this, play);
-    Debug_Print(4, "init: my id is: %d", this->dyna.bgId);
+//    Debug_Print(4, "init: my id is: %d", this->dyna.bgId);
 
 }
 
@@ -61,7 +72,7 @@ void TreeElevator_Destroy(Actor* thisx, PlayState* play) {
 void TreeElevator_Update(Actor* thisx, PlayState* play) {
     TreeElevator* this = (TreeElevator*)thisx;
     
-    Debug_Print(0, "hello from Update");
+//    Debug_Print(0, "hello from Update");
     this->actionFunc(this, play);
 }
 
@@ -92,8 +103,19 @@ void TreeElevator_SetupWaitForSwitch(TreeElevator* this, PlayState* play) {
 }
 
 void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play) {
-    // do nothing
-    Debug_Print(1, "current frame: %u", play->gameplayFrames);
-    TreeElevator_SpawnDust(this, play);
+//    Debug_Print(1, "current frame: %u", play->gameplayFrames);
+    if (Flags_GetSwitch(play, SWITCH_FLAG(this))) {
+        TreeElevator_SetupRaise(this, play);
+    }
+
+}
+
+void TreeElevator_SetupRaise(TreeElevator* this, PlayState* play) {
+    Debug_Print(0, "SetupRaise");
+    this->actionFunc = TreeElevator_Raise;
+}
+
+void TreeElevator_Raise(TreeElevator* this, PlayState* play) {
+    Debug_Print(1, "In raise");
 
 }
