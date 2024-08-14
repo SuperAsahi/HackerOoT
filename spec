@@ -624,6 +624,7 @@ beginseg
     include "$(BUILD_DIR)/data/rsp.rodata.o"
 #endif
     include "$(BUILD_DIR)/src/code/rainbow.o"
+    include "$(BUILD_DIR)/src/code/debug_util.o"
 endseg
 
 beginseg

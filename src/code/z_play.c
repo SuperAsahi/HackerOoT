@@ -1058,6 +1058,8 @@ skip:
     PLAY_LOG(3816);
     Environment_Update(this, &this->envCtx, &this->lightCtx, &this->pauseCtx, &this->msgCtx, &this->gameOverCtx,
                        this->state.gfxCtx);
+    // I added this from kentonm's tutorial
+    Debug_Print_Draw(this->state.gfxCtx);
 
     if (ENABLE_MOTION_BLUR && ENABLE_MOTION_BLUR_DEBUG) {
         // motion blur testing controls

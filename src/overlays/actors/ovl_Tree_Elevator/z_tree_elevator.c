@@ -48,6 +48,7 @@ void TreeElevator_Init(Actor* thisx, PlayState* play) {
     this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
 
     TreeElevator_SetupWaitForSwitch(this, play);
+    Debug_Print(4, "init: my id is: %d", this->dyna.bgId);
 
 }
 
@@ -59,7 +60,8 @@ void TreeElevator_Destroy(Actor* thisx, PlayState* play) {
 
 void TreeElevator_Update(Actor* thisx, PlayState* play) {
     TreeElevator* this = (TreeElevator*)thisx;
-
+    
+    Debug_Print(0, "hello from Update");
     this->actionFunc(this, play);
 }
 
@@ -91,6 +93,7 @@ void TreeElevator_SetupWaitForSwitch(TreeElevator* this, PlayState* play) {
 
 void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play) {
     // do nothing
+    Debug_Print(1, "current frame: %u", play->gameplayFrames);
     TreeElevator_SpawnDust(this, play);
 
 }
