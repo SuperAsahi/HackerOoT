@@ -154,10 +154,13 @@ void TreeElevator_SetupLower(TreeElevator* this, PlayState* play) {
     this->actionFunc = TreeElevator_Lower;
 }
 void TreeElevator_Lower(TreeElevator* this, PlayState* play) {
-        if (DECR(this->timer) == 0) {
-        TreeElevator_SetupWaitForSwitch(this, play);
-    } else {
-        this->dyna.actor.world.pos.y -= 2.0f;
-    }
+    f32 step = this->timer / ((f32)TREE_ELEVATOR_TRAVEL_DURATION);
+    f32 offset = TREE_ELEVATOR_MAX_HEIGHT * TreeElevator_SmoothStep(step);
+    this->dyna.actor.world.pos.y = this->dyna.actor.home.pos.y + offset;
 
+
+        if (DECR(this->timer) == 0) {
+            this->dyna.actor.world.pos.y = this->dyna.actor.home.pos.y;
+            TreeElevator_SetupWaitForSwitch(this, play);
+    }
 }
