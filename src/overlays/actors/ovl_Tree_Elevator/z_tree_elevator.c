@@ -99,8 +99,8 @@ void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play) {
     Vec3f pos;
     Vec3f velocity = { 0.0f, 1.0f, 0.0f };
     Vec3f accel = { 0.0f, 0.0f, 0.0f };
-    s16 scale = 8;
-    s16 scaleStep = 100;
+    s16 scale = 100;
+    s16 scaleStep = 80;
     s16 life = 20;
     u8 i = 0;
 
@@ -113,6 +113,9 @@ void TreeElevator_SpawnDust(TreeElevator* this, PlayState* play) {
         s16 randomAngle = Rand_S16Offset(0, DEG_TO_BINANG(360.0f));
         velocity.x = Math_SinS(randomAngle) * randomDist;
         velocity.z = Math_CosS(randomAngle) * randomDist;
+
+        pos.x += Math_SinS(randomAngle) * randomDist;
+        pos.z += Math_CosS(randomAngle) * randomDist;
 
         EffectSsDust_Spawn(play, 0, &pos, &velocity, &accel,
         &primColor, &envColor, scale, scaleStep, life, 0);
@@ -154,7 +157,7 @@ void TreeElevator_Raise(TreeElevator* this, PlayState* play) {
         TreeElevator_SetupWaitToLower(this, play);
     } else {
         Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_ELEVATOR_MOVE3 - SFX_FLAG);
-        if (this->timer > 10) {
+        if ((this->timer < (TREE_ELEVATOR_TRAVEL_DURATION - 20)) && (this->timer > 20)) {
             TreeElevator_SpawnDust(this, play);
         }
     }
@@ -187,7 +190,7 @@ void TreeElevator_Lower(TreeElevator* this, PlayState* play) {
         TreeElevator_SetupWaitForSwitch(this, play);
     } else {
         Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_ELEVATOR_MOVE3 - SFX_FLAG);
-        if (this->timer > 10) {
+        if ((this->timer < (TREE_ELEVATOR_TRAVEL_DURATION - 20)) && (this->timer > 20)) {
             TreeElevator_SpawnDust(this, play);
         }
     }
