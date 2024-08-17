@@ -33,11 +33,11 @@ const ActorInit Npc_Test_InitVars = {
 };
 
 typedef enum {
-    NPCTEST_MESSAGE_1 = 0x71B4,
-    NPCTEST_MESSAGE_2 = 0x71B5,
-    NPCTEST_MESSAGE_3 = 0x71B6,
-    NPCTEST_MESSAGE_4 = 0x71B7,
-    NPCTEST_MESSAGE_5 = 0x71B8,
+    NPCTEST_MESSAGE_COME_BACK_LATER = 0x71B4,
+    NPCTEST_MESSAGE_COME_BACK_WAY_LATER = 0x71B5,
+    NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS = 0x71B6,
+    NPCTEST_MESSAGE_CHOICE_LOVE_EM = 0x71B7,
+    NPCTEST_MESSAGE_CHOICE_ABSOLUTELY = 0x71B8,
     NPCTEST_MESSAGE_6 = 0x71B9,
     NPCTEST_MESSAGE_7 = 0x71BA,
     NPCTEST_MESSAGE_8 = 0x71BB,
@@ -166,6 +166,7 @@ void NpcTest_Draw(Actor* thisx, PlayState* play) {
 }
 
 u16 NpcTest_GetNextTextId(PlayState* play, Actor* thisx) {
+    if ()
     return NPCTEST_MESSAGE_1;
 }
 
