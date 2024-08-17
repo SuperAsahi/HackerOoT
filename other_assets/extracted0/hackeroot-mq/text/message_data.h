@@ -41117,32 +41117,32 @@ DEFINE_MESSAGE(0x71B3, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x71B4, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 1.5"
+"Come talk to me later..."
 
 ,"german","french"
 )
 
 DEFINE_MESSAGE(0x71B5, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 2"
+"I meant like WAY later."
 
 ,"german","french"
 )
 
 DEFINE_MESSAGE(0x71B6, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 3"
-
+"Do you like these tutorials?\n"
+"\n"
+TWO_CHOICE COLOR(ADJUSTABLE) "Yep, love 'em!\n"
+"Absolutely." COLOR(DEFAULT)
 ,"german","french"
 )
 
 DEFINE_MESSAGE(0x71B7, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 4"
-
+"You love 'em huh? Glad to hear it!"
 ,"german","french"
 )
 
 DEFINE_MESSAGE(0x71B8, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 5"
-
+"That's nice."
 ,"german","french"
 )
 

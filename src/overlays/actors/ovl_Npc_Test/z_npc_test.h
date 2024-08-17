@@ -3,6 +3,7 @@
 
 #include "ultra64.h"
 #include "global.h"
+#include "src/overlays/actors/ovl_Demo_Im/z_demo_im.h"
 
 struct NpcTest;
 
@@ -12,6 +13,11 @@ typedef struct NpcTest {
     Actor actor;
     NpcTestActionFunc actionFunc;
     NpcInteractInfo interactInfo;
+    SkelAnime skelAnime;
+    Vec3s jointTable[IMPA_LIMB_MAX];
+    Vec3s morphTable[IMPA_LIMB_MAX];
+    s16 eyeIndex;
+    ColliderCylinder collider;
 } NpcTest;
 
 #endif
