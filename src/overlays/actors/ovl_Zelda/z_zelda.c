@@ -47,16 +47,24 @@ typedef enum {
     NPCTEST_MESSAGE_9 = 0x71BC,
 } ZeldaMessageId;
 
-static ColliderCylinderInitType1 sCylinderInit = {
+static ColliderCylinderInit sCylinderInit = {
     {
-        COLTYPE_HIT0,
+        COLTYPE_NONE,
         AT_NONE,
         AC_NONE,
-        OC1_ON | OC1_TYPE_PLAYER,
+        OC1_ON | OC1_TYPE_ALL,
+        OC2_TYPE_2,
         COLSHAPE_CYLINDER,
     },
-    { 0x00, { 0x00000000, 0x00, 0x00 }, { 0x00000000, 0x00, 0x00 }, 0x00, 0x00, 0x01 },
-    { 25, 80, 0, { 0, 0, 0 } },
+    {
+        ELEMTYPE_UNK0,
+        { 0x00000000, 0x00, 0x00 },
+        { 0x00000000, 0x00, 0x00 },
+        ATELEM_NONE,
+        ACELEM_NONE,
+        OCELEM_ON,
+    },
+    { 10, 44, 0, { 0, 0, 0 } },
 };
 
 void Zelda_Init(Actor* thisx, PlayState* play) {
@@ -67,6 +75,8 @@ void Zelda_Init(Actor* thisx, PlayState* play) {
     Animation_Change(&this->skelAnime, &gChildZeldaAnim_000654, 1.0f, 0.0f, Animation_GetLastFrame(&gChildZeldaAnim_000654), ANIMMODE_LOOP, 0.0f);
     
     Actor_UpdateBgCheckInfo(play, &this->actor, 75.0f, 30.0f, 30.0f, UPDBGCHECKINFO_FLAG_0 | UPDBGCHECKINFO_FLAG_2);
+    Collider_InitCylinder(play, &this->collider);
+    Collider_SetCylinder(play, &this->collider, &this->actor, &sCylinderInit);
 
 
     /*
@@ -99,7 +109,7 @@ void Zelda_Update(Actor* thisx, PlayState* play) {
     );
 
     Collider_UpdateCylinder(&this->actor, &this->collider);
-    CollisionCheck_SetOC(play, &play->colChkCtx, &this->collider);
+    CollisionCheck_SetOC(play, &play->colChkCtx, &this->collider.base);
     // Hitbox = AT
     // Hurtbox = AC
     // Bumping = OC
@@ -112,6 +122,7 @@ s32 Zelda_OverrideLimbDraw(PlayState* play, s32 limbIndex, Gfx** dList, Vec3f* p
     if (limbIndex == 17) {
         limbRot = this->interactInfo.headRot;
         Matrix_Translate(900.0f, 0.0f, 0.0f, MTXMODE_APPLY);
+        // If you change this to Matrix_RotateY, and remove the other limb indexes, it becomes creepypasta
         Matrix_RotateX(BINANG_TO_RAD_ALT(limbRot.y), MTXMODE_APPLY);
         Matrix_RotateZ(BINANG_TO_RAD_ALT(limbRot.x), MTXMODE_APPLY);
         Matrix_Translate(-900.0f, 0.0f, 0.0f, MTXMODE_APPLY);
@@ -169,16 +180,40 @@ u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx) {
     }
 }
 
+/*
+u16 Zelda_GetTextId(PlayState* play, Actor* thisx) {
+    u16 maskReactionTextId = MaskReaction_GetTextId(play, MASK_REACTION_SET_ZELDA);   
+    s16 textId;
+
+    if (maskReactionTextId != 0) {
+        return maskReactionTextId;
+    }
+    return textId;
+}
+*/
 
 s16 Zelda_UpdateTalkState(PlayState* play, Actor* thisx) {
-    s16 talkState = NPC_TALK_STATE_IDLE;
+    s16 talkState = NPC_TALK_STATE_TALKING;
 
     switch (Message_GetState(&play->msgCtx)) {
+        case TEXT_STATE_CHOICE:
+            if (Message_ShouldAdvance(play)) {
+                if (play->msgCtx.choiceIndex == 0) {
+                    thisx->textId = NPCTEST_MESSAGE_CHOICE_LOVE_EM;
+                } else {
+                    thisx->textId = NPCTEST_MESSAGE_CHOICE_ABSOLUTELY;
+                }
+
+                Message_ContinueTextbox(play, thisx->textId);
+            }
+            break;
         case TEXT_STATE_DONE:
-        if (thisx->textId == NPCTEST_MESSAGE_COME_BACK_LATER) {
-            SET_INFTABLE(INFTABLE_E0);
-        }
-        break;
+            if (thisx->textId == NPCTEST_MESSAGE_COME_BACK_LATER) {
+             SET_INFTABLE(INFTABLE_E0);
+            }
+            talkState = NPC_TALK_STATE_IDLE;
+            break;
     }
 
+    return talkState;
 }
