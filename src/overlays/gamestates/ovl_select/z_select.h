@@ -177,6 +177,7 @@ static SceneSelectEntry sScenes[] = {
     { "Deku Theater Grotto", MapSelect_LoadGame, ENTR_GROTTOS_12 },
     { "Death Mountain Trail Cow Grotto", MapSelect_LoadGame, ENTR_GROTTOS_13 },
     { "Cutscene Map", MapSelect_LoadGame, ENTR_CUTSCENE_MAP_0 },
+    { "TestMap001", MapSelect_LoadGame, ENTR_TESTMAP001_0 },
 #if CAN_INCLUDE_TEST_SCENES
     { "Test Room", MapSelect_LoadGame, ENTR_BESITU_0 },
     { "SRD Map", MapSelect_LoadGame, ENTR_SASATEST_0 },

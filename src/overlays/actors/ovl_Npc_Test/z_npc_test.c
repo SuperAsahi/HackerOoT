@@ -166,12 +166,27 @@ void NpcTest_Draw(Actor* thisx, PlayState* play) {
 }
 
 u16 NpcTest_GetNextTextId(PlayState* play, Actor* thisx) {
-    if ()
-    return NPCTEST_MESSAGE_1;
+    if (LINK_IS_ADULT) {
+        return NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS;
+    } else {
+        if (GET_INFTABLE(INFTABLE_E0)) {
+            return NPCTEST_MESSAGE_COME_BACK_WAY_LATER;
+        } else {
+            return NPCTEST_MESSAGE_COME_BACK_LATER;
+        }
+    }
 }
 
 
 s16 NpcTest_UpdateTalkState(PlayState* play, Actor* thisx) {
-    return NPC_TALK_STATE_IDLE;
+    s16 talkState = NPC_TALK_STATE_IDLE;
+
+    switch (Message_GetState(&play->msgCtx)) {
+        case TEXT_STATE_DONE:
+        if (thisx->textId == NPCTEST_MESSAGE_COME_BACK_LATER) {
+            SET_INFTABLE(INFTABLE_E0);
+        }
+        break;
+    }
 
 }
