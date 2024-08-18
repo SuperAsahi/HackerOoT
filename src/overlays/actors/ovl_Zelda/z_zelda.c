@@ -65,12 +65,13 @@ void Zelda_Init(Actor* thisx, PlayState* play) {
     SkelAnime_InitFlex(play, &this->skelAnime, &gChildZeldaSkel, NULL, this->jointTable, this->morphTable, 18);
     ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawCircle, 18.0f);
     Animation_Change(&this->skelAnime, &gChildZeldaAnim_000654, 1.0f, 0.0f, Animation_GetLastFrame(&gChildZeldaAnim_000654), ANIMMODE_LOOP, 0.0f);
+    
+    Actor_UpdateBgCheckInfo(play, &this->actor, 75.0f, 30.0f, 30.0f, UPDBGCHECKINFO_FLAG_0 | UPDBGCHECKINFO_FLAG_2);
 
 
     /*
     Collider_InitCylinder(play, &this->collider);
     Collider_SetCylinderType1(play, &this->collider, &this->actor, &sCylinderInit);
-    Actor_UpdateBgCheckInfo(play, &this->actor, 75.0f, 30.0f, 30.0f, UPDBGCHECKINFO_FLAG_0 | UPDBGCHECKINFO_FLAG_2);
     */
     
 }
@@ -98,7 +99,7 @@ void Zelda_Update(Actor* thisx, PlayState* play) {
     );
 
     Collider_UpdateCylinder(&this->actor, &this->collider);
-    //CollisionCheck_SetOC(play, &play->colChkCtx, &this->collider);
+    CollisionCheck_SetOC(play, &play->colChkCtx, &this->collider);
     // Hitbox = AT
     // Hurtbox = AC
     // Bumping = OC
@@ -108,12 +109,21 @@ s32 Zelda_OverrideLimbDraw(PlayState* play, s32 limbIndex, Gfx** dList, Vec3f* p
     Zelda* this = (Zelda*)thisx;
     Vec3s limbRot;
 
-    limbRot = this->interactInfo.headRot;
-    Matrix_Translate(900.0f, 0.0f, 0.0f, MTXMODE_APPLY);
-    Matrix_RotateX(BINANG_TO_RAD_ALT(limbRot.y), MTXMODE_APPLY);
-    Matrix_RotateZ(BINANG_TO_RAD_ALT(limbRot.x), MTXMODE_APPLY);
-    Matrix_Translate(-900.0f, 0.0f, 0.0f, MTXMODE_APPLY);
-
+    if (limbIndex == 17) {
+        limbRot = this->interactInfo.headRot;
+        Matrix_Translate(900.0f, 0.0f, 0.0f, MTXMODE_APPLY);
+        Matrix_RotateX(BINANG_TO_RAD_ALT(limbRot.y), MTXMODE_APPLY);
+        Matrix_RotateZ(BINANG_TO_RAD_ALT(limbRot.x), MTXMODE_APPLY);
+        Matrix_Translate(-900.0f, 0.0f, 0.0f, MTXMODE_APPLY);
+    }
+    if (limbIndex == 10) {
+        limbRot = this->interactInfo.torsoRot;
+        Matrix_RotateY(BINANG_TO_RAD_ALT(limbRot.y), MTXMODE_APPLY);
+        Matrix_RotateX(BINANG_TO_RAD_ALT(limbRot.x), MTXMODE_APPLY);
+    }
+    if ((limbIndex >= 3) && (limbIndex < 7)) {
+        *dList = NULL;
+    }
     return false;
 }
 
@@ -121,10 +131,10 @@ void Zelda_PostLimbDraw(PlayState* play, s32 limbIndex, Gfx** dList, Vec3s* rot,
     Vec3f zeroVec = { 0.0f, 0.0f, 0.0f };
     Zelda* this = (Zelda*)thisx;
 
-    Matrix_MultVec3f(&zeroVec, &this->actor.focus.pos);
-
+    if (limbIndex == 17) {
+        Matrix_MultVec3f(&zeroVec, &this->actor.focus.pos);
+    }
 }
-
 
 void Zelda_Draw(Actor* thisx, PlayState* play) {
     Zelda* this = (Zelda*)thisx;
