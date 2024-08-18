@@ -3964,6 +3964,13 @@ beginseg
 endseg
 
 beginseg
+    name "ovl_Zelda"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Zelda/z_zelda.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Zelda/ovl_Zelda_reloc.o"
+endseg
+
+beginseg
     name "gameplay_keep"
     compress
     romalign 0x1000
