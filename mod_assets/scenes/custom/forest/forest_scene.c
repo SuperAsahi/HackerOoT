@@ -100,6 +100,16 @@ EnvLightSettings forest_scene_header00_lightSettings[4] = {
     },
 };
 
+Vec3s forest_camPosData[3] = {
+	{ 0, 0, 0 },
+	{ 3859, 56871, 0 },
+	{ 3960, -1, -1 },
+};
+
+BgCamInfo forest_camData[1] = {
+	{ CAM_SET_NONE, 3, &forest_camPosData[0] },
+};
+
 SurfaceType forest_polygonTypes[] = {
 	{ 0x00000000, 0x00000000 },
 	{ 0x00000000, 0x0002000a },
@@ -207,7 +217,7 @@ CollisionHeader forest_collisionHeader = {
 	50,
 	forest_polygons,
 	forest_polygonTypes,
-	0,
+	forest_camData,
 	0,
 	0
 };

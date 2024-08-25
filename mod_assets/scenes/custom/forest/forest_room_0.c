@@ -30,6 +30,14 @@ s16 forest_room_0_header00_objectList[LENGTH_FOREST_ROOM_0_HEADER00_OBJECTLIST] 
 };
 
 ActorEntry forest_room_0_header00_actorList[LENGTH_FOREST_ROOM_0_HEADER00_ACTORLIST] = {
+    // Torch
+    {
+        /* Actor ID   */ ACTOR_OBJ_SYOKUDAI,
+        /* Position   */ { 244, -118, 230 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x2000
+    },
+
     // Redead/Gibdo
     {
         /* Actor ID   */ ACTOR_EN_RD,
@@ -38,26 +46,10 @@ ActorEntry forest_room_0_header00_actorList[LENGTH_FOREST_ROOM_0_HEADER00_ACTORL
         /* Parameters */ 0x0000
     },
 
-    // Torch
-    {
-        /* Actor ID   */ ACTOR_OBJ_SYOKUDAI,
-        /* Position   */ { -242, -120, 183 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x2400
-    },
-
-    // Torch
-    {
-        /* Actor ID   */ ACTOR_OBJ_SYOKUDAI,
-        /* Position   */ { 365, -120, 357 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
     // Greenery
     {
         /* Actor ID   */ ACTOR_EN_WOOD02,
-        /* Position   */ { -876, -120, 568 },
+        /* Position   */ { 751, -120, 1096 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0003
     },
@@ -78,6 +70,22 @@ ActorEntry forest_room_0_header00_actorList[LENGTH_FOREST_ROOM_0_HEADER00_ACTORL
         /* Parameters */ 0x1000
     },
 
+    // Greenery
+    {
+        /* Actor ID   */ ACTOR_EN_WOOD02,
+        /* Position   */ { -729, -120, 2646 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0000
+    },
+
+    // Greenery
+    {
+        /* Actor ID   */ ACTOR_EN_WOOD02,
+        /* Position   */ { -876, -120, 568 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0003
+    },
+
     // Torch
     {
         /* Actor ID   */ ACTOR_OBJ_SYOKUDAI,
@@ -89,9 +97,9 @@ ActorEntry forest_room_0_header00_actorList[LENGTH_FOREST_ROOM_0_HEADER00_ACTORL
     // Torch
     {
         /* Actor ID   */ ACTOR_OBJ_SYOKUDAI,
-        /* Position   */ { 244, -118, 230 },
+        /* Position   */ { -242, -120, 183 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x2000
+        /* Parameters */ 0x2400
     },
 
     // Greenery
@@ -105,23 +113,15 @@ ActorEntry forest_room_0_header00_actorList[LENGTH_FOREST_ROOM_0_HEADER00_ACTORL
     // Greenery
     {
         /* Actor ID   */ ACTOR_EN_WOOD02,
-        /* Position   */ { -729, -120, 2646 },
+        /* Position   */ { 851, -120, 2037 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },
 
-    // Greenery
+    // Torch
     {
-        /* Actor ID   */ ACTOR_EN_WOOD02,
-        /* Position   */ { 751, -120, 1096 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0003
-    },
-
-    // Greenery
-    {
-        /* Actor ID   */ ACTOR_EN_WOOD02,
-        /* Position   */ { 851, -120, 2037 },
+        /* Actor ID   */ ACTOR_OBJ_SYOKUDAI,
+        /* Position   */ { 365, -120, 357 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },

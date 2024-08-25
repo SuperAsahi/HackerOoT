@@ -11961,6 +11961,20 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/forest/forest_room_0.o"
     number 3
+endseg
+
+beginseg
+    name "hallway_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/hallway/hallway_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "hallway_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/hallway/hallway_room_0.o"
+    number 3
 endseg	
 
 #if CAN_INCLUDE_TEST_SCENES

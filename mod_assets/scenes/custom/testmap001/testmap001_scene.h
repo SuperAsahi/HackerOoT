@@ -11,6 +11,8 @@ extern TransitionActorEntry testmap001_scene_header00_transitionActors[];
 extern Spawn testmap001_scene_header00_entranceList[];
 extern EnvLightSettings testmap001_scene_header00_lightSettings[4];
 extern Gfx mat_testmap001_dl_floor_mat_layerOpaque[];
+extern Vec3s testmap001_camPosData[3];
+extern BgCamInfo testmap001_camData[1];
 extern SurfaceType testmap001_polygonTypes[];
 extern CollisionPoly testmap001_polygons[];
 extern Vec3s testmap001_vertices[36];

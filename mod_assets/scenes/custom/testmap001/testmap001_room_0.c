@@ -40,14 +40,6 @@ ActorEntry testmap001_room_0_header00_actorList[LENGTH_TESTMAP001_ROOM_0_HEADER0
         /* Parameters */ 0x0803
     },
 
-    // Custom Actor
-    {
-        /* Actor ID   */ ACTOR_TREE_ELEVATOR,
-        /* Position   */ { -149, -110, 165 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0008
-    },
-
     // Princess Zelda Child
     {
         /* Actor ID   */ ACTOR_EN_ZL1,
@@ -58,16 +50,24 @@ ActorEntry testmap001_room_0_header00_actorList[LENGTH_TESTMAP001_ROOM_0_HEADER0
 
     // Custom Actor
     {
-        /* Actor ID   */ ACTOR_NPC_TEST,
-        /* Position   */ { -225, -120, -59 },
+        /* Actor ID   */ ACTOR_ZELDA,
+        /* Position   */ { -422, -120, -32 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },
 
     // Custom Actor
     {
-        /* Actor ID   */ ACTOR_ZELDA,
-        /* Position   */ { -422, -120, -32 },
+        /* Actor ID   */ ACTOR_TREE_ELEVATOR,
+        /* Position   */ { -149, -110, 165 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0008
+    },
+
+    // Custom Actor
+    {
+        /* Actor ID   */ ACTOR_NPC_TEST,
+        /* Position   */ { -225, -120, -59 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },

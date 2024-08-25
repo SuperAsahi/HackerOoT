@@ -5,6 +5,8 @@ extern u8 _hallway_room_0SegmentRomEnd[];
 extern ActorEntry hallway_scene_header00_playerEntryList[];
 extern Spawn hallway_scene_header00_entranceList[];
 extern EnvLightSettings hallway_scene_header00_lightSettings[4];
+extern Vec3s hallway_camPosData[3];
+extern BgCamInfo hallway_camData[1];
 extern SurfaceType hallway_polygonTypes[];
 extern CollisionPoly hallway_polygons[];
 extern Vec3s hallway_vertices[8];

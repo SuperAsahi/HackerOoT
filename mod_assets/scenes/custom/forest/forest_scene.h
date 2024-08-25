@@ -6,6 +6,8 @@ extern ActorEntry forest_scene_header00_playerEntryList[];
 extern TransitionActorEntry forest_scene_header00_transitionActors[];
 extern Spawn forest_scene_header00_entranceList[];
 extern EnvLightSettings forest_scene_header00_lightSettings[4];
+extern Vec3s forest_camPosData[3];
+extern BgCamInfo forest_camData[1];
 extern SurfaceType forest_polygonTypes[];
 extern CollisionPoly forest_polygons[];
 extern Vec3s forest_vertices[34];

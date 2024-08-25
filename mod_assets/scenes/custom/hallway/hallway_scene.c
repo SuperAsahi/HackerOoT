@@ -88,6 +88,16 @@ EnvLightSettings hallway_scene_header00_lightSettings[4] = {
     },
 };
 
+Vec3s hallway_camPosData[3] = {
+	{ 0, 0, 0 },
+	{ 5659, 58199, 167 },
+	{ 3960, -1, -1 },
+};
+
+BgCamInfo hallway_camData[1] = {
+	{ CAM_SET_NONE, 3, &hallway_camPosData[0] },
+};
+
 SurfaceType hallway_polygonTypes[] = {
 	{ 0x00000000, 0x00000000 },
 };
@@ -124,7 +134,7 @@ CollisionHeader hallway_collisionHeader = {
 	6,
 	hallway_polygons,
 	hallway_polygonTypes,
-	0,
+	hallway_camData,
 	0,
 	0
 };

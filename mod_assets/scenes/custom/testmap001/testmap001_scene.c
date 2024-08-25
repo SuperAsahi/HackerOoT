@@ -122,6 +122,16 @@ Gfx mat_testmap001_dl_floor_mat_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
+Vec3s testmap001_camPosData[3] = {
+	{ 0, 0, 0 },
+	{ 5626, 436, 114 },
+	{ 3960, -1, -1 },
+};
+
+BgCamInfo testmap001_camData[1] = {
+	{ CAM_SET_NONE, 3, &testmap001_camPosData[0] },
+};
+
 SurfaceType testmap001_polygonTypes[] = {
 	{ 0x00000000, 0x00000000 },
 };
@@ -222,7 +232,7 @@ CollisionHeader testmap001_collisionHeader = {
 	42,
 	testmap001_polygons,
 	testmap001_polygonTypes,
-	0,
+	testmap001_camData,
 	0,
 	0
 };
