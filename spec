@@ -11933,19 +11933,33 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/testmap001/testmap001_room_0.o"
     number 3
-endseg	
+endseg
 
 beginseg
     name "testmap001_room_1"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/testmap001/testmap001_room_1.o"
     number 3
-endseg	
+endseg
 
 beginseg
     name "testmap001_room_2"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/testmap001/testmap001_room_2.o"
+    number 3
+endseg
+
+beginseg
+    name "forest_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/forest/forest_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "forest_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/forest/forest_room_0.o"
     number 3
 endseg	
 
