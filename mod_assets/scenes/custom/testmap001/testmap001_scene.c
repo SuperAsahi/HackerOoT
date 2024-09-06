@@ -42,18 +42,18 @@ ActorEntry testmap001_scene_header00_playerEntryList[] = {
 TransitionActorEntry testmap001_scene_header00_transitionActors[] = {
     // Lifting Wooden Door
     {
-        /* Room & Cam Index (Front, Back) */ { 0, 0xFF, 2, 0xFF },
+        /* Room & Cam Index (Front, Back) */ { 0, 0xFF, 1, 0xFF },
         /* Actor ID                       */ ACTOR_DOOR_SHUTTER,
-        /* Position                       */ { -972, -120, 172 },
+        /* Position                       */ { 745, -120, 106 },
         /* Rotation Y                     */ DEG_TO_BINANG(0.000),
         /* Parameters                     */ 0x0000
     },
 
     // Lifting Wooden Door
     {
-        /* Room & Cam Index (Front, Back) */ { 0, 0xFF, 1, 0xFF },
+        /* Room & Cam Index (Front, Back) */ { 0, 0xFF, 2, 0xFF },
         /* Actor ID                       */ ACTOR_DOOR_SHUTTER,
-        /* Position                       */ { 745, -120, 106 },
+        /* Position                       */ { -972, -120, 172 },
         /* Rotation Y                     */ DEG_TO_BINANG(0.000),
         /* Parameters                     */ 0x0000
     },

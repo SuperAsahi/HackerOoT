@@ -11950,6 +11950,20 @@ beginseg
 endseg
 
 beginseg
+    name "festival_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/festival/festival_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "festival_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/festival/festival_room_0.o"
+    number 3
+endseg
+
+beginseg
     name "forest_scene"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/forest/forest_scene.o"
@@ -11974,6 +11988,41 @@ beginseg
     name "hallway_room_0"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/hallway/hallway_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "lab_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/lab/lab_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "lab_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/lab/lab_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "lab_room_1"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/lab/lab_room_1.o"
+    number 3
+endseg
+
+beginseg
+    name "maze_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/maze/maze_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "maze_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/maze/maze_room_0.o"
     number 3
 endseg	
 
