@@ -305,6 +305,16 @@ endif
 
 #### Main Targets ###
 
+cart:
+	python3 install_mod_assets.py
+	make -j$(nproc)
+	./sc64deployer upload build/hackeroot-mq/hackeroot-mq.z64
+
+unfl:
+	python3 install_mod_assets.py
+	make -j$(nproc)
+	UNFLoader -r build/hackeroot-mq/hackeroot-mq.z64
+
 mod:
 	python3 install_mod_assets.py
 	make -j$(nproc) run

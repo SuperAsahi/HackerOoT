@@ -12013,6 +12013,13 @@ beginseg
 endseg
 
 beginseg
+    name "lab_room_2"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/lab/lab_room_2.o"
+    number 3
+endseg
+
+beginseg
     name "maze_scene"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/maze/maze_scene.o"
