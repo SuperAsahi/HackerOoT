@@ -10,7 +10,7 @@
 /**
  * Header Child Day (Default)
 */
-#define LENGTH_TESTMAP001_ROOM_1_HEADER00_OBJECTLIST 1
+#define LENGTH_TESTMAP001_ROOM_1_HEADER00_OBJECTLIST 2
 #define LENGTH_TESTMAP001_ROOM_1_HEADER00_ACTORLIST 1
 SceneCmd testmap001_room_1_header00[] = {
     SCENE_CMD_ECHO_SETTINGS(0x00),
@@ -25,6 +25,7 @@ SceneCmd testmap001_room_1_header00[] = {
 
 s16 testmap001_room_1_header00_objectList[LENGTH_TESTMAP001_ROOM_1_HEADER00_OBJECTLIST] = {
     OBJECT_RD,
+    OBJECT_ZL4,
 };
 
 ActorEntry testmap001_room_1_header00_actorList[LENGTH_TESTMAP001_ROOM_1_HEADER00_ACTORLIST] = {

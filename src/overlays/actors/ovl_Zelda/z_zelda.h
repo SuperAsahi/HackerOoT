@@ -29,6 +29,10 @@ typedef struct Zelda {
     s16 talkTimer1;
     s16 talkTimer2;
     s16 cueId;
+    s16 timer;
+    u8 action;
+    u8 playerStunWaitTimer; // Cannot stun the player if this is non-zero
+    u8 grabWaitTimer; // Cannot grab the player if this is non-zero
 } Zelda;
 
 #endif

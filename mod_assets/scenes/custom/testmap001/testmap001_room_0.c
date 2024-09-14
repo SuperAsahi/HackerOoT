@@ -40,14 +40,6 @@ ActorEntry testmap001_room_0_header00_actorList[LENGTH_TESTMAP001_ROOM_0_HEADER0
         /* Parameters */ 0x0008
     },
 
-    // Dungeon Switches
-    {
-        /* Actor ID   */ ACTOR_OBJ_SWITCH,
-        /* Position   */ { -475, -120, 185 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0803
-    },
-
     // Princess Zelda Child
     {
         /* Actor ID   */ ACTOR_EN_ZL1,
@@ -62,6 +54,14 @@ ActorEntry testmap001_room_0_header00_actorList[LENGTH_TESTMAP001_ROOM_0_HEADER0
         /* Position   */ { -422, -120, -32 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
+    },
+
+    // Dungeon Switches
+    {
+        /* Actor ID   */ ACTOR_OBJ_SWITCH,
+        /* Position   */ { -475, -120, 185 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0803
     },
 
     // Custom Actor
