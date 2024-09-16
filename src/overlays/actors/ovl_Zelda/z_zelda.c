@@ -253,30 +253,91 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 
 void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play) {
     Debug_Print(1, "setup walk to player");
-    Animation_Change(&this->skelAnime, &gChildZeldaAnim_000654, 1.0f, 4.0f, Animation_GetLastFrame(&gChildZeldaAnim_000654),
+    Animation_Change(&this->skelAnime, &gChildZeldaAnim_00E5C8, 1.0f, 4.0f, Animation_GetLastFrame(&gChildZeldaAnim_00E5C8),
                      ANIMMODE_LOOP_INTERP, -4.0f);
     this->actor.speed = 0.8f;
 //    this->actor.speed = 0.4f;
     this->action = ZELDA_ACTION_WALK_TO_PLAYER;
     Zelda_SetupAction(this, Zelda_WalkToPlayer);
+//    Animation_Change(&this->skelAnime, &gChildZeldaAnim_00E5C8, 1.0f, 0.0f, Animation_GetLastFrame(&gChildZeldaAnim_00E5C8), ANIMMODE_LOOP, 0.0f);
 }
 
 void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
+    Player* player = GET_PLAYER(play);
+    s16 targetY = Actor_WorldYawTowardPoint(&this->actor, &player->actor.prevPos);
+
     Debug_Print(2, "walk to player");
-    Vec3f D_80AE4918 = { 0.0f, 0.0f, 0.0f };
+
+        if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) <= 150.0f) {
+                    Debug_Print(4, "smooth step");
+                    Math_SmoothStepToS(&this->actor.shape.rot.y, targetY, 1, 200, 0);
+
+                    //func_8008EEAC(play, &this->actor);
+                   // GET_PLAYER(play)->unk_684 = &this->actor;
+                   
+                } else {
+            Zelda_SetupIdle(this);
+        }
+}
+/*
+
+    Vec3f preyPos;
+
+    SkelAnime_Update(&this->skelAnime);
+    if (this->timer != 0) {
+        this->timer--;
+    }
+    Math_StepToF(&this->actor.speed, 4.0f, 0.5f);
+    if (this->actor.bgCheckFlags & BGCHECKFLAG_WALL) {
+        Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.wallYaw, 2, 0xC00, 0x300);
+       // Math_ScaledStepToS(&this->actor.shape.rot.x, this->targetPitch, 0x100);
+    } else if (Actor_IsFacingPlayer(&this->actor, 0x2800)) {
+        if (Animation_OnFrame(&this->skelAnime, 4.0f)) {
+            this->skelAnime.playSpeed = 0.0f;
+            this->skelAnime.curFrame = 4.0f;
+        }
+        Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 2, 0xC00, 0x300);
+        preyPos.x = player->actor.world.pos.x;
+        preyPos.y = player->actor.world.pos.y + 20.0f;
+        preyPos.z = player->actor.world.pos.z;
+        Math_SmoothStepToS(&this->actor.shape.rot.x, Actor_WorldPitchTowardPoint(&this->actor, &preyPos) + 0x1554, 2,
+                           0x400, 0x100);
+
+    }
+}
+*/
+
+   /* Vec3f D_80AE4918 = { 0.0f, 0.0f, 0.0f };
     Color_RGBA8 D_80AE4924 = { 200, 200, 255, 255 };
     Color_RGBA8 D_80AE4928 = { 0, 0, 255, 0 };
     Player* player = GET_PLAYER(play);
     s32 pad;
     s16 yaw = this->actor.yawTowardsPlayer - this->actor.shape.rot.y;
     s16 targetY = Actor_WorldYawTowardPoint(&this->actor, &player->actor.prevPos);
+    f32 distToPlayer = Actor_WorldDistXZToActor(&this->actor, &GET_PLAYER(play)->actor);
+    Vec3f preyPos;
 
+    if (distToPlayer > 50.0f) {
+        Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 2, 0xC00, 0x300);
+        preyPos.x = player->actor.world.pos.x;
+        preyPos.y = player->actor.world.pos.y + 20.0f;
+        preyPos.z = player->actor.world.pos.z;
+        Math_SmoothStepToS(&this->actor.shape.rot.x, Actor_WorldPitchTowardPoint(&this->actor, &preyPos) + 0x1554, 2,
+                           0x400, 0x100);
+    }
+}
+
+//Actor_WorldDistXZToActor(&this->actor, &GET_PLAYER(play)->actor);
+
+*/
+
+/*
     this->skelAnime.playSpeed = this->actor.speed;
     Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 0xFA, 0);
    // Math_SmoothStepToS(&this->actor.shape.rot.y, player->actor.world, 1, 10, 0);
 
     //Math_SmoothStepToS(&this->actor.shape.rot.y, targetY, 1, 0x1C2, 0);
-/*
+
      s16 targetY = Actor_WorldYawTowardPoint(&this->actor, &player->actor.pos);
 
     if (Actor_WorldDistXYZToPoint(&this->actor, &this->actor.home.pos) >= 5.0f) {
@@ -289,7 +350,7 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
     if (Actor_WorldDistXYZToPoint(&player->actor, &this->actor.home.pos) >= 150.0f) {
         Zelda_SetupIdle(this);
     }
-    */
+    
 
     if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) <= 150.0f) {
                     Debug_Print(4, "smooth step");
@@ -302,6 +363,8 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
             Zelda_SetupIdle(this);
         }
 }
+*/
+
 /*
     if (this->grabWaitTimer != 0) {
         this->grabWaitTimer--;
