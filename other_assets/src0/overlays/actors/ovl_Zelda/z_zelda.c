@@ -39,6 +39,33 @@ const ActorInit Zelda_InitVars = {
 };
 
 typedef enum {
+    /* 0 */ ZELDA_EYES_NEUTRAL,
+    /* 1 */ ZELDA_EYES_SHUT,
+    /* 2 */ ZELDA_EYES_LOOK_LEFT,
+    /* 3 */ ZELDA_EYES_LOOK_RIGHT,
+    /* 4 */ ZELDA_EYES_WIDE,
+    /* 5 */ ZELDA_EYES_SQUINT,
+    /* 6 */ ZELDA_EYES_OPEN
+} ZeldaEyeExpression;
+
+typedef enum {
+    /* 0 */ ZELDA_MOUTH_NEUTRAL,
+    /* 1 */ ZELDA_MOUTH_HAPPY,
+    /* 2 */ ZELDA_MOUTH_WORRIED,
+    /* 3 */ ZELDA_MOUTH_SURPRISED
+} ZeldaMouthExpression;
+
+typedef enum {
+    /* 0 */ ZELDA_EYE_OPEN,
+    /* 1 */ ZELDA_EYE_BLINK,
+    /* 2 */ ZELDA_EYE_SHUT,
+    /* 3 */ ZELDA_EYE_WIDE,
+    /* 4 */ ZELDA_EYE_SQUINT,
+    /* 5 */ ZELDA_EYE_LOOK_OUT,
+    /* 6 */ ZELDA_EYE_LOOK_IN
+} ZeldaEyeState;
+
+typedef enum {
     NPCTEST_MESSAGE_COME_BACK_LATER = 0x71B4,
     NPCTEST_MESSAGE_COME_BACK_WAY_LATER = 0x71B5,
     NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS = 0x71B6,
@@ -73,6 +100,91 @@ static ColliderCylinderInit sCylinderInit = {
         OCELEM_ON,
     },
     { 10, 44, 0, { 0, 0, 0 } },
+};
+
+
+typedef enum {
+    /*  0 */ ZELDA_ANIM_0,
+    /*  1 */ ZELDA_ANIM_1,
+    /*  2 */ ZELDA_ANIM_2,
+    /*  3 */ ZELDA_ANIM_3,
+    /*  4 */ ZELDA_ANIM_4,
+    /*  5 */ ZELDA_ANIM_5,
+    /*  6 */ ZELDA_ANIM_6,
+    /*  7 */ ZELDA_ANIM_7,
+    /*  8 */ ZELDA_ANIM_8,
+    /*  9 */ ZELDA_ANIM_9,
+    /* 10 */ ZELDA_ANIM_10,
+    /* 11 */ ZELDA_ANIM_11,
+    /* 12 */ ZELDA_ANIM_12,
+    /* 13 */ ZELDA_ANIM_13,
+    /* 14 */ ZELDA_ANIM_14,
+    /* 15 */ ZELDA_ANIM_15,
+    /* 16 */ ZELDA_ANIM_16,
+    /* 17 */ ZELDA_ANIM_17,
+    /* 18 */ ZELDA_ANIM_18,
+    /* 19 */ ZELDA_ANIM_19,
+    /* 20 */ ZELDA_ANIM_20,
+    /* 21 */ ZELDA_ANIM_21,
+    /* 22 */ ZELDA_ANIM_22,
+    /* 23 */ ZELDA_ANIM_23,
+    /* 24 */ ZELDA_ANIM_24,
+    /* 25 */ ZELDA_ANIM_25,
+    /* 26 */ ZELDA_ANIM_26,
+    /* 27 */ ZELDA_ANIM_27,
+    /* 28 */ ZELDA_ANIM_28,
+    /* 29 */ ZELDA_ANIM_29,
+    /* 30 */ ZELDA_ANIM_30,
+    /* 31 */ ZELDA_ANIM_31,
+    /* 32 */ ZELDA_ANIM_32,
+    /* 33 */ ZELDA_ANIM_33
+} ZeldaAnimation;
+
+static AnimationInfo sAnimationInfo[] = {
+    /*  0 */ /* standing idle */ { &gChildZeldaAnim_000654, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /*  1 */ /* moves to introduce herself */ { &gChildZeldaAnim_00E5C8, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /*  2 */ /* introducing herself */ { &gChildZeldaAnim_00EBC4, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /*  3 */ /* turns away from window surprised */
+    { &gChildZeldaAnim_010DF8, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /*  4 */ /* standing with hand in front of mouth */
+    { &gChildZeldaAnim_011248, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /*  5 */ /* surprise, moves hand to mouth */ { &gChildZeldaAnim_011698, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /*  6 */ /* uncrosses arms, leans toward link with hands together */
+    { &gChildZeldaAnim_011B34, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -8.0f },
+    /*  7 */ /* turns to write letter */ { &gChildZeldaAnim_0125E4, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, 0.0f },
+    /*  8 */ /* writing letter */ { &gChildZeldaAnim_012E58, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /*  9 */ /* pulls back, looks askew */ { &gChildZeldaAnim_013280, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /* 10 */ /* looks askew at Link */ { &gChildZeldaAnim_013628, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /* 11 */ /* crosses arms, looks to the side */ { &gChildZeldaAnim_013A50, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /* 12 */ /* arms crossed, looking away */ { &gChildZeldaAnim_013EA0, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /* 13 */ /* turns away, hands behind back, looks up */
+    { &gChildZeldaAnim_015F14, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 14 */ /* turns back to link, hands on top of each other */
+    { &gChildZeldaAnim_0169B4, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 15 */ /* hands behind back looking up */ { &gChildZeldaAnim_016D08, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 16 */ /* leans toward link, looks askew */ { &gChildZeldaAnim_01726C, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /* 17 */ /* leaning toward link, looking askew */
+    { &gChildZeldaAnim_017818, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -8.0f },
+    /* 18 */ /* neutral, looking at Link */ { &gChildZeldaAnim_01805C, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 19 */ /* moves towards link, hands clasped */
+    { &gChildZeldaAnim_018898, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /* 20 */ /* facing link, hands clasped */ { &gChildZeldaAnim_01910C, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /* 21 */ /* look in window */ { &gChildZeldaAnim_019600, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 22 */ /* leans forward, hands together */ { &gChildZeldaAnim_01991C, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, -1.0f },
+    /* 23 */ /* turns to link, hands on top of each other */
+    { &gChildZeldaAnim_01A2FC, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 24 */ /* stands, hands on top of each other */
+    { &gChildZeldaAnim_01AAE0, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 25 */ /* leaning forward, hands together */ { &gChildZeldaAnim_01AE88, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /* 26 */ /* walks aside, points to window */ { &gChildZeldaAnim_01B874, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, 0.0f },
+    /* 27 */ /* stands pointing at window */ { &gChildZeldaAnim_01BCF0, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 28 */ /* laughs, hands together */ { &gChildZeldaAnim_01C494, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /* 29 */ /* happy, hands together */ { &gChildZeldaAnim_01C7B0, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -1.0f },
+    /* 30 */ /* standing hands behind back looking down*/
+    { &gChildZeldaAnim_01CE08, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 31 */ /* cocks head, hands clasped */ { &gChildZeldaAnim_00F0A4, 1.0f, 0.0f, -1.0f, ANIMMODE_ONCE, 0.0f },
+    /* 32 */ /* happy, hands clasped */ { &gChildZeldaAnim_00F894, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, 0.0f },
+    /* 33 */ /* transition to standing */ { &gChildZeldaAnim_000654, 1.0f, 0.0f, -1.0f, ANIMMODE_LOOP, -8.0f },
 };
 
 void Zelda_SetupAction(Zelda* this, ZeldaActionFunc actionFunc) {
@@ -115,6 +227,7 @@ void Zelda_Update(Actor* thisx, PlayState* play) {
 
     SkelAnime_Update(&this->skelAnime);
     this->interactInfo.trackPos = player->actor.world.pos;
+    //Zelda_UpdateFace(this);
     Npc_TrackPoint(&this->actor, &this->interactInfo, 0xC, NPC_TRACKING_HEAD_AND_TORSO);
     Actor_UpdateBgCheckInfo(play, &this->actor, 75.0f, 30.0f, 30.0f, UPDBGCHECKINFO_FLAG_0 | UPDBGCHECKINFO_FLAG_2);
     Npc_UpdateTalking(
@@ -186,8 +299,73 @@ void Zelda_Draw(Actor* thisx, PlayState* play) {
                           Zelda_OverrideLimbDraw, Zelda_PostLimbDraw, this);
     CLOSE_DISPS(play->state.gfxCtx, __FILE__, __LINE__);
 }
+/*
 
+void Zelda_UpdateFace(Zelda* this) {
+    if (this->blinkTimer > 0) {
+        this->blinkTimer--;
+    } else {
+        this->blinkTimer = 0;
+    }
+    if (this->blinkTimer <= 2) {
+        this->leftEyeState = this->rightEyeState = this->blinkTimer;
+    }
+    switch (this->eyeExpression) {
+        case ZELDA_EYES_NEUTRAL:
+            if (this->blinkTimer == 0) {
+                this->blinkTimer = Rand_S16Offset(30, 30);
+            }
+            break;
+        case ZELDA_EYES_SHUT:
+            if (this->blinkTimer == 0) {
+                this->leftEyeState = this->rightEyeState = ZELDA_EYE_SHUT;
+            }
+            break;
+        case ZELDA_EYES_LOOK_LEFT:
+            if (this->blinkTimer == 0) {
+                this->leftEyeState = ZELDA_EYE_LOOK_OUT;
+                this->rightEyeState = ZELDA_EYE_LOOK_IN;
+            }
+            break;
+        case ZELDA_EYES_LOOK_RIGHT:
+            if (this->blinkTimer == 0) {
+                this->leftEyeState = ZELDA_EYE_LOOK_IN;
+                this->rightEyeState = ZELDA_EYE_LOOK_OUT;
+            }
+            break;
+        case ZELDA_EYES_WIDE:
+            if (this->blinkTimer == 0) {
+                this->leftEyeState = this->rightEyeState = ZELDA_EYE_WIDE;
+            }
+            break;
+        case ZELDA_EYES_SQUINT:
+            if (this->blinkTimer == 0) {
+                this->leftEyeState = this->rightEyeState = ZELDA_EYE_SQUINT;
+            }
+            break;
+        case ZELDA_EYES_OPEN:
+            if (this->blinkTimer >= 3) {
+                this->blinkTimer = ZELDA_EYE_OPEN;
+            }
+            break;
+    }
+    switch (this->mouthExpression) {
+        case ZELDA_MOUTH_HAPPY:
+            this->mouthState = 1;
+            break;
+        case ZELDA_MOUTH_WORRIED:
+            this->mouthState = 2;
+            break;
+        case ZELDA_MOUTH_SURPRISED:
+            this->mouthState = 3;
+            break;
+        default:
+            this->mouthState = 0;
+            break;
+    }
+}
 
+*/
 
 u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx) {
     if (LINK_IS_ADULT) {
@@ -251,7 +429,6 @@ void Zelda_SetupIdle(Zelda* this) {
 void Zelda_Idle(Zelda* this, PlayState* play) {
     Player* player = GET_PLAYER(play);
     Debug_Print(0, "zelda idle");
-    this->actor.speed = 0.8f;
     Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 450, 250);
         if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
             Zelda_SetupWalkToPlayer(this, play);
@@ -260,7 +437,8 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 
 void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play) {
     Debug_Print(1, "setup walk to player");
-    Animation_Change(&this->skelAnime, &gChildZeldaAnim_013280, 1.0f, 0.0f, Animation_GetLastFrame(&gChildZeldaAnim_013280), ANIMMODE_LOOP, 4.0f);
+    //Animation_Change(&this->skelAnime, ZELDA_ANIM_26, 1.0f, 0.0f, Animation_GetLastFrame(ZELDA_ANIM_26), ANIMMODE_LOOP, 4.0f);
+    Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_3);
     this->actor.speed = 0.8f;
 //    this->actor.speed = 0.4f;
     this->action = ZELDA_ACTION_WALK_TO_PLAYER;
@@ -284,7 +462,8 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
                    // GET_PLAYER(play)->unk_684 = &this->actor;
                    
                 } else {
-            //Animation_Change(&this->skelAnime, &gChildZeldaAnim_000654, 1.0f, 0.0f, Animation_GetLastFrame(&gChildZeldaAnim_000654), ANIMMODE_LOOP, 4.0f);
+            //Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_0);
+            //Animation_Change(&this->skelAnime, &ZELDA_ANIM_0, 1.0f, 0.0f, Animation_GetLastFrame(&ZELDA_ANIM_0), ANIMMODE_LOOP, 4.0f);
             Zelda_SetupIdle(this);
         }
 }
