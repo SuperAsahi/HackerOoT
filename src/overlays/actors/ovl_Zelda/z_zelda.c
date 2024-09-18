@@ -438,7 +438,7 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play) {
     Debug_Print(1, "setup walk to player");
     //Animation_Change(&this->skelAnime, ZELDA_ANIM_26, 1.0f, 0.0f, Animation_GetLastFrame(ZELDA_ANIM_26), ANIMMODE_LOOP, 4.0f);
-    Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_13);
+    Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_3);
     this->actor.speed = 0.8f;
 //    this->actor.speed = 0.4f;
     this->action = ZELDA_ACTION_WALK_TO_PLAYER;
