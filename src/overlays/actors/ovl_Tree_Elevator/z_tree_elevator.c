@@ -130,14 +130,14 @@ f32 TreeElevator_SmoothStep(f32 x) {
 }
 
 void TreeElevator_SetupWaitForSwitch(TreeElevator* this, PlayState* play) {
-    Debug_Print(5, "tree_setupwaitfor switch");
+    //Debug_Print(5, "tree_setupwaitfor switch");
     Flags_UnsetSwitch(play, SWITCH_FLAG(this));
     this->dyna.actor.world.pos.y = this->dyna.actor.home.pos.y;
     this->actionFunc = TreeElevator_WaitForSwitch;
 }
 
 void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play) {
-    Debug_Print(6, "current frame: %u", play->gameplayFrames);
+    //Debug_Print(6, "current frame: %u", play->gameplayFrames);
     if (Flags_GetSwitch(play, SWITCH_FLAG(this))) {
         TreeElevator_SetupRaise(this, play);
     }

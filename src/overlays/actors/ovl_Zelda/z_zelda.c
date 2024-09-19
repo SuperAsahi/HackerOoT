@@ -212,7 +212,8 @@ void Zelda_Init(Actor* thisx, PlayState* play) {
     Collider_InitCylinder(play, &this->collider);
     Collider_SetCylinder(play, &this->collider, &this->actor, &sCylinderInit);
 
-    Zelda_Idle(this, play);
+    //Zelda_Idle(this, play);
+    Zelda_SetupWalkToPlayer(this, play);
 //    this->action = ZELDA_ACTION_IDLE;
 
 
@@ -426,12 +427,13 @@ s16 Zelda_UpdateTalkState(PlayState* play, Actor* thisx) {
 }
 
 void Zelda_SetupIdle(Zelda* this, PlayState* play) {
-    Debug_Print(3, "zelda setup idle");
+    Debug_Print(0, "zelda setup idle");
     //Flags_UnsetSwitch(play, SWITCH_FLAG(this));
-    this->action = ZELDA_ACTION_IDLE;
+
     this->timer = (Rand_ZeroOne() * 10.0f) + 5.0f;
     this->actor.speed = 0.0f;
     this->actor.world.rot.y = this->actor.shape.rot.y;
+    this->action = ZELDA_ACTION_IDLE;
     Zelda_SetupAction(this, Zelda_Idle);
 }
 
@@ -441,18 +443,21 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 
     Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 450, 250);
 
-        if (Flags_GetSwitch(play, SWITCH_FLAG(this))) {
-                //if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
+        if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
                 Debug_Print(4, "test");
                 //Zelda_Idle(this, play);
                 //}
+                                Zelda_SetupWalkToPlayer(this, play);
 
-            } else {
+            }
+            /*
+            else
+            {
                 if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
                 Debug_Print(4, "test2");
                 Zelda_SetupWalkToPlayer(this, play);
             }
-        }
+        }*/
 }
 
 /*
@@ -467,9 +472,6 @@ void TreeElevator_WaitForSwitch(TreeElevator* this, PlayState* play) {
     if (Flags_GetSwitch(play, SWITCH_FLAG(this))) {
         TreeElevator_SetupRaise(this, play);
     }
-
-}
-
 */
 
 void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play) {
@@ -486,7 +488,8 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
 
     Debug_Print(3, "walk to player");
 
-        if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
+
+        if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
                 Debug_Print(3, "walking");
                 Math_SmoothStepToF(&this->actor.world.pos.x, player->actor.world.pos.x, 0.5f, 4.2f, 0.0f);
                 Math_SmoothStepToF(&this->actor.world.pos.z, player->actor.world.pos.z, 0.5f, 4.2f, 0.0f);
