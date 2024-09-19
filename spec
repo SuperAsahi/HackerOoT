@@ -12031,7 +12031,22 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/maze/maze_room_0.o"
     number 3
-endseg	
+endseg
+
+beginseg
+    name "hall2_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/hall2/hall2_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "hall2_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/hall2/hall2_room_0.o"
+    number 3
+endseg
+
 
 #if CAN_INCLUDE_TEST_SCENES
 beginseg

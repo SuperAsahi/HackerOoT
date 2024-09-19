@@ -18,7 +18,7 @@ SceneCmd hallway_scene_header00[] = {
     SCENE_CMD_SPECIAL_FILES(0x00, OBJECT_GAMEPLAY_DANGEON_KEEP),
     SCENE_CMD_SKYBOX_SETTINGS(0x00, 0x00, LIGHT_MODE_TIME),
     SCENE_CMD_ENTRANCE_LIST(hallway_scene_header00_entranceList),
-    SCENE_CMD_SPAWN_LIST(1, hallway_scene_header00_playerEntryList),
+    SCENE_CMD_SPAWN_LIST(2, hallway_scene_header00_playerEntryList),
     SCENE_CMD_ENV_LIGHT_SETTINGS(4, hallway_scene_header00_lightSettings),
     SCENE_CMD_END(),
 };
@@ -34,11 +34,18 @@ ActorEntry hallway_scene_header00_playerEntryList[] = {
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0FFF
     },
+    {
+        /* Actor ID   */ ACTOR_PLAYER,
+        /* Position   */ { -812, -120, 5626 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0FFF
+    },
 };
 
 Spawn hallway_scene_header00_entranceList[] = {
     // { Spawn Actor List Index, Room Index }
     { 0, 0 },
+    { 1, 0 },
 };
 
 EnvLightSettings hallway_scene_header00_lightSettings[4] = {

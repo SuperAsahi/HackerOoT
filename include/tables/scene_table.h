@@ -114,8 +114,9 @@
 /* 0x6E */ DEFINE_SCENE(festival_scene, none, SCENE_FESTIVAL, SDC_DEFAULT, 0, 0)
 /* 0x6E */ DEFINE_SCENE(forest_scene, none, SCENE_FOREST, SDC_DEFAULT, 0, 0)
 /* 0x6E */ DEFINE_SCENE(hallway_scene, none, SCENE_HALLWAY, SDC_DEFAULT, 0, 0)
-/* 0x6E */ DEFINE_SCENE(lab_scene, none, SCENE_LAB, SDC_DEFAULT, 0, 0)
+/* 0x6E */ DEFINE_SCENE(lab_scene, none, SCENE_LAB, SDC_CALM_WATER, 0, 0)
 /* 0x6E */ DEFINE_SCENE(maze_scene, none, SCENE_MAZE, SDC_DEFAULT, 0, 0)
+/* 0x6E */ DEFINE_SCENE(hall2_scene, none, SCENE_HALL2, SDC_DEFAULT, 0, 0)
 
 #if CAN_INCLUDE_TEST_SCENES
 /* 0x65 */ DEFINE_SCENE(test01_scene, none, SCENE_TEST01, SDC_CALM_WATER, 0, 0)
