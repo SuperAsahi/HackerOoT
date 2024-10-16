@@ -28,18 +28,18 @@ s16 maze_room_0_header00_objectList[LENGTH_MAZE_ROOM_0_HEADER00_OBJECTLIST] = {
 };
 
 ActorEntry maze_room_0_header00_actorList[LENGTH_MAZE_ROOM_0_HEADER00_ACTORLIST] = {
-    // Redead/Gibdo
+    // Silver Rupee/Large Rotating Pot
     {
-        /* Actor ID   */ ACTOR_EN_RD,
-        /* Position   */ { 1011, -120, 53 },
+        /* Actor ID   */ ACTOR_EN_G_SWITCH,
+        /* Position   */ { -515, -120, 647 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },
 
-    // Sparkling Rupee
+    // Redead/Gibdo
     {
-        /* Actor ID   */ ACTOR_EN_EX_RUPPY,
-        /* Position   */ { -515, -120, 647 },
+        /* Actor ID   */ ACTOR_EN_RD,
+        /* Position   */ { 1011, -120, 53 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },

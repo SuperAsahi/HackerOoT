@@ -1,69 +1,63 @@
-#include "ultra64.h"
-#include "z64.h"
-#include "macros.h"
 #include "lab_scene.h"
-#include "segment_symbols.h"
-#include "command_macros_base.h"
-#include "z64cutscene_commands.h"
-#include "variables.h"
+
 
 /**
  * Header Child Day (Default)
 */
 SceneCmd lab_room_3_header00[] = {
+    SCENE_CMD_ROOM_SHAPE(&lab_room_3_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(0x00),
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
     SCENE_CMD_SKYBOX_DISABLES(true, true),
-    SCENE_CMD_TIME_SETTINGS(0xFF, 0xFF, 0),
-    SCENE_CMD_ROOM_SHAPE(&lab_room_3_shapeHeader),
+    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
     SCENE_CMD_END(),
 };
 
 RoomShapeNormal lab_room_3_shapeHeader = {
     ROOM_SHAPE_TYPE_NORMAL,
-    ARRAY_COUNT(lab_room_3_shapeDListEntry),
-    lab_room_3_shapeDListEntry,
-    lab_room_3_shapeDListEntry + ARRAY_COUNT(lab_room_3_shapeDListEntry)
+    ARRAY_COUNT(lab_room_3_shapeDListsEntry),
+    lab_room_3_shapeDListsEntry,
+    lab_room_3_shapeDListsEntry + ARRAY_COUNT(lab_room_3_shapeDListsEntry)
 };
 
-RoomShapeDListsEntry lab_room_3_shapeDListEntry[1] = {
-    { lab_room_3_entry_0_opaque, NULL },
+RoomShapeDListsEntry lab_room_3_shapeDListsEntry[1] = {
+    { lab_room_3_shapeHeader_entry_0_opaque, NULL }
 };
 
-Gfx lab_room_3_entry_0_opaque[] = {
-	gsSPDisplayList(lab_dl_Cube_014_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_015_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_016_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_017_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_018_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_019_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_020_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_021_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_022_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_023_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_024_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_025_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_026_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Cube_027_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_015_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_016_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_017_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_018_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_019_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_020_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_021_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_022_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_023_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_024_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_025_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_026_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_027_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_028_mesh_layer_Opaque),
-	gsSPDisplayList(lab_dl_Floor_029_mesh_layer_Opaque),
+Gfx lab_room_3_shapeHeader_entry_0_opaque[] = {
+	gsSPDisplayList(lab_room_3_dl_Cube_014_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_015_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_016_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_017_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_018_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_019_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_020_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_021_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_022_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_023_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_024_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_025_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_026_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_027_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_015_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_016_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_017_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_018_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_019_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_020_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_021_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_022_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_023_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_024_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_025_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_026_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_027_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_028_mesh_layer_Opaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_029_mesh_layer_Opaque),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_014_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_014_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-36, -698, 516}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-36, -622, 516}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-36, -622, 501}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -74,7 +68,7 @@ Vtx lab_dl_Cube_014_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {16, -698, 501}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_014_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_014_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {16, -698, 516}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {16, -622, 516}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {-36, -622, 516}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -101,8 +95,8 @@ Vtx lab_dl_Cube_014_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {16, -622, 501}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_014_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_014_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_014_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_014_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -112,7 +106,7 @@ Gfx lab_dl_Cube_014_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_015_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_015_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-217, -698, 169}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-217, -622, 169}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-217, -622, 154}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -123,7 +117,7 @@ Vtx lab_dl_Cube_015_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-164, -698, 154}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_015_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_015_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {-164, -698, 169}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {-164, -622, 169}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {-217, -622, 169}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -150,8 +144,8 @@ Vtx lab_dl_Cube_015_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {-164, -622, 154}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_015_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_015_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_015_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_015_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -161,7 +155,7 @@ Gfx lab_dl_Cube_015_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_016_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_016_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {208, -698, 165}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {208, -622, 165}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {208, -622, 151}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -172,7 +166,7 @@ Vtx lab_dl_Cube_016_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {260, -698, 151}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_016_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_016_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {260, -698, 165}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {260, -622, 165}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {208, -622, 165}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -199,8 +193,8 @@ Vtx lab_dl_Cube_016_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {260, -622, 151}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_016_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_016_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_016_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_016_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -210,7 +204,7 @@ Gfx lab_dl_Cube_016_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_017_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_017_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {932, -698, 156}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {932, -622, 156}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {932, -622, 142}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -221,7 +215,7 @@ Vtx lab_dl_Cube_017_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {984, -698, 142}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_017_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_017_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {984, -698, 156}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {984, -622, 156}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {932, -622, 156}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -248,8 +242,8 @@ Vtx lab_dl_Cube_017_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {984, -622, 142}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_017_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_017_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_017_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_017_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -259,7 +253,7 @@ Gfx lab_dl_Cube_017_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_018_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_018_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1603, -698, 143}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1603, -622, 143}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1603, -622, 129}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -270,7 +264,7 @@ Vtx lab_dl_Cube_018_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1655, -698, 129}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_018_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_018_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {1655, -698, 143}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {1655, -622, 143}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {1603, -622, 143}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -297,8 +291,8 @@ Vtx lab_dl_Cube_018_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {1655, -622, 129}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_018_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_018_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_018_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_018_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -308,7 +302,7 @@ Gfx lab_dl_Cube_018_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_019_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_019_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2640, -698, 145}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2640, -622, 145}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2640, -622, 130}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -319,7 +313,7 @@ Vtx lab_dl_Cube_019_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2693, -698, 130}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_019_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_019_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {2693, -698, 145}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {2693, -622, 145}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {2640, -622, 145}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -346,8 +340,8 @@ Vtx lab_dl_Cube_019_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {2693, -622, 130}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_019_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_019_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_019_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_019_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -357,7 +351,7 @@ Gfx lab_dl_Cube_019_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_020_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_020_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {840, -698, 511}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {840, -622, 511}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {840, -622, 496}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -368,7 +362,7 @@ Vtx lab_dl_Cube_020_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {893, -698, 496}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_020_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_020_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {893, -698, 511}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {893, -622, 511}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {840, -622, 511}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -395,8 +389,8 @@ Vtx lab_dl_Cube_020_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {893, -622, 496}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_020_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_020_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_020_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_020_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -406,7 +400,7 @@ Gfx lab_dl_Cube_020_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_021_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_021_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1919, -698, 993}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1919, -622, 993}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1919, -622, 979}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -417,7 +411,7 @@ Vtx lab_dl_Cube_021_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1971, -698, 979}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_021_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_021_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {1971, -698, 993}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {1971, -622, 993}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {1919, -622, 993}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -444,8 +438,8 @@ Vtx lab_dl_Cube_021_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {1971, -622, 979}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_021_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_021_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_021_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_021_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -455,7 +449,7 @@ Gfx lab_dl_Cube_021_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_022_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_022_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2505, -698, 568}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2505, -622, 568}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2505, -622, 516}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -466,7 +460,7 @@ Vtx lab_dl_Cube_022_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2520, -698, 516}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_022_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_022_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {2520, -698, 516}, 0, {368, 1008}, {127, 0, 0, 255} }},
 	{{ {2520, -622, 516}, 0, {624, 1008}, {127, 0, 0, 255} }},
 	{{ {2520, -622, 568}, 0, {624, 752}, {127, 0, 0, 255} }},
@@ -493,8 +487,8 @@ Vtx lab_dl_Cube_022_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {2505, -622, 516}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_022_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_022_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_022_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_022_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -504,7 +498,7 @@ Gfx lab_dl_Cube_022_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_023_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_023_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1603, -698, 519}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1603, -622, 519}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1603, -622, 504}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -515,7 +509,7 @@ Vtx lab_dl_Cube_023_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1655, -698, 504}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_023_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_023_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {1655, -698, 519}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {1655, -622, 519}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {1603, -622, 519}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -542,8 +536,8 @@ Vtx lab_dl_Cube_023_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {1655, -622, 504}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_023_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_023_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_023_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_023_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -553,7 +547,7 @@ Gfx lab_dl_Cube_023_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_024_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_024_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2415, -698, 1477}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2415, -622, 1477}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2415, -622, 1463}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -564,7 +558,7 @@ Vtx lab_dl_Cube_024_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2468, -698, 1463}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_024_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_024_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {2468, -698, 1477}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {2468, -622, 1477}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {2415, -622, 1477}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -591,8 +585,8 @@ Vtx lab_dl_Cube_024_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {2468, -622, 1463}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_024_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_024_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_024_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_024_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -602,7 +596,7 @@ Gfx lab_dl_Cube_024_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_025_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_025_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {769, -698, 1477}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {769, -622, 1477}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {769, -622, 1463}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -613,7 +607,7 @@ Vtx lab_dl_Cube_025_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {822, -698, 1463}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_025_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_025_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {822, -698, 1477}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {822, -622, 1477}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {769, -622, 1477}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -640,8 +634,8 @@ Vtx lab_dl_Cube_025_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {822, -622, 1463}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_025_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_025_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_025_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_025_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -651,7 +645,7 @@ Gfx lab_dl_Cube_025_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_026_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_026_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-290, -698, 1454}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-290, -622, 1454}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-290, -622, 1439}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -662,7 +656,7 @@ Vtx lab_dl_Cube_026_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-238, -698, 1439}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_026_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_026_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {-238, -698, 1454}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {-238, -622, 1454}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {-290, -622, 1454}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -689,8 +683,8 @@ Vtx lab_dl_Cube_026_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {-238, -622, 1439}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_026_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_026_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_026_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_026_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -700,7 +694,7 @@ Gfx lab_dl_Cube_026_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Cube_027_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Cube_027_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {230, -698, 1461}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {230, -622, 1461}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {230, -622, 1446}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -711,7 +705,7 @@ Vtx lab_dl_Cube_027_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {283, -698, 1446}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Cube_027_mesh_layer_Opaque_vtx_0[24] = {
+Vtx lab_room_3_dl_Cube_027_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {283, -698, 1461}, 0, {368, 1008}, {0, 0, 127, 255} }},
 	{{ {283, -622, 1461}, 0, {624, 1008}, {0, 0, 127, 255} }},
 	{{ {230, -622, 1461}, 0, {624, 752}, {0, 0, 127, 255} }},
@@ -738,8 +732,8 @@ Vtx lab_dl_Cube_027_mesh_layer_Opaque_vtx_0[24] = {
 	{{ {283, -622, 1446}, 0, {624, 240}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Cube_027_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Cube_027_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
+Gfx lab_room_3_dl_Cube_027_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Cube_027_mesh_layer_Opaque_vtx_0 + 0, 24, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -749,7 +743,7 @@ Gfx lab_dl_Cube_027_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_015_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_015_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {162, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {162, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {162, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -760,20 +754,20 @@ Vtx lab_dl_Floor_015_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {745, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_015_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_015_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {162, -698, 181}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {745, -698, 181}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {745, -698, -402}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {162, -698, -402}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_015_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_015_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_015_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_015_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_016_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_016_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {809, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {809, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {809, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -784,20 +778,20 @@ Vtx lab_dl_Floor_016_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1392, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_016_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_016_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {809, -698, 181}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {1392, -698, 181}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {1392, -698, -402}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {809, -698, -402}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_016_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_016_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_016_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_016_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_017_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_017_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1476, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1476, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1476, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -808,20 +802,20 @@ Vtx lab_dl_Floor_017_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2059, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_017_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_017_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {1476, -698, 181}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {2059, -698, 181}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {2059, -698, -402}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {1476, -698, -402}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_017_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_017_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_017_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_017_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_018_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_018_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2224, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2224, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2224, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -832,20 +826,20 @@ Vtx lab_dl_Floor_018_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2807, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_018_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_018_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {2224, -698, 181}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {2807, -698, 181}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {2807, -698, -402}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {2224, -698, -402}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_018_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_018_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_018_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_018_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_019_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_019_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-455, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-455, -698, 181}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-455, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -856,20 +850,20 @@ Vtx lab_dl_Floor_019_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-138, -698, -402}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_019_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_019_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {-455, -698, 181}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {-138, -698, 181}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {-138, -698, -402}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {-455, -698, -402}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_019_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_019_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_019_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_019_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_020_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_020_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-506, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-506, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-506, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -880,20 +874,20 @@ Vtx lab_dl_Floor_020_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {77, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_020_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_020_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {-506, -698, 1036}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {77, -698, 1036}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {77, -698, 453}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {-506, -698, 453}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_020_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_020_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_020_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_020_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_021_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_021_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {470, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {470, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {470, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -904,20 +898,20 @@ Vtx lab_dl_Floor_021_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1053, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_021_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_021_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {470, -698, 1036}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {1053, -698, 1036}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {1053, -698, 453}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {470, -698, 453}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_021_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_021_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_021_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_021_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_022_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_022_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-510, -698, 1317}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-510, -698, 1317}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-510, -698, -415}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -928,7 +922,7 @@ Vtx lab_dl_Floor_022_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2810, -698, -415}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_022_mesh_layer_Opaque_vtx_0[18] = {
+Vtx lab_room_3_dl_Floor_022_mesh_layer_Opaque_vtx_0[18] = {
 	{{ {-462, -698, 205}, 0, {-16, -16}, {0, 127, 0, 255} }},
 	{{ {-462, -698, 428}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {129, -698, 428}, 0, {325, 1008}, {0, 127, 0, 255} }},
@@ -949,8 +943,8 @@ Vtx lab_dl_Floor_022_mesh_layer_Opaque_vtx_0[18] = {
 	{{ {-120, -698, -415}, 0, {325, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_022_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_022_mesh_layer_Opaque_vtx_0 + 0, 18, 0),
+Gfx lab_room_3_dl_Floor_022_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_022_mesh_layer_Opaque_vtx_0 + 0, 18, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 0, 2, 0),
 	gsSP2Triangles(2, 4, 3, 0, 2, 5, 4, 0),
 	gsSP2Triangles(5, 2, 6, 0, 5, 6, 7, 0),
@@ -962,7 +956,7 @@ Gfx lab_dl_Floor_022_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_023_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_023_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1159, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1159, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1159, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -973,20 +967,20 @@ Vtx lab_dl_Floor_023_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1742, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_023_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_023_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {1159, -698, 1036}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {1742, -698, 1036}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {1742, -698, 453}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {1159, -698, 453}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_023_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_023_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_023_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_023_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_024_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_024_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {1819, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1819, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {1819, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -997,20 +991,20 @@ Vtx lab_dl_Floor_024_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2402, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_024_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_024_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {1819, -698, 1036}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {2402, -698, 1036}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {2402, -698, 453}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {1819, -698, 453}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_024_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_024_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_024_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_024_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_025_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_025_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-120, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-120, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-120, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1021,20 +1015,20 @@ Vtx lab_dl_Floor_025_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {463, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_025_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_025_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {-120, -698, 1967}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {463, -698, 1967}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {463, -698, 1383}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {-120, -698, 1383}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_025_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_025_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_025_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_025_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_026_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_026_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-500, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-500, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-500, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1045,20 +1039,20 @@ Vtx lab_dl_Floor_026_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-197, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_026_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_026_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {-500, -698, 1967}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {-197, -698, 1967}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {-197, -698, 1383}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {-500, -698, 1383}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_026_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_026_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_026_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_026_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_027_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_027_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {553, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {553, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {553, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1069,20 +1063,20 @@ Vtx lab_dl_Floor_027_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2205, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_027_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_027_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {553, -698, 1967}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {2205, -698, 1967}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {2205, -698, 1383}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {553, -698, 1383}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_027_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_027_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_027_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_027_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_028_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_028_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2307, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2307, -698, 1967}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2307, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1093,20 +1087,20 @@ Vtx lab_dl_Floor_028_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2820, -698, 1383}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_028_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_028_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {2307, -698, 1967}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {2820, -698, 1967}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {2820, -698, 1383}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {2307, -698, 1383}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_028_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_028_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_028_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_028_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx lab_dl_Floor_029_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx lab_room_3_dl_Floor_029_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2456, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2456, -698, 1036}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2456, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1117,306 +1111,306 @@ Vtx lab_dl_Floor_029_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2852, -698, 453}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx lab_dl_Floor_029_mesh_layer_Opaque_vtx_0[4] = {
+Vtx lab_room_3_dl_Floor_029_mesh_layer_Opaque_vtx_0[4] = {
 	{{ {2456, -698, 1036}, 0, {-16, 1008}, {0, 127, 0, 255} }},
 	{{ {2852, -698, 1036}, 0, {1008, 1008}, {0, 127, 0, 255} }},
 	{{ {2852, -698, 453}, 0, {1008, -16}, {0, 127, 0, 255} }},
 	{{ {2456, -698, 453}, 0, {-16, -16}, {0, 127, 0, 255} }},
 };
 
-Gfx lab_dl_Floor_029_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(lab_dl_Floor_029_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+Gfx lab_room_3_dl_Floor_029_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(lab_room_3_dl_Floor_029_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_014_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_014_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_014_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_014_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_014_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_014_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_015_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_015_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_015_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_015_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_015_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_015_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_016_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_016_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_016_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_016_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_016_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_016_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_017_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_017_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_017_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_017_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_017_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_017_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_018_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_018_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_018_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_018_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_018_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_018_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_019_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_019_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_019_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_019_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_019_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_019_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_020_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_020_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_020_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_020_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_020_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_020_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_021_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_021_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_021_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_021_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_021_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_021_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_022_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_022_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_022_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_022_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_022_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_022_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_023_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_023_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_023_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_023_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_023_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_023_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_024_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_024_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_024_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_024_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_024_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_024_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_025_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_025_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_025_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_025_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_025_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_025_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_026_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_026_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_026_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_026_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_026_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_026_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Cube_027_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Cube_027_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Cube_027_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Cube_027_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_test_layerOpaque),
-	gsSPDisplayList(lab_dl_Cube_027_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_test_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Cube_027_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_015_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_015_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_015_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_015_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_015_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_015_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_016_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_016_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_016_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_016_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_016_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_016_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_017_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_017_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_017_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_017_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_017_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_017_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_018_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_018_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_018_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_018_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_018_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_018_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_019_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_019_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_019_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_019_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_019_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_019_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_020_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_020_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_020_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_020_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_020_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_020_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_021_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_021_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_021_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_021_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_021_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_021_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_022_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_022_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_022_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_022_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_022_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_022_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_023_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_023_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_023_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_023_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_023_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_023_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_024_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_024_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_024_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_024_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_024_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_024_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_025_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_025_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_025_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_025_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_025_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_025_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_026_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_026_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_026_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_026_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_026_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_026_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_027_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_027_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_027_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_027_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_027_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_027_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_028_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_028_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_028_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_028_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_028_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_028_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx lab_dl_Floor_029_mesh_layer_Opaque[] = {
+Gfx lab_room_3_dl_Floor_029_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(lab_dl_Floor_029_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(lab_room_3_dl_Floor_029_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_lab_dl_floor_mat_layerOpaque),
-	gsSPDisplayList(lab_dl_Floor_029_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_lab_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(lab_room_3_dl_Floor_029_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 

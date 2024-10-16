@@ -62,11 +62,11 @@ void NpcTest_Init(Actor* thisx, PlayState* play) {
     ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawCircle, 30.0f);
     SkelAnime_InitFlex(play, &this->skelAnime, &gImpaSkel, NULL, this->jointTable, this->morphTable, IMPA_LIMB_MAX);
     Animation_Change(&this->skelAnime, &gImpaIdleAnim, 1.0f, 0.0f, Animation_GetLastFrame(&gImpaIdleAnim), ANIMMODE_LOOP, 0.0f);
+
     Collider_InitCylinder(play, &this->collider);
     Collider_SetCylinderType1(play, &this->collider, &this->actor, &sCylinderInit);
     Actor_UpdateBgCheckInfo(play, &this->actor, 75.0f, 30.0f, 30.0f, UPDBGCHECKINFO_FLAG_0 | UPDBGCHECKINFO_FLAG_2);
     
-
 }
 
 void NpcTest_Destroy(Actor* thisx, PlayState* play) {
@@ -92,7 +92,7 @@ void NpcTest_Update(Actor* thisx, PlayState* play) {
     );
 
     Collider_UpdateCylinder(&this->actor, &this->collider);
-    CollisionCheck_SetOC(play, &play->colChkCtx, &this->collider);
+    CollisionCheck_SetOC(play, &play->colChkCtx, &this->collider.base);
     // Hitbox = AT
     // Hurtbox = AC
     // Bumping = OC
@@ -167,6 +167,7 @@ void NpcTest_Draw(Actor* thisx, PlayState* play) {
 
 u16 NpcTest_GetNextTextId(PlayState* play, Actor* thisx) {
     if (LINK_IS_ADULT) {
+//    if (this->actor.params & 0x8) {
         return NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS;
     } else {
         if (GET_INFTABLE(INFTABLE_E0)) {
@@ -179,14 +180,27 @@ u16 NpcTest_GetNextTextId(PlayState* play, Actor* thisx) {
 
 
 s16 NpcTest_UpdateTalkState(PlayState* play, Actor* thisx) {
-    s16 talkState = NPC_TALK_STATE_IDLE;
+    s16 talkState = NPC_TALK_STATE_TALKING;
 
     switch (Message_GetState(&play->msgCtx)) {
+        case TEXT_STATE_CHOICE:
+            if (Message_ShouldAdvance(play)) {
+                if (play->msgCtx.choiceIndex == 0) {
+                    thisx->textId = NPCTEST_MESSAGE_CHOICE_LOVE_EM; 
+                } else {
+                    thisx->textId = NPCTEST_MESSAGE_CHOICE_ABSOLUTELY;
+                }
+
+                Message_ContinueTextbox(play, thisx->textId);
+            }
+            break;
         case TEXT_STATE_DONE:
-        if (thisx->textId == NPCTEST_MESSAGE_COME_BACK_LATER) {
-            SET_INFTABLE(INFTABLE_E0);
-        }
-        break;
+            if (thisx->textId == NPCTEST_MESSAGE_COME_BACK_LATER) {
+                SET_INFTABLE(INFTABLE_E0);
+            }
+            talkState = NPC_TALK_STATE_IDLE;
+            break;
     }
 
+    return talkState;
 }

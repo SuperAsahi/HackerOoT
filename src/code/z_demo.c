@@ -31,6 +31,10 @@
 
 #include "assets/scenes/misc/hakaana_ouke/hakaana_ouke_scene.h"
 
+// My additions
+#include "assets/scenes/custom/cutscene_test/cutscene_test_scene.h"
+#include "assets/scenes/custom/maskcs/maskcs_scene.h"
+
 
 u16 sCurTextId = 0;
 u16 sCurOcarinaAction = 0;
@@ -110,6 +114,8 @@ EntranceCutscene sEntranceCutsceneTable[] = {
     { ENTR_GERUDOS_FORTRESS_17, 0, EVENTCHKINF_C7, gGerudoFortressFirstCaptureCs },
     { ENTR_DEATH_MOUNTAIN_CRATER_1, 2, EVENTCHKINF_B9, gDeathMountainCraterIntroCs },
     { ENTR_KOKIRI_FOREST_12, 2, EVENTCHKINF_C6, gKokiriForestDekuSproutCs },
+    { ENTR_CUTSCENE_TEST_0, 2, EVENTCHKINF_0F, gTestCs },
+    { ENTR_MASKCS_0, 2, EVENTCHKINF_0B, gMaskCs },
 };
 
 void* sUnusedEntranceCsList[] = {

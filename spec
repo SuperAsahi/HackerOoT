@@ -11978,6 +11978,13 @@ beginseg
 endseg
 
 beginseg
+    name "forest_room_1"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/forest/forest_room_1.o"
+    number 3
+endseg
+
+beginseg
     name "hallway_scene"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/hallway/hallway_scene.o"
@@ -12051,6 +12058,62 @@ beginseg
     name "hall2_room_0"
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/custom/hall2/hall2_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "cutscene_test_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/cutscene_test/cutscene_test_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "cutscene_test_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/cutscene_test/cutscene_test_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "catacombs_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/catacombs/catacombs_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "catacombs_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/catacombs/catacombs_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "maskcs_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/maskcs/maskcs_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "maskcs_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/maskcs/maskcs_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "spiral_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/spiral/spiral_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "spiral_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/spiral/spiral_room_0.o"
     number 3
 endseg
 

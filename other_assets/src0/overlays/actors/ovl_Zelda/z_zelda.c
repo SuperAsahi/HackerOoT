@@ -13,15 +13,23 @@
 // Flag 4 - update actor while off screen, flag 5 - draw actor while offscreen
 #define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_3 | ACTOR_FLAG_4 | ACTOR_FLAG_5)
 
+#define SWITCH_FLAG(this) (this->actor.params & 0x3F)
+
 void Zelda_Init(Actor* thisx, PlayState* play);
 void Zelda_Destroy(Actor* thisx, PlayState* play);
 void Zelda_Update(Actor* thisx, PlayState* play);
 void Zelda_Draw(Actor* thisx, PlayState* play);
 
+void Zelda_SetupIdle(Zelda* this, PlayState* play);
 void Zelda_Idle(Zelda* this, PlayState* play);
 
 void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play);
 void Zelda_WalkToPlayer(Zelda* this, PlayState* play);
+
+void Zelda_UpdateFace(Zelda* this);
+
+// WalkToPlayer
+// idle
 
 u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx);
 s16 Zelda_UpdateTalkState(PlayState* play, Actor* thisx);
@@ -193,6 +201,7 @@ void Zelda_SetupAction(Zelda* this, ZeldaActionFunc actionFunc) {
 
 void Zelda_Init(Actor* thisx, PlayState* play) {
     Zelda* this = (Zelda*)thisx;
+    //u8 zeldafollow = 0;
 
     // Actor_Init(&this->actor, &play);
 
@@ -205,7 +214,9 @@ void Zelda_Init(Actor* thisx, PlayState* play) {
     Collider_InitCylinder(play, &this->collider);
     Collider_SetCylinder(play, &this->collider, &this->actor, &sCylinderInit);
 
-    Zelda_Idle(this, play);
+    //Zelda_Idle(this, play);
+    Zelda_SetupWalkToPlayer(this, play);
+//    this->action = ZELDA_ACTION_IDLE;
 
 
     /*
@@ -227,7 +238,7 @@ void Zelda_Update(Actor* thisx, PlayState* play) {
 
     SkelAnime_Update(&this->skelAnime);
     this->interactInfo.trackPos = player->actor.world.pos;
-    //Zelda_UpdateFace(this);
+    Zelda_UpdateFace(this);
     Npc_TrackPoint(&this->actor, &this->interactInfo, 0xC, NPC_TRACKING_HEAD_AND_TORSO);
     Actor_UpdateBgCheckInfo(play, &this->actor, 75.0f, 30.0f, 30.0f, UPDBGCHECKINFO_FLAG_0 | UPDBGCHECKINFO_FLAG_2);
     Npc_UpdateTalking(
@@ -299,7 +310,6 @@ void Zelda_Draw(Actor* thisx, PlayState* play) {
                           Zelda_OverrideLimbDraw, Zelda_PostLimbDraw, this);
     CLOSE_DISPS(play->state.gfxCtx, __FILE__, __LINE__);
 }
-/*
 
 void Zelda_UpdateFace(Zelda* this) {
     if (this->blinkTimer > 0) {
@@ -365,10 +375,10 @@ void Zelda_UpdateFace(Zelda* this) {
     }
 }
 
-*/
-
 u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx) {
+    Zelda* this = (Zelda*)thisx;
     if (LINK_IS_ADULT) {
+        //this->mouthExpression = ZELDA_MOUTH_HAPPY;
         return NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS;
     } else {
         if (GET_INFTABLE(INFTABLE_E0)) {
@@ -381,7 +391,7 @@ u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx) {
 
 /*
 u16 Zelda_GetTextId(PlayState* play, Actor* thisx) {
-    u16 maskReactionTextId = MaskReaction_GetTextId(play, MASK_REACTION_SET_ZELDA);   
+    u16 maskReactionTextId = MaskReaction_GetTextId(play, MASK_REACTION_SET_ZELDA);
     s16 textId;
 
     if (maskReactionTextId != 0) {
@@ -392,6 +402,7 @@ u16 Zelda_GetTextId(PlayState* play, Actor* thisx) {
 */
 
 s16 Zelda_UpdateTalkState(PlayState* play, Actor* thisx) {
+    Zelda* this = (Zelda*)thisx;
     s16 talkState = NPC_TALK_STATE_TALKING;
 
     switch (Message_GetState(&play->msgCtx)) {
@@ -399,8 +410,10 @@ s16 Zelda_UpdateTalkState(PlayState* play, Actor* thisx) {
             if (Message_ShouldAdvance(play)) {
                 if (play->msgCtx.choiceIndex == 0) {
                     thisx->textId = NPCTEST_MESSAGE_CHOICE_LOVE_EM;
+                    //this->mouthExpression = ZELDA_MOUTH_NEUTRAL;
                 } else {
                     thisx->textId = NPCTEST_MESSAGE_CHOICE_ABSOLUTELY;
+                    //this->mouthExpression = ZELDA_MOUTH_NEUTRAL;
                 }
 
                 Message_ContinueTextbox(play, thisx->textId);
@@ -417,30 +430,45 @@ s16 Zelda_UpdateTalkState(PlayState* play, Actor* thisx) {
     return talkState;
 }
 
-void Zelda_SetupIdle(Zelda* this) {
-    Debug_Print(3, "zelda setup idle");
-    this->action = ZELDA_ACTION_IDLE;
+void Zelda_SetupIdle(Zelda* this, PlayState* play) {
+    //Debug_Print(0, "zelda setup idle");
+    //Flags_UnsetSwitch(play, SWITCH_FLAG(this));
+
     this->timer = (Rand_ZeroOne() * 10.0f) + 5.0f;
     this->actor.speed = 0.0f;
     this->actor.world.rot.y = this->actor.shape.rot.y;
+    this->action = ZELDA_ACTION_IDLE;
     Zelda_SetupAction(this, Zelda_Idle);
 }
 
 void Zelda_Idle(Zelda* this, PlayState* play) {
     Player* player = GET_PLAYER(play);
-    Debug_Print(0, "zelda idle");
+    //Debug_Print(1, "zelda idle");
+
     Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 450, 250);
-        if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
-            Zelda_SetupWalkToPlayer(this, play);
-        }
+
+        if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
+
+                //Zelda_Idle(this, play);
+                //}
+                                Zelda_SetupWalkToPlayer(this, play);
+
+            }
+            /*
+            else
+            {
+                if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
+                Debug_Print(4, "test2");
+                Zelda_SetupWalkToPlayer(this, play);
+            }
+        }*/
 }
 
 void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play) {
-    Debug_Print(1, "setup walk to player");
+    //Debug_Print(2, "setup walk to player");
     //Animation_Change(&this->skelAnime, ZELDA_ANIM_26, 1.0f, 0.0f, Animation_GetLastFrame(ZELDA_ANIM_26), ANIMMODE_LOOP, 4.0f);
     Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_3);
     this->actor.speed = 0.8f;
-//    this->actor.speed = 0.4f;
     this->action = ZELDA_ACTION_WALK_TO_PLAYER;
     Zelda_SetupAction(this, Zelda_WalkToPlayer);
 }
@@ -448,9 +476,11 @@ void Zelda_SetupWalkToPlayer(Zelda* this, PlayState* play) {
 void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
     Player* player = GET_PLAYER(play);
 
-    Debug_Print(2, "walk to player");
+    //Debug_Print(3, "walk to player");
 
-        if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
+
+        if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
+                //Debug_Print(3, "walking");
                 Math_SmoothStepToF(&this->actor.world.pos.x, player->actor.world.pos.x, 0.5f, 4.2f, 0.0f);
                 Math_SmoothStepToF(&this->actor.world.pos.z, player->actor.world.pos.z, 0.5f, 4.2f, 0.0f);
                 Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 900, 600);
@@ -464,7 +494,7 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
                 } else {
             //Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_0);
             //Animation_Change(&this->skelAnime, &ZELDA_ANIM_0, 1.0f, 0.0f, Animation_GetLastFrame(&ZELDA_ANIM_0), ANIMMODE_LOOP, 4.0f);
-            Zelda_SetupIdle(this);
+            Zelda_SetupIdle(this, play);
         }
 }
 
