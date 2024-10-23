@@ -505,7 +505,8 @@ u16 EnHy_GetTextId(PlayState* play, Actor* thisx) {
             } else if (play->sceneId == SCENE_KAKARIKO_VILLAGE) {
                 return CHECK_QUEST_ITEM(QUEST_MEDALLION_SHADOW) ? 0x507C : 0x507B;
             } else {
-                return GET_EVENTCHKINF(EVENTCHKINF_80) ? 0x7046 : (GET_INFTABLE(INFTABLE_CD) ? 0x7019 : 0x7018);
+                //return GET_EVENTCHKINF(EVENTCHKINF_80) ? 0x7046 : (GET_INFTABLE(INFTABLE_CD) ? 0x7019 : 0x7018);
+                return 0x7046;
             }
         case ENHY_TYPE_CNE_11:
             return GET_INFTABLE(INFTABLE_MALON_SPAWNED_AT_HYRULE_CASTLE) ? (GET_INFTABLE(INFTABLE_CC) ? 0x7014 : 0x70A4)
@@ -557,6 +558,10 @@ s16 EnHy_UpdateTalkState(PlayState* play, Actor* thisx) {
     EnHy* this = (EnHy*)thisx;
     s16 beggarItems[] = { ITEM_BOTTLE_BLUE_FIRE, ITEM_BOTTLE_FISH, ITEM_BOTTLE_BUG, ITEM_BOTTLE_FAIRY };
     s16 beggarRewards[] = { 150, 100, 50, 25 };
+    f32 yRange = fabsf(thisx->yDistToPlayer) + 1.0f;
+    f32 xzRange;
+
+    xzRange = thisx->xzDistToPlayer + 1.0f;
 
     switch (Message_GetState(&play->msgCtx)) {
         case TEXT_STATE_NONE:
@@ -663,6 +668,11 @@ s16 EnHy_UpdateTalkState(PlayState* play, Actor* thisx) {
                     func_80A6F7CC(this, play, GET_INFTABLE(INFTABLE_191) ? GI_RUPEE_BLUE : GI_HEART_PIECE);
                     this->actionFunc = func_80A714C4;
                     break;
+                    //nighttime beggar gives you the key
+                case 0x71BE:
+                    //Debug_Print(1, "Message 7");
+                    Actor_OfferGetItem(thisx, play, GI_SMALL_KEY, xzRange, yRange);
+                    break;
             }
             return NPC_TALK_STATE_IDLE;
         case TEXT_STATE_EVENT:
@@ -733,10 +743,44 @@ void func_80A70834(EnHy* this, PlayState* play) {
                     this->actor.textId = 0x70EF;
                     break;
                 default:
-                    if (Player_GetMask(play) == PLAYER_MASK_NONE) {
-                        this->actor.textId = 0x70ED;
+                    //if (Player_GetMask(play) == PLAYER_MASK_NONE) {
+                    switch (this->rotFlag) {
+                case (1):
+                    //Debug_Print(1, "Message 6");
+                    if (GET_INFTABLE(INFTABLE_10E)) {
+                            this->actor.textId = 0x71BC;
+                    } else if (GET_INFTABLE(INFTABLE_10D)) {
+                            this->actor.textId = 0x71BC;
+                    } else if (GET_INFTABLE(INFTABLE_10B)) {
+                                this->actor.textId = 0x71BB;
+                                SET_INFTABLE(INFTABLE_10D);
+                    } else if (GET_INFTABLE(INFTABLE_10A)) {
+                        this->actor.textId = 0x71BA;
+                        SET_INFTABLE(INFTABLE_10B);
+                    } else {
+                        this->actor.textId = 0x71B9;
+                        SET_INFTABLE(INFTABLE_10A);
                     }
                     break;
+                case (2):
+                    if (GET_INFTABLE(INFTABLE_10E)) {
+                            this->actor.textId = 0x71BF;
+                    } else if (GET_INFTABLE(INFTABLE_10D)) {
+                            this->actor.textId = 0x71BE;
+                            SET_INFTABLE(INFTABLE_10E);
+                    } else {
+                        this->actor.textId = 0x71BD;
+                    }
+                    break;
+                case (3):
+                    //Debug_Print(3, "Message 8");
+                    this->actor.textId = 0x71BB;
+                    break;
+                default:
+                    this->actor.textId = 0x70ED;
+                }
+            //}
+                    //break;
             }
         } else {
             switch (func_8002F368(play)) {
@@ -878,6 +922,7 @@ s32 EnHy_ShouldSpawn(EnHy* this, PlayState* play) {
 
 void EnHy_Init(Actor* thisx, PlayState* play) {
     EnHy* this = (EnHy*)thisx;
+    this->rotFlag = this->actor.world.rot.z;
 
     if ((this->actor.params & 0x7F) >= ENHY_TYPE_MAX || !EnHy_FindOsAnimeObject(this, play) ||
         !EnHy_FindSkelAndHeadObjects(this, play)) {

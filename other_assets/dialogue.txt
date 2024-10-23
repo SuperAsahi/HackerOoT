@@ -1,10 +1,36 @@
-Festival
+ - Festival
 
 En_Hy 1
 
 En_Hy 2
 
 En_Hy 3
+(Day)
+"Hey kid! Hope you're having fun at the festival! Everyone else sure is!"
+                    SET_INFTABLE(INFTABLE_10A);
+                    
+                    if (GET_INFTABLE(INFTABLE_10A))
+                    "What, you're wondering why I'm not enjoying the games? I just don't like the atmosphere, that's all. There's no particular reason..."
+                    	SET_INFTABLE(INFTABLE_10B);
+                    	
+                    		if (GET_INFTABLE(INFTABLE_10B))
+                    		"...Everyone else has been ignoring me this whole time, but you keep talking to me. You must be a nice guy. Hey, come see me later, if you're still around. I think I can trust you." 
+                    			SET_INFTABLE(INFTABLE_10D);
+                    				"Come see me later."
+
+(Night)
+"What are you still doing here? Everyone else has left already. You should leave, too."
+	if (GET_INFTABLE(INFTABLE_10D))
+	"...So you're still here, I see. Listen, I probably shouldn't even tell you this, but I used to work here. I really don't like this place. Even the locals talk about some scary stories. Perhaps you've heard? One is a scary story that parents tell their children about a creature called The Taker whom takes them into the woods, never to return. I dunno if it's true, but there definitely are some strange things going on here...rumors of people disappearing, then seeing them in the forest later, but their faces aren't really their faces...
+	...
+	Let me give you something.
+	I don't even know why I still have it. What you choose to do with this is up to you. If I were you, I would throw it far away and forget everything I just told you. Either way, I don't want it anymore, so please take it."
+	
+	
+	if (GET_INFTABLE(INFTABLE_))
+	"What you choose to do with that key is up to you. Choose wisely."
+	
+	
 
 En_Hy 5
 

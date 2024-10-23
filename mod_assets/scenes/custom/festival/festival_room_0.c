@@ -5,16 +5,23 @@
  * Header Child Day (Default)
 */
 #define LENGTH_FESTIVAL_ROOM_0_HEADER00_OBJECTLIST 13
-#define LENGTH_FESTIVAL_ROOM_0_HEADER00_ACTORLIST 20
+#define LENGTH_FESTIVAL_ROOM_0_HEADER00_ACTORLIST 21
 SceneCmd festival_room_0_header00[] = {
+    SCENE_CMD_ALTERNATE_HEADER_LIST(festival_room_0_alternateHeaders),
     SCENE_CMD_ROOM_SHAPE(&festival_room_0_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(5),
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x04, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, true),
+    SCENE_CMD_SKYBOX_DISABLES(false, false),
     SCENE_CMD_TIME_SETTINGS(255, 255, 0),
     SCENE_CMD_OBJECT_LIST(LENGTH_FESTIVAL_ROOM_0_HEADER00_OBJECTLIST, festival_room_0_header00_objectList),
     SCENE_CMD_ACTOR_LIST(LENGTH_FESTIVAL_ROOM_0_HEADER00_ACTORLIST, festival_room_0_header00_actorList),
     SCENE_CMD_END(),
+};
+
+SceneCmd* festival_room_0_alternateHeaders[] = {
+    festival_room_0_header01,
+    NULL,
+    NULL,
 };
 
 s16 festival_room_0_header00_objectList[LENGTH_FESTIVAL_ROOM_0_HEADER00_OBJECTLIST] = {
@@ -37,25 +44,17 @@ ActorEntry festival_room_0_header00_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER00_AC
     // Hylians
     {
         /* Actor ID   */ ACTOR_EN_HY,
-        /* Position   */ { -683, 0, -56 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(107.424), DEG_TO_BINANG(0.000) },
+        /* Position   */ { 132, 0, -636 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(35.167), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0788
     },
 
     // Hylians
     {
         /* Actor ID   */ ACTOR_EN_HY,
-        /* Position   */ { 1, 0, -743 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(96.526), DEG_TO_BINANG(0.000) },
+        /* Position   */ { -472, 0, 60 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(107.095), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x078B
-    },
-
-    // Hylians
-    {
-        /* Actor ID   */ ACTOR_EN_HY,
-        /* Position   */ { -387, 0, -228 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0785
     },
 
     // Hylians
@@ -114,6 +113,14 @@ ActorEntry festival_room_0_header00_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER00_AC
         /* Parameters */ 0x0784
     },
 
+    // Hylians
+    {
+        /* Actor ID   */ ACTOR_EN_HY,
+        /* Position   */ { -630, 0, -468 },
+        /* Rotation   */ { 0, 0, 1 },
+        /* Parameters */ 0x0785
+    },
+
     // Haggling Townspeople
     {
         /* Actor ID   */ ACTOR_EN_MU,
@@ -141,9 +148,108 @@ ActorEntry festival_room_0_header00_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER00_AC
     // Treasure Chest
     {
         /* Actor ID   */ ACTOR_EN_BOX,
-        /* Position   */ { -512, 0, -393 },
+        /* Position   */ { 2732, 2, 231 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x5360
+        /* Parameters */ 0x5A23
+    },
+
+    // Treasure Chest
+    {
+        /* Actor ID   */ ACTOR_EN_BOX,
+        /* Position   */ { 2560, 2, -49 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x5342
+    },
+
+    // Treasure Chest
+    {
+        /* Actor ID   */ ACTOR_EN_BOX,
+        /* Position   */ { -203, 0, -525 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(238.211), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x00A0
+    },
+
+    // Treasure Chest
+    {
+        /* Actor ID   */ ACTOR_EN_BOX,
+        /* Position   */ { 2419, 2, 192 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x5A41
+    },
+
+    // Custom Actor
+    {
+        /* Actor ID   */ ACTOR_NPC_TEST,
+        /* Position   */ { 216, 0, -247 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0008
+    },
+
+    // Gameplay_keep Objects
+    {
+        /* Actor ID   */ ACTOR_EN_A_OBJ,
+        /* Position   */ { 455, 0, -704 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(332.023), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x3C09
+    },
+
+    // Greenery
+    {
+        /* Actor ID   */ ACTOR_EN_WOOD02,
+        /* Position   */ { 581, 0, 336 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0002
+    },
+
+    // Custom Actor
+    {
+        /* Actor ID   */ ACTOR_ZELDA,
+        /* Position   */ { -236, 0, 469 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(40.331), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0009
+    },
+};
+
+/**
+ * Header Child Night
+*/
+#define LENGTH_FESTIVAL_ROOM_0_HEADER01_OBJECTLIST 5
+#define LENGTH_FESTIVAL_ROOM_0_HEADER01_ACTORLIST 12
+SceneCmd festival_room_0_header01[] = {
+    SCENE_CMD_ROOM_SHAPE(&festival_room_0_shapeHeader),
+    SCENE_CMD_ECHO_SETTINGS(0x00),
+    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x01, false, false),
+    SCENE_CMD_SKYBOX_DISABLES(false, false),
+    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
+    SCENE_CMD_WIND_SETTINGS(0, 0, 0, 1),
+    SCENE_CMD_OBJECT_LIST(LENGTH_FESTIVAL_ROOM_0_HEADER01_OBJECTLIST, festival_room_0_header01_objectList),
+    SCENE_CMD_ACTOR_LIST(LENGTH_FESTIVAL_ROOM_0_HEADER01_ACTORLIST, festival_room_0_header01_actorList),
+    SCENE_CMD_END(),
+};
+
+s16 festival_room_0_header01_objectList[LENGTH_FESTIVAL_ROOM_0_HEADER01_OBJECTLIST] = {
+    OBJECT_OS_ANIME,
+    OBJECT_BOJ,
+    OBJECT_BOX,
+    OBJECT_RD,
+    OBJECT_WOOD02,
+};
+
+ActorEntry festival_room_0_header01_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER01_ACTORLIST] = {
+    // Hylians
+    {
+        /* Actor ID   */ ACTOR_EN_HY,
+        /* Position   */ { -761, 0, -542 },
+        /* Rotation   */ { 0, 0, 2 },
+        /* Parameters */ 0x0785
+    },
+
+    // Treasure Chest
+    {
+        /* Actor ID   */ ACTOR_EN_BOX,
+        /* Position   */ { 149, 0, 472 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x5A64
     },
 
     // Treasure Chest
@@ -165,6 +271,14 @@ ActorEntry festival_room_0_header00_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER00_AC
     // Treasure Chest
     {
         /* Actor ID   */ ACTOR_EN_BOX,
+        /* Position   */ { -203, 0, -525 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(238.211), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x00A0
+    },
+
+    // Treasure Chest
+    {
+        /* Actor ID   */ ACTOR_EN_BOX,
         /* Position   */ { 2419, 2, 192 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x5A41
@@ -175,7 +289,31 @@ ActorEntry festival_room_0_header00_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER00_AC
         /* Actor ID   */ ACTOR_NPC_TEST,
         /* Position   */ { 216, 0, -247 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0008
+    },
+
+    // Redead/Gibdo
+    {
+        /* Actor ID   */ ACTOR_EN_RD,
+        /* Position   */ { 551, 0, 300 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(329.123), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
+    },
+
+    // Redead/Gibdo
+    {
+        /* Actor ID   */ ACTOR_EN_RD,
+        /* Position   */ { -94, 0, -623 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(354.606), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0000
+    },
+
+    // Gameplay_keep Objects
+    {
+        /* Actor ID   */ ACTOR_EN_A_OBJ,
+        /* Position   */ { 455, 0, -704 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(332.023), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x3C09
     },
 
     // Greenery
@@ -190,7 +328,7 @@ ActorEntry festival_room_0_header00_actorList[LENGTH_FESTIVAL_ROOM_0_HEADER00_AC
     {
         /* Actor ID   */ ACTOR_ZELDA,
         /* Position   */ { -236, 0, 469 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(220.331), DEG_TO_BINANG(0.000) },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(40.331), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0009
     },
 };
@@ -211,6 +349,7 @@ Gfx festival_room_0_shapeHeader_entry_0_opaque[] = {
 	gsSPDisplayList(festival_room_0_dl_Cylinder_mesh_layer_Opaque),
 	gsSPDisplayList(festival_room_0_dl_Cylinder_001_mesh_layer_Opaque),
 	gsSPDisplayList(festival_room_0_dl_Cylinder_002_mesh_layer_Opaque),
+	gsSPDisplayList(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque),
 	gsSPDisplayList(festival_room_0_dl_fence_mesh_layer_Opaque),
 	gsSPDisplayList(festival_room_0_dl_fence_001_mesh_layer_Opaque),
 	gsSPDisplayList(festival_room_0_dl_fence_002_mesh_layer_Opaque),
@@ -239,8 +378,6 @@ Gfx festival_room_0_shapeHeader_entry_0_opaque[] = {
 
 Gfx festival_room_0_shapeHeader_entry_0_transparent[] = {
 	gsSPDisplayList(festival_room_0_dl_masca_mesh_layer_Transparent),
-	gsSPDisplayList(festival_room_0_dl_Plane_001_mesh_layer_Transparent),
-	gsSPDisplayList(festival_room_0_dl_Plane_002_mesh_layer_Transparent),
 	gsSPEndDisplayList(),
 };
 
@@ -638,17 +775,17 @@ u64 festival_room_0_dl_spot16_sceneTex_00F198_rgba16_pal_rgba16[] = {
 };
 
 Vtx festival_room_0_dl_BG_mesh_layer_Opaque_vtx_cull[8] = {
-	{{ {-2037, -446, 2778}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-2037, 621, 2778}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-2037, -721, 4330}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-2037, 621, 4330}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2037, 621, -2410}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-2037, -446, -2410}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2301, -446, 2778}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2301, 621, 2778}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-2037, -721, -2410}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2301, -721, 4330}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2301, 621, 4330}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {2301, 621, -2410}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2301, -446, -2410}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2301, -721, -2410}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx festival_room_0_dl_BG_mesh_layer_Opaque_vtx_0[20] = {
+Vtx festival_room_0_dl_BG_mesh_layer_Opaque_vtx_0[28] = {
 	{{ {1901, -35, -2410}, 0, {32, 991}, {0, 0, 127, 255} }},
 	{{ {1901, 621, -2410}, 0, {32, 10}, {0, 0, 127, 255} }},
 	{{ {-1188, 621, -2410}, 0, {3871, 10}, {0, 0, 127, 255} }},
@@ -669,15 +806,25 @@ Vtx festival_room_0_dl_BG_mesh_layer_Opaque_vtx_0[20] = {
 	{{ {-2037, 406, 679}, 0, {2466, 27}, {114, 0, 199, 255} }},
 	{{ {-1175, 209, 2413}, 0, {4132, 27}, {114, 0, 199, 255} }},
 	{{ {-1175, -446, 2413}, 0, {4132, 1004}, {114, 0, 199, 255} }},
+	{{ {141, -66, 4330}, 0, {496, -16}, {105, 0, 184, 255} }},
+	{{ {141, -721, 4330}, 0, {496, 1008}, {105, 0, 184, 255} }},
+	{{ {-1175, -446, 2413}, 0, {2903, 1008}, {105, 0, 184, 255} }},
+	{{ {-1175, 209, 2413}, 0, {2903, -16}, {105, 0, 184, 255} }},
+	{{ {1458, 209, 2778}, 0, {-1911, -16}, {159, 0, 174, 255} }},
+	{{ {1458, -446, 2778}, 0, {-1911, 1008}, {159, 0, 174, 255} }},
+	{{ {141, -721, 4330}, 0, {496, 1008}, {159, 0, 174, 255} }},
+	{{ {141, -66, 4330}, 0, {496, -16}, {159, 0, 174, 255} }},
 };
 
 Gfx festival_room_0_dl_BG_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(festival_room_0_dl_BG_mesh_layer_Opaque_vtx_0 + 0, 20, 0),
+	gsSPVertex(festival_room_0_dl_BG_mesh_layer_Opaque_vtx_0 + 0, 28, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
 	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
 	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
 	gsSPEndDisplayList(),
 };
 
@@ -1027,6 +1174,125 @@ Vtx festival_room_0_dl_Cylinder_002_mesh_layer_Opaque_vtx_1[32] = {
 
 Gfx festival_room_0_dl_Cylinder_002_mesh_layer_Opaque_tri_1[] = {
 	gsSPVertex(festival_room_0_dl_Cylinder_002_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPEndDisplayList(),
+};
+
+Vtx festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_cull[8] = {
+	{{ {-735, -5, -494}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-735, 72, -494}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-735, 72, -558}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-735, -5, -558}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-671, -5, -494}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-671, 72, -494}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-671, 72, -558}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-671, -5, -558}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_0[40] = {
+	{{ {-693, -5, -494}, 0, {964, 682}, {243, 0, 126, 255} }},
+	{{ {-693, 65, -494}, 0, {217, 874}, {243, 0, 126, 255} }},
+	{{ {-718, 65, -497}, 0, {216, 1397}, {243, 0, 126, 255} }},
+	{{ {-718, -5, -497}, 0, {962, 1610}, {243, 0, 126, 255} }},
+	{{ {-718, -5, -497}, 0, {962, 1631}, {158, 0, 80, 255} }},
+	{{ {-718, 65, -497}, 0, {216, 1397}, {158, 0, 80, 255} }},
+	{{ {-735, 65, -516}, 0, {164, 1922}, {158, 0, 80, 255} }},
+	{{ {-735, -5, -516}, 0, {910, 2305}, {158, 0, 80, 255} }},
+	{{ {-735, -5, -516}, 0, {910, 2308}, {130, 0, 243, 255} }},
+	{{ {-735, 65, -516}, 0, {164, 1922}, {130, 0, 243, 255} }},
+	{{ {-732, 65, -542}, 0, {92, 2471}, {130, 0, 243, 255} }},
+	{{ {-732, -5, -542}, 0, {838, 2795}, {130, 0, 243, 255} }},
+	{{ {-732, -5, -542}, 0, {838, 2786}, {176, 0, 158, 255} }},
+	{{ {-732, 65, -542}, 0, {92, 2471}, {176, 0, 158, 255} }},
+	{{ {-712, 65, -558}, 0, {42, 3094}, {176, 0, 158, 255} }},
+	{{ {-712, -5, -558}, 0, {788, 3225}, {176, 0, 158, 255} }},
+	{{ {-712, -5, -558}, 0, {788, -1376}, {13, 0, 130, 255} }},
+	{{ {-712, 65, -558}, 0, {42, -1491}, {13, 0, 130, 255} }},
+	{{ {-687, 65, -555}, 0, {43, -815}, {13, 0, 130, 255} }},
+	{{ {-687, -5, -555}, 0, {790, -944}, {13, 0, 130, 255} }},
+	{{ {-687, -5, -555}, 0, {790, -961}, {98, 0, 176, 255} }},
+	{{ {-687, 65, -555}, 0, {43, -815}, {98, 0, 176, 255} }},
+	{{ {-671, 65, -536}, 0, {96, -197}, {98, 0, 176, 255} }},
+	{{ {-671, -5, -536}, 0, {842, -520}, {98, 0, 176, 255} }},
+	{{ {-671, -5, -536}, 0, {842, -529}, {126, 0, 13, 255} }},
+	{{ {-671, 65, -536}, 0, {96, -197}, {126, 0, 13, 255} }},
+	{{ {-673, 65, -510}, 0, {168, 349}, {126, 0, 13, 255} }},
+	{{ {-673, -5, -510}, 0, {914, -36}, {126, 0, 13, 255} }},
+	{{ {-673, -5, -510}, 0, {914, -32}, {80, 0, 98, 255} }},
+	{{ {-673, 65, -510}, 0, {168, 349}, {80, 0, 98, 255} }},
+	{{ {-693, 65, -494}, 0, {217, 874}, {80, 0, 98, 255} }},
+	{{ {-693, -5, -494}, 0, {964, 660}, {80, 0, 98, 255} }},
+	{{ {-730, 72, -518}, 0, {1008, 496}, {0, 127, 0, 255} }},
+	{{ {-716, 72, -501}, 0, {858, 134}, {0, 127, 0, 255} }},
+	{{ {-694, 72, -499}, 0, {496, -16}, {0, 127, 0, 255} }},
+	{{ {-675, 72, -534}, 0, {-16, 496}, {0, 127, 0, 255} }},
+	{{ {-678, 72, -513}, 0, {134, 134}, {0, 127, 0, 255} }},
+	{{ {-711, 72, -553}, 0, {496, 1008}, {0, 127, 0, 255} }},
+	{{ {-689, 72, -551}, 0, {134, 858}, {0, 127, 0, 255} }},
+	{{ {-728, 72, -539}, 0, {858, 858}, {0, 127, 0, 255} }},
+};
+
+Gfx festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_0 + 0, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPVertex(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_0 + 32, 8, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(2, 4, 3, 0, 3, 5, 0, 0),
+	gsSP2Triangles(3, 6, 5, 0, 5, 7, 0, 0),
+	gsSPEndDisplayList(),
+};
+
+Vtx festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_1[32] = {
+	{{ {-735, 65, -516}, 0, {164, 1922}, {174, 70, 67, 255} }},
+	{{ {-718, 65, -497}, 0, {216, 1397}, {174, 70, 67, 255} }},
+	{{ {-716, 72, -501}, 0, {128, 1378}, {174, 70, 67, 255} }},
+	{{ {-730, 72, -518}, 0, {84, 1871}, {174, 70, 67, 255} }},
+	{{ {-687, 65, -555}, 0, {43, -815}, {11, 70, 151, 255} }},
+	{{ {-712, 65, -558}, 0, {42, -1491}, {11, 70, 151, 255} }},
+	{{ {-711, 72, -553}, 0, {-19, -1525}, {11, 70, 151, 255} }},
+	{{ {-689, 72, -551}, 0, {-18, -778}, {11, 70, 151, 255} }},
+	{{ {-693, 65, -494}, 0, {217, 874}, {67, 70, 82, 255} }},
+	{{ {-673, 65, -510}, 0, {168, 349}, {67, 70, 82, 255} }},
+	{{ {-678, 72, -513}, 0, {87, 399}, {67, 70, 82, 255} }},
+	{{ {-694, 72, -499}, 0, {130, 891}, {67, 70, 82, 255} }},
+	{{ {-718, 65, -497}, 0, {216, 1397}, {245, 70, 105, 255} }},
+	{{ {-693, 65, -494}, 0, {217, 874}, {245, 70, 105, 255} }},
+	{{ {-694, 72, -499}, 0, {130, 891}, {245, 70, 105, 255} }},
+	{{ {-716, 72, -501}, 0, {128, 1378}, {245, 70, 105, 255} }},
+	{{ {-732, 65, -542}, 0, {92, 2471}, {151, 70, 245, 255} }},
+	{{ {-735, 65, -516}, 0, {164, 1922}, {151, 70, 245, 255} }},
+	{{ {-730, 72, -518}, 0, {84, 1871}, {151, 70, 245, 255} }},
+	{{ {-728, 72, -539}, 0, {23, 2407}, {151, 70, 245, 255} }},
+	{{ {-671, 65, -536}, 0, {96, -197}, {82, 70, 189, 255} }},
+	{{ {-687, 65, -555}, 0, {43, -815}, {82, 70, 189, 255} }},
+	{{ {-689, 72, -551}, 0, {-18, -778}, {82, 70, 189, 255} }},
+	{{ {-675, 72, -534}, 0, {26, -133}, {82, 70, 189, 255} }},
+	{{ {-712, 65, -558}, 0, {42, 3094}, {189, 70, 174, 255} }},
+	{{ {-732, 65, -542}, 0, {92, 2471}, {189, 70, 174, 255} }},
+	{{ {-728, 72, -539}, 0, {23, 2407}, {189, 70, 174, 255} }},
+	{{ {-711, 72, -553}, 0, {-19, 3060}, {189, 70, 174, 255} }},
+	{{ {-673, 65, -510}, 0, {168, 349}, {105, 70, 11, 255} }},
+	{{ {-671, 65, -536}, 0, {96, -197}, {105, 70, 11, 255} }},
+	{{ {-675, 72, -534}, 0, {26, -133}, {105, 70, 11, 255} }},
+	{{ {-678, 72, -513}, 0, {87, 399}, {105, 70, 11, 255} }},
+};
+
+Gfx festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -1938,54 +2204,6 @@ Vtx festival_room_0_dl_Plane_mesh_layer_Opaque_vtx_0[4] = {
 
 Gfx festival_room_0_dl_Plane_mesh_layer_Opaque_tri_0[] = {
 	gsSPVertex(festival_room_0_dl_Plane_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
-	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
-	gsSPEndDisplayList(),
-};
-
-Vtx festival_room_0_dl_Plane_001_mesh_layer_Transparent_vtx_cull[8] = {
-	{{ {1240, 3, 543}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1240, 3, 543}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1240, 3, 382}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1240, 3, 382}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1401, 3, 543}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1401, 3, 543}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1401, 3, 382}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {1401, 3, 382}, 0, {0, 0}, {0, 0, 0, 0} }},
-};
-
-Vtx festival_room_0_dl_Plane_001_mesh_layer_Transparent_vtx_0[4] = {
-	{{ {1401, 3, 394}, 0, {-16, 1008}, {0, 127, 0, 255} }},
-	{{ {1252, 3, 382}, 0, {1008, 1008}, {0, 127, 0, 255} }},
-	{{ {1240, 3, 531}, 0, {1008, -16}, {0, 127, 0, 255} }},
-	{{ {1389, 3, 543}, 0, {-16, -16}, {0, 127, 0, 255} }},
-};
-
-Gfx festival_room_0_dl_Plane_001_mesh_layer_Transparent_tri_0[] = {
-	gsSPVertex(festival_room_0_dl_Plane_001_mesh_layer_Transparent_vtx_0 + 0, 4, 0),
-	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
-	gsSPEndDisplayList(),
-};
-
-Vtx festival_room_0_dl_Plane_002_mesh_layer_Transparent_vtx_cull[8] = {
-	{{ {-966, 1, -850}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-966, 1, -850}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-966, 1, -1084}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-966, 1, -1084}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-733, 1, -850}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-733, 1, -850}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-733, 1, -1084}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-733, 1, -1084}, 0, {0, 0}, {0, 0, 0, 0} }},
-};
-
-Vtx festival_room_0_dl_Plane_002_mesh_layer_Transparent_vtx_0[4] = {
-	{{ {-733, 1, -1061}, 0, {-16, 1008}, {0, 127, 0, 255} }},
-	{{ {-943, 1, -1084}, 0, {1008, 1008}, {0, 127, 0, 255} }},
-	{{ {-966, 1, -874}, 0, {1008, -16}, {0, 127, 0, 255} }},
-	{{ {-756, 1, -850}, 0, {-16, -16}, {0, 127, 0, 255} }},
-};
-
-Gfx festival_room_0_dl_Plane_002_mesh_layer_Transparent_tri_0[] = {
-	gsSPVertex(festival_room_0_dl_Plane_002_mesh_layer_Transparent_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
@@ -3171,28 +3389,6 @@ Gfx mat_festival_room_0_dl_arrow_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_festival_room_0_dl_scene_trans_002_layerTransparent[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_XLU_SURF2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 0, 255, 0, 218, 27),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_festival_room_0_dl_scene_trans_layerTransparent[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_XLU_SURF2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 0, 255, 0, 218, 27),
-	gsSPEndDisplayList(),
-};
-
 Gfx mat_festival_room_0_dl_blue_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
@@ -3313,6 +3509,18 @@ Gfx festival_room_0_dl_Cylinder_002_mesh_layer_Opaque[] = {
 	gsSPEndDisplayList(),
 };
 
+Gfx festival_room_0_dl_Cylinder_003_mesh_layer_Opaque[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_festival_room_0_dl_f3dlite_material_075_layerOpaque),
+	gsSPDisplayList(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_festival_room_0_dl_gray_layerOpaque),
+	gsSPDisplayList(festival_room_0_dl_Cylinder_003_mesh_layer_Opaque_tri_1),
+	gsSPEndDisplayList(),
+};
+
 Gfx festival_room_0_dl_fence_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
 	gsSPVertex(festival_room_0_dl_fence_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
@@ -3412,26 +3620,6 @@ Gfx festival_room_0_dl_Plane_mesh_layer_Opaque[] = {
 	gsSPCullDisplayList(0, 7),
 	gsSPDisplayList(mat_festival_room_0_dl_arrow_layerOpaque),
 	gsSPDisplayList(festival_room_0_dl_Plane_mesh_layer_Opaque_tri_0),
-	gsSPEndDisplayList(),
-};
-
-Gfx festival_room_0_dl_Plane_001_mesh_layer_Transparent[] = {
-	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(festival_room_0_dl_Plane_001_mesh_layer_Transparent_vtx_cull + 0, 8, 0),
-	gsSPSetGeometryMode(G_LIGHTING),
-	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_festival_room_0_dl_scene_trans_002_layerTransparent),
-	gsSPDisplayList(festival_room_0_dl_Plane_001_mesh_layer_Transparent_tri_0),
-	gsSPEndDisplayList(),
-};
-
-Gfx festival_room_0_dl_Plane_002_mesh_layer_Transparent[] = {
-	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(festival_room_0_dl_Plane_002_mesh_layer_Transparent_vtx_cull + 0, 8, 0),
-	gsSPSetGeometryMode(G_LIGHTING),
-	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_festival_room_0_dl_scene_trans_layerTransparent),
-	gsSPDisplayList(festival_room_0_dl_Plane_002_mesh_layer_Transparent_tri_0),
 	gsSPEndDisplayList(),
 };
 

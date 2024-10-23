@@ -58,6 +58,7 @@ typedef struct EnHy {
     /* 0x0264 */ Vec3f modelOffset;
     /* 0x0270 */ Vec3s jointTable[16];
     /* 0x02D0 */ Vec3s morphTable[16];
+                 u8 rotFlag;
     /* 0x0330 */ u16 unk_330;
 } EnHy; // size = 0x0334
 

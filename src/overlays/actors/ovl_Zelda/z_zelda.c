@@ -2,6 +2,9 @@
  * File: z_zelda.c
  * Overlay: ovl_Zelda
  * Description: A custom child Zelda for use with my mod
+ * 
+ * Params 0x9 - Zelda stays idle until switch is activated.
+ * 
  */
 
 #include "z_zelda.h"
@@ -463,6 +466,8 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 
     Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 450, 250);
 
+        if (this->actor.params == 0x9) {
+
         if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
 
                 //Zelda_Idle(this, play);
@@ -470,6 +475,12 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
                 Zelda_SetupWalkToPlayer(this, play);
 
             }
+        } else {
+                Debug_Print(3, "test");
+                if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
+                Zelda_SetupWalkToPlayer(this, play);
+                }
+        }
             /*
             else
             {
@@ -495,12 +506,13 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
 
     //Debug_Print(3, "walk to player");
 
-
-        if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
+    if (this->actor.params == 0x9) {
+            if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
                 //Debug_Print(3, "walking");
-                Math_SmoothStepToF(&this->actor.world.pos.x, player->actor.world.pos.x, 0.5f, 4.2f, 0.0f);
-                Math_SmoothStepToF(&this->actor.world.pos.z, player->actor.world.pos.z, 0.5f, 4.2f, 0.0f);
-                Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 900, 600);
+            Math_SmoothStepToF(&this->actor.world.pos.x, player->actor.world.pos.x, 0.5f, 4.2f, 0.0f);
+            Math_SmoothStepToF(&this->actor.world.pos.z, player->actor.world.pos.z, 0.5f, 4.2f, 0.0f);
+            Math_SmoothStepToF(&this->actor.world.pos.y, player->actor.world.pos.y, 0.2f, 0.4f, 0.0f);
+            Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 900, 600);
 
 
                     //Math_SmoothStepToS(&this->actor.world.pos.x, &player->actor, 1, 200, 0);
@@ -508,10 +520,26 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
                     //func_8008EEAC(play, &this->actor);
                    // GET_PLAYER(play)->unk_684 = &this->actor;
                    
-                } else {
+            } else {
             //Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ZELDA_ANIM_0);
             //Animation_Change(&this->skelAnime, &ZELDA_ANIM_0, 1.0f, 0.0f, Animation_GetLastFrame(&ZELDA_ANIM_0), ANIMMODE_LOOP, 4.0f);
             Zelda_SetupIdle(this, play);
+            }
+        } else {
+
+        if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
+                //Debug_Print(1, "param2");
+            Math_SmoothStepToF(&this->actor.world.pos.x, player->actor.world.pos.x, 0.5f, 4.2f, 0.0f);
+            Math_SmoothStepToF(&this->actor.world.pos.z, player->actor.world.pos.z, 0.5f, 4.2f, 0.0f);
+            Math_SmoothStepToF(&this->actor.world.pos.y, player->actor.world.pos.y, 0.5f, 4.2f, 0.0f);
+            Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 900, 600);
+                   
+            } else {
+                //Debug_Print(2, "param3");
+
+            Zelda_SetupIdle(this, play);
+            }
+
         }
 }
 
