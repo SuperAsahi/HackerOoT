@@ -1,1 +1,0 @@
-extern s16 gPlayerFrontFlipAnimFrameData[];

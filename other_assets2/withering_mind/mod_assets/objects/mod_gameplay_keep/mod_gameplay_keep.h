@@ -1,2 +1,0 @@
-
-extern LinkAnimationHeader gPlayerAnim_FrontFlipStart;
