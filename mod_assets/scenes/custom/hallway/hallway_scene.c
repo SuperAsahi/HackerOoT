@@ -120,7 +120,7 @@ BgCamInfo hallway_scene_bgCamInfo[] = {
 SurfaceType hallway_scene_polygonTypes[3] = {
     { SURFACETYPE0(0, 0, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x00, 0x00, 0, 0, 0, 0, 0, 0) },
     { SURFACETYPE0(0, 0, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x0D, 0x00, 0, 0, 0, 0, 0, 0) },
-    { SURFACETYPE0(0, 2, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x00, 0x00, 0, 0, 0, 0, 0, 0) },
+    { SURFACETYPE0(0, 1, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x00, 0x00, 0, 0, 0, 0, 0, 0) },
 };
 
 Vec3s hallway_scene_vertices[151] = {

@@ -41,6 +41,7 @@ En_Hy 7
 "Hello kid! If you've had enough fun at the festival, you can walk right through here to head back home. Hope we'll see you next year, too!"
 
 En_Hy 8
+"Have you seen my son? I can't find him anywhere! I told him not to go into the forest!"
 
 En_Hy 9
 
@@ -54,7 +55,7 @@ En_Tg
 Impa
 
 Zelda
-"Link!! Thank you so much for joining me for the Masca Festival!! I'll catch up with you in a minute, Link. Go ahead and play some of the games for now, and see if you can win a prize for us!"
+"Link!! Thank you so much for joining me for the Masca Festival!! I'll catch up with you in a bit, Link. Go ahead and play some of the games for now, and see if you can win a prize for us!"
 
 
 
@@ -74,5 +75,44 @@ Thank you for staying close by me."
 
 
 Lab
+Checkable spot 1
+"A long held belief around the Masca Festival is that there is a creature around here called 'The Taker'. Many believe it's just a superstition, however we can now confirm that it definitely exists. As far as what exactly 'it' is will require much more research..."
+
+Checkable spot 2
+"'Masca' - Latin
+Meaning spectre, nightmare, mask. (It would appear the original meaning held the idea of concealing one's face to protect from a certain monster."
+
+Checkable spot 3
+"The Taker has been around for a lot longer than anyone here realizes. Stories around it go back 100s of years. It would seem that it originally was 
+
+
+
+We're not entirely sure where it came from, but it would seem to not be of Earth..."
+
+Checkable spot 4
+" 
+
+Checkable spot 5
+
+Checkable spot 6
+
+Checkable spot 7
+
+Checkable spot 8
+
+Checkable spot 9
+
+Checkable spot 10
+
+Checkable spot 11
+
+Checkable spot 12
+
+Checkable spot 13
+
+Checkable spot 14
+
+Checkable spot 15
+
 
 

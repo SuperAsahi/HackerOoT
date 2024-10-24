@@ -189,6 +189,9 @@ static SceneSelectEntry sScenes[] = {
     { "Catacombs", MapSelect_LoadGame, ENTR_CATACOMBS_0 },
     { "Mask Cutscene", MapSelect_LoadGame, ENTR_MASKCS_0 },
     { "Spiral", MapSelect_LoadGame, ENTR_SPIRAL_0 },
+    { "Maze Game", MapSelect_LoadGame, ENTR_GAMES_0 },
+    { "Lizalfos Game", MapSelect_LoadGame, ENTR_GAMES_1 },
+    { "Shooting Game", MapSelect_LoadGame, ENTR_GAMES_2 },
 
 #if CAN_INCLUDE_TEST_SCENES
     { "Test Room", MapSelect_LoadGame, ENTR_BESITU_0 },

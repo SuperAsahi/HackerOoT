@@ -12117,6 +12117,33 @@ beginseg
     number 3
 endseg
 
+beginseg
+    name "games_scene"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/games/games_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "games_room_0"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/games/games_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "games_room_1"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/games/games_room_1.o"
+    number 3
+endseg
+
+beginseg
+    name "games_room_2"
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/custom/games/games_room_2.o"
+    number 3
+endseg
 
 #if CAN_INCLUDE_TEST_SCENES
 beginseg

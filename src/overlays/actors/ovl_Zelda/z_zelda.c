@@ -383,9 +383,11 @@ void Zelda_UpdateFace(Zelda* this) {
 
 u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx) {
     Zelda* this = (Zelda*)thisx;
-    if (LINK_IS_ADULT) {
+    if (this->actor.params == 0x9) {
+        return 0x71C0;
+    //if (LINK_IS_ADULT) {
         //this->mouthExpression = ZELDA_MOUTH_HAPPY;
-        return NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS;
+        //return NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS;
     } else {
         if (GET_INFTABLE(INFTABLE_E0)) {
             return NPCTEST_MESSAGE_COME_BACK_WAY_LATER;
