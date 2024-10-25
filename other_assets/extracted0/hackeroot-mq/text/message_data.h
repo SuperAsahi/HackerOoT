@@ -7688,6 +7688,162 @@ SHIFT("\x0A")  COLOR(RED) "vérité" COLOR(DEFAULT) " du Village Cocorico sera\n
 SHIFT("\x23") "porté par les Ombres." QUICKTEXT_DISABLE
 )
 
+// New Messages for En_Wonder_Talk2
+
+// Message ID 61, wonder_talk param should be 0x0F40
+DEFINE_MESSAGE(0x023D, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"The quick brown fox jumped over the \n"
+"Lazy dog\n"
+"I have a stomach ache.\n"
+"Owwie!!\n"
+BOX_BREAK
+" This is the constraints for a\n"
+"textbox; as far as I can tell."
+,
+"german"
+,
+"french"
+)
+
+// Message ID 62, wonder_talk param should be 0x0F80
+DEFINE_MESSAGE(0x023E, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"A long held belief connected to the\n"
+"Masca Festival is that there is a\n"
+"creature around here called " COLOR(RED) "The Taker." COLOR(DEFAULT)
+BOX_BREAK
+"Many believe it's just a\n"
+"superstition, however we can now\n"
+"confirm that it definitely exists."
+BOX_BREAK
+"As far as what exactly " COLOR(LIGHTBLUE) "it" COLOR(DEFAULT) " is\n"
+"will require more research..."
+,
+"german"
+,
+"french"
+)
+
+// Message ID 63, wonder_talk param should be 0x0FC0
+DEFINE_MESSAGE(0x023F, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+QUICKTEXT_ENABLE COLOR(LIGHTBLUE) "'Masca' - Latin\n" COLOR(DEFAULT)
+"Meaning 'spectre, nightmare, mask.'"
+BOX_BREAK
+QUICKTEXT_DISABLE "...It would appear the original\n"
+"meaning held the idea of concealing\n"
+"one's face to protect from a monster."
+,
+"german"
+,
+"french"
+)
+
+// Message ID 64, wonder_talk param should be 0x1000
+DEFINE_MESSAGE(0x0240, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+COLOR(RED) "The Taker" COLOR(DEFAULT) " has been around for a lot\n"
+"longer than anyone here realizes.\n"
+"Stories around it go back 100s of years."
+BOX_BREAK
+"We're not entirely sure where it came\n"
+"from, but it would seem to not be\n"
+"of Earth..."
+,
+"german"
+,
+"french"
+)
+
+// Message ID 65, wonder_talk param should be 0x1040
+DEFINE_MESSAGE(0x0241, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"Opened up on the screen are some\n"
+"research notes:"
+BOX_BREAK
+COLOR(LIGHTBLUE) "'...the object had reappeared on the\n"
+"Princeton's Aegis SPY 1 radar at our\n"
+"CAP point. This...was far superior in"
+BOX_BREAK
+"performance to my brand-new F/A-18F\n"
+"and did not operate with any of the\n"
+"known aerodynamic principles that"
+BOX_BREAK
+"we expect...'" COLOR(DEFAULT)
+BOX_BREAK
+"..."
+BOX_BREAK
+"...What a strange message!"
+,
+"german"
+,
+"french"
+)
+
+// Message ID 66, wonder_talk param should be 0x1080
+DEFINE_MESSAGE(0x0242, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"Message ID 66"
+,
+"german"
+,
+"french"
+)
+
+// Message ID 67, wonder_talk param should be 0x10C0
+DEFINE_MESSAGE(0x0243, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"Message ID 67"
+,
+"german"
+,
+"french"
+)
+
+// Message ID 68, wonder_talk param should be 0x1100
+DEFINE_MESSAGE(0x0244, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+COLOR(RED) "The Taker" COLOR(DEFAULT) " had a different name\n"
+"originally. It was called the\n"
+COLOR(RED) "Face Stealer" COLOR(DEFAULT) ". Our research indicates"
+BOX_BREAK
+"that the creature takes the face of\n"
+"those it comes in contact with, and\n"
+"keeps the original host in its " COLOR(LIGHTBLUE) "den" COLOR(DEFAULT) ","
+BOX_BREAK
+"gradually drawing energy from them,\n"
+"until the host itself becomes a\n"
+"macabre creature, desperately trying"
+BOX_BREAK
+"to get it's face back from anyone\n"
+"they happen upon. We've captured some\n"
+"of these 'hosts', and are hoping to"
+BOX_BREAK
+"study them to learn more about the\n"
+COLOR(RED) "Face Stealer" COLOR(DEFAULT) ". Our superiors say that\n"
+"the ends justifies the means."
+BOX_BREAK
+"Whatever this alien creature is, we\n"
+"must do whatever we can to contain it."
+BOX_BREAK
+"...Before it's too late..."
+,
+"german"
+,
+"french"
+)
+
+// Message ID 69, wonder_talk param should be 0x1140
+DEFINE_MESSAGE(0x0245, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"Message ID 69"
+,
+"german"
+,
+"french"
+)
+
+// Message ID 70, wonder_talk param should be 0x1180
+DEFINE_MESSAGE(0x0246, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
+"Message ID 70"
+,
+"german"
+,
+"french"
+)
+
 DEFINE_MESSAGE(0x0300, TEXTBOX_TYPE_WOODEN, TEXTBOX_POS_VARIABLE,
 BACKGROUND("\x00", "\x01", "\x10")
 ,
@@ -8464,7 +8620,7 @@ QUICKTEXT_ENABLE  SHIFT("\x10") "This way to leave the forest and head home." QU
 DEFINE_MESSAGE(0x033C, TEXTBOX_TYPE_WOODEN, TEXTBOX_POS_VARIABLE,
 QUICKTEXT_ENABLE  SHIFT("\x2D") "The Tent of Combat\n"
 "Are you strong enough to win against\n"
-SHIFT("\xE") "the great Lizalfos? Enter if you dare!!" QUICKTEXT_DISABLE
+"the great Lizalfos? Enter if you dare!!" QUICKTEXT_DISABLE
 ,
 QUICKTEXT_ENABLE  SHIFT("\x38") "Haus von " COLOR(RED) "Mido" COLOR(DEFAULT) "\n"
 SHIFT("\x2B") "Anführer der Kokiri" QUICKTEXT_DISABLE
@@ -36979,8 +37135,10 @@ DEFINE_MESSAGE(0x709C, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x709D, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
-"I can't find my puppy anywhere!\n"
-"I need you to look for it! Please!"
+"Have you seen my son?\n"
+"I can't find him anywhere!"
+BOX_BREAK
+"I told him not to go into the forest!"
 ,
 "Hast Du meinen Richard gesehen?\n"
 "Er ist sonst so ein braver Hund,\n"
@@ -41170,7 +41328,7 @@ BOX_BREAK
 )
 
 DEFINE_MESSAGE(0x71BB, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-UNSKIPPABLE "...Everyone else has been ignoring me\n"
+"...Everyone else has been ignoring me\n"
 "this whole time, but you keep talking\n"
 "to me. You must be a nice guy!"
 BOX_BREAK
@@ -41196,35 +41354,35 @@ DEFINE_MESSAGE(0x71BD, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x71BE, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-UNSKIPPABLE "...So you're still here, I see...\n"
+"...So you're still here, I see...\n"
 "Listen, I probably shouldn't even tell\n"
 "you this, but I used to work here."
 BOX_BREAK
-UNSKIPPABLE "I really don't like this place. People\n"
+"I really don't like this place. People\n"
 "here talk about some scary stories.\n"
 "Perhaps you've heard? One is a story"
 BOX_BREAK
-UNSKIPPABLE "that parents tell their children about\n"
+"that parents tell their children about\n"
 "a creature called " COLOR(RED) "The Taker" COLOR(DEFAULT) " who takes\n"
 "them into the woods, never to return."
 BOX_BREAK
-UNSKIPPABLE "I dunno if it's true, but there\n"
+"I dunno if it's true, but there\n"
 "definitely are some strange things\n"
 "here...rumors of people disappearing,"
 BOX_BREAK
-UNSKIPPABLE "then seeing them in the forest later,\n"
+"then seeing them in the forest later,\n"
 "but their faces...\n"
 COLOR(RED) "aren't really their faces..." COLOR(DEFAULT)
 BOX_BREAK
-UNSKIPPABLE "..."
+"..."
 BOX_BREAK
-UNSKIPPABLE "Hey, let me give you something."
+"Hey, let me give you something."
 BOX_BREAK
-UNSKIPPABLE "I don't even know why I still have it.\n"
+"I don't even know why I still have it.\n"
 "What you do with it is up to you.\n"
 "If I were you, I would throw it far"
 BOX_BREAK
-UNSKIPPABLE "away and forget everything I said.\n"
+"away and forget everything I said.\n"
 "Either way, I don't want it anymore,\n"
 "so please take it."
 
@@ -41240,7 +41398,13 @@ DEFINE_MESSAGE(0x71BF, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x71C0, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 13"
+"Link!! Thank you so much for joining\n"
+"me for the Masca Festival!!\n"
+"I'll catch up with you in a bit, Link."
+BOX_BREAK
+"Go ahead and play some of the games\n"
+"games for now, and see if you can\n"
+"win a prize for us!"
 
 ,"german","french"
 )

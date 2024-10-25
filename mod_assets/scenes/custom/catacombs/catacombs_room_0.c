@@ -4,8 +4,8 @@
 /**
  * Header Child Day (Default)
 */
-#define LENGTH_CATACOMBS_ROOM_0_HEADER00_OBJECTLIST 1
-#define LENGTH_CATACOMBS_ROOM_0_HEADER00_ACTORLIST 10
+#define LENGTH_CATACOMBS_ROOM_0_HEADER00_OBJECTLIST 2
+#define LENGTH_CATACOMBS_ROOM_0_HEADER00_ACTORLIST 11
 SceneCmd catacombs_room_0_header00[] = {
     SCENE_CMD_ROOM_SHAPE(&catacombs_room_0_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(0x00),
@@ -18,6 +18,7 @@ SceneCmd catacombs_room_0_header00[] = {
 };
 
 s16 catacombs_room_0_header00_objectList[LENGTH_CATACOMBS_ROOM_0_HEADER00_OBJECTLIST] = {
+    OBJECT_RD,
     OBJECT_SYOKUDAI,
 };
 
@@ -44,6 +45,14 @@ ActorEntry catacombs_room_0_header00_actorList[LENGTH_CATACOMBS_ROOM_0_HEADER00_
         /* Position   */ { -54, 265, 269 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(95.966), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x8F8A
+    },
+
+    // Redead/Gibdo
+    {
+        /* Actor ID   */ ACTOR_EN_RD,
+        /* Position   */ { 435, 260, -379 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(275.966), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0000
     },
 
     // Torch
@@ -126,6 +135,7 @@ Gfx catacombs_room_0_shapeHeader_entry_0_opaque[] = {
 	gsSPDisplayList(catacombs_room_0_dl_Cube_030_mesh_layer_Opaque),
 	gsSPDisplayList(catacombs_room_0_dl_gChildZeldaSkel_mesh_001_mesh_layer_Opaque),
 	gsSPDisplayList(catacombs_room_0_dl_gChildZeldaSkel_mesh_002_mesh_layer_Opaque),
+	gsSPDisplayList(catacombs_room_0_dl_Plane_001_mesh_layer_Opaque),
 	gsSPDisplayList(catacombs_room_0_dl_spiral_mesh_layer_Opaque),
 	gsSPEndDisplayList(),
 };
@@ -6856,6 +6866,30 @@ Gfx catacombs_room_0_dl_gChildZeldaSkel_mesh_002_mesh_layer_Opaque_tri_55[] = {
 	gsSPEndDisplayList(),
 };
 
+Vtx catacombs_room_0_dl_Plane_001_mesh_layer_Opaque_vtx_cull[8] = {
+	{{ {371, 260, -314}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {371, 260, -314}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {371, 260, -444}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {371, 260, -444}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {501, 260, -314}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {501, 260, -314}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {501, 260, -444}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {501, 260, -444}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx catacombs_room_0_dl_Plane_001_mesh_layer_Opaque_vtx_0[4] = {
+	{{ {501, 260, -444}, 0, {-16, 1008}, {0, 127, 0, 255} }},
+	{{ {371, 260, -444}, 0, {1008, 1008}, {0, 127, 0, 255} }},
+	{{ {371, 260, -314}, 0, {1008, -16}, {0, 127, 0, 255} }},
+	{{ {501, 260, -314}, 0, {-16, -16}, {0, 127, 0, 255} }},
+};
+
+Gfx catacombs_room_0_dl_Plane_001_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(catacombs_room_0_dl_Plane_001_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSPEndDisplayList(),
+};
+
 Vtx catacombs_room_0_dl_spiral_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-205, 0, 770}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-205, 560, 770}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -6905,7 +6939,7 @@ Vtx catacombs_room_0_dl_spiral_mesh_layer_Opaque_vtx_0[76] = {
 	{{ {128, 22, 417}, 0, {1511, -2088}, {181, 98, 30, 255} }},
 	{{ {-132, 0, 246}, 0, {3198, -1188}, {87, 90, 237, 255} }},
 	{{ {208, 0, -226}, 0, {1377, 1886}, {171, 72, 61, 255} }},
-	{{ {-202, 0, -263}, 0, {3902, 1886}, {75, 72, 72, 255} }},
+	{{ {-202, 0, -263}, 0, {3902, 1886}, {75, 72, 73, 255} }},
 	{{ {589, 536, 357}, 0, {-1293, -1470}, {81, 161, 22, 255} }},
 	{{ {630, 558, 157}, 0, {-1431, -227}, {86, 163, 3, 255} }},
 	{{ {857, 558, 172}, 0, {-2831, -193}, {166, 167, 244, 255} }},
@@ -6940,10 +6974,10 @@ Vtx catacombs_room_0_dl_spiral_mesh_layer_Opaque_vtx_0[76] = {
 	{{ {145, 247, 728}, 0, {1222, -3979}, {46, 175, 170, 255} }},
 	{{ {125, 225, 417}, 0, {1511, -2088}, {194, 157, 50, 255} }},
 	{{ {-72, 225, 532}, 0, {2654, -2897}, {88, 175, 212, 255} }},
-	{{ {92, 203, 267}, 0, {1798, -1188}, {173, 160, 6, 255} }},
-	{{ {-135, 203, 247}, 0, {3198, -1188}, {92, 169, 243, 255} }},
-	{{ {204, 203, -226}, 0, {1377, 1886}, {172, 183, 61, 255} }},
-	{{ {-205, 203, -262}, 0, {3902, 1886}, {76, 185, 72, 255} }},
+	{{ {92, 203, 267}, 0, {1798, -1188}, {174, 160, 11, 255} }},
+	{{ {-135, 203, 247}, 0, {3198, -1188}, {91, 167, 249, 255} }},
+	{{ {204, 148, -226}, 0, {1377, 1886}, {171, 187, 64, 255} }},
+	{{ {-205, 148, -262}, 0, {3902, 1886}, {77, 189, 75, 255} }},
 };
 
 Gfx catacombs_room_0_dl_spiral_mesh_layer_Opaque_tri_0[] = {
@@ -7061,12 +7095,12 @@ Vtx catacombs_room_0_dl_spiral_mesh_layer_Opaque_vtx_1[102] = {
 	{{ {649, 514, 663}, 0, {-916, -2540}, {200, 174, 177, 255} }},
 	{{ {652, 311, 662}, 0, {-955, 90}, {189, 81, 185, 255} }},
 	{{ {208, 0, -226}, 0, {5816, 4129}, {171, 72, 61, 255} }},
-	{{ {204, 203, -226}, 0, {5855, 1498}, {172, 183, 61, 255} }},
-	{{ {-205, 203, -262}, 0, {11195, 1498}, {76, 185, 72, 255} }},
-	{{ {-202, 0, -263}, 0, {11156, 4129}, {75, 72, 72, 255} }},
-	{{ {-202, 0, -263}, 0, {-2813, 4129}, {75, 72, 72, 255} }},
-	{{ {-205, 203, -262}, 0, {-2805, 1498}, {76, 185, 72, 255} }},
-	{{ {-135, 203, 247}, 0, {3694, 1498}, {92, 169, 243, 255} }},
+	{{ {204, 148, -226}, 0, {5855, 1498}, {171, 187, 64, 255} }},
+	{{ {-205, 148, -262}, 0, {11195, 1498}, {77, 189, 75, 255} }},
+	{{ {-202, 0, -263}, 0, {11156, 4129}, {75, 72, 73, 255} }},
+	{{ {-202, 0, -263}, 0, {-2813, 4129}, {75, 72, 73, 255} }},
+	{{ {-205, 148, -262}, 0, {-2805, 1498}, {77, 189, 75, 255} }},
+	{{ {-135, 203, 247}, 0, {3694, 1498}, {91, 167, 249, 255} }},
 	{{ {-132, 0, 246}, 0, {3686, 4129}, {87, 90, 237, 255} }},
 	{{ {-72, 225, 532}, 0, {7310, 1210}, {88, 175, 212, 255} }},
 	{{ {-69, 22, 531}, 0, {7302, 3840}, {80, 82, 202, 255} }},
@@ -7079,9 +7113,9 @@ Vtx catacombs_room_0_dl_spiral_mesh_layer_Opaque_vtx_1[102] = {
 	{{ {176, 200, 102}, 0, {5849, 1532}, {211, 98, 190, 255} }},
 	{{ {173, 403, 103}, 0, {5888, -1098}, {194, 157, 206, 255} }},
 	{{ {95, 0, 266}, 0, {3686, 4129}, {174, 97, 250, 255} }},
-	{{ {204, 203, -226}, 0, {-2805, 1498}, {172, 183, 61, 255} }},
+	{{ {204, 148, -226}, 0, {-2805, 1498}, {171, 187, 64, 255} }},
 	{{ {208, 0, -226}, 0, {-2813, 4129}, {171, 72, 61, 255} }},
-	{{ {92, 203, 267}, 0, {3694, 1498}, {173, 160, 6, 255} }},
+	{{ {92, 203, 267}, 0, {3694, 1498}, {174, 160, 11, 255} }},
 	{{ {128, 22, 417}, 0, {5590, 3840}, {181, 98, 30, 255} }},
 	{{ {125, 225, 417}, 0, {5598, 1210}, {194, 157, 50, 255} }},
 	{{ {592, 333, 357}, 0, {4284, -198}, {73, 95, 41, 255} }},
@@ -8712,6 +8746,16 @@ Gfx catacombs_room_0_dl_gChildZeldaSkel_mesh_002_mesh_layer_Opaque[] = {
 	gsSPDisplayList(catacombs_room_0_dl_gChildZeldaSkel_mesh_002_mesh_layer_Opaque_tri_54),
 	gsSPDisplayList(mat_catacombs_room_0_dl_f3dlite_material_471_layerOpaque),
 	gsSPDisplayList(catacombs_room_0_dl_gChildZeldaSkel_mesh_002_mesh_layer_Opaque_tri_55),
+	gsSPEndDisplayList(),
+};
+
+Gfx catacombs_room_0_dl_Plane_001_mesh_layer_Opaque[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(catacombs_room_0_dl_Plane_001_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_catacombs_room_0_dl_brown_layerOpaque),
+	gsSPDisplayList(catacombs_room_0_dl_Plane_001_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 

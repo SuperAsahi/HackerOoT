@@ -888,16 +888,16 @@ DEFINE_MESSAGE(0x002F, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x0030, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
-UNSKIPPABLE  ITEM_ICON("\x06")  QUICKTEXT_ENABLE "You found the " COLOR(RED) "Fairy Slingshot" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
+ITEM_ICON("\x06")  QUICKTEXT_ENABLE "You found the " COLOR(RED) "Fairy Slingshot" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
 "On the " COLOR(YELLOW) "Select Item Subscreen" COLOR(DEFAULT) ",\n"
 "you can set it to " COLOR(YELLOW) "[C-Left]" COLOR(DEFAULT) ", " COLOR(YELLOW) "[C-Down]" COLOR(DEFAULT) " or" COLOR(YELLOW) " [C-Right]" COLOR(DEFAULT) "."
 BOX_BREAK
-UNSKIPPABLE  ITEM_ICON("\x06") "Press " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "to take it out and hold\n"
+ITEM_ICON("\x06") "Press " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "to take it out and hold\n"
 "it. As you hold " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "you can aim \n"
 "with " COLOR(LIGHTBLUE) "[Control-Pad]" COLOR(DEFAULT) ". Release " COLOR(YELLOW) "[C]" COLOR(DEFAULT) " to unleash \n"
 "a " COLOR(RED) "Deku Seed" COLOR(DEFAULT) "."
 BOX_BREAK
-UNSKIPPABLE  ITEM_ICON("\x06") "If you want to shoot right \n"
+ITEM_ICON("\x06") "If you want to shoot right \n"
 "away, when you first press " COLOR(YELLOW) "[C]" COLOR(DEFAULT) ", \n"
 "hold down " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "a little longer to \n"
 "get a seed ready."
@@ -8446,33 +8446,25 @@ SHIFT("\x38")  COLOR(YELLOW) "Ranch Lon Lon" COLOR(DEFAULT)  QUICKTEXT_DISABLE
 )
 
 DEFINE_MESSAGE(0x033A, TEXTBOX_TYPE_WOODEN, TEXTBOX_POS_VARIABLE,
-QUICKTEXT_ENABLE  SHIFT("\x13") "You are here: " COLOR(LIGHTBLUE) "Hyrule Castle" COLOR(DEFAULT) "\n"
-SHIFT("\x16") "This way to " COLOR(YELLOW) "Lon Lon Ranch" COLOR(DEFAULT)  QUICKTEXT_DISABLE
+QUICKTEXT_ENABLE  SHIFT("\x13") "This way to return to the festival." QUICKTEXT_DISABLE
 ,
-QUICKTEXT_ENABLE "Diese Richtung zur " COLOR(YELLOW) "Lon Lon-Farm" COLOR(DEFAULT) "!" COLOR(YELLOW) "\n"
-COLOR(DEFAULT) "Zur Rechten liegt " COLOR(LIGHTBLUE) "Hyrule" COLOR(DEFAULT) "." QUICKTEXT_DISABLE
+"German"
 ,
-QUICKTEXT_ENABLE  SHIFT("\x0A") "Vous êtes ici: " COLOR(LIGHTBLUE) "Château d'Hyrule" COLOR(DEFAULT) "\n"
-SHIFT("\x19") "Tout droit: " COLOR(YELLOW) "Ranch Lon Lon" COLOR(DEFAULT)  QUICKTEXT_DISABLE
+"French"
 )
 
 DEFINE_MESSAGE(0x033B, TEXTBOX_TYPE_WOODEN, TEXTBOX_POS_VARIABLE,
-QUICKTEXT_ENABLE  SHIFT("\x42") "Just Ahead\n"
-SHIFT("\x29")  COLOR(BLUE) "King Zora's Chamber\n"
-COLOR(DEFAULT)  SHIFT("\x19") "Show the proper respect!" QUICKTEXT_DISABLE
+QUICKTEXT_ENABLE  SHIFT("\x10") "This way to leave the forest and head home." QUICKTEXT_DISABLE
 ,
-QUICKTEXT_ENABLE  SHIFT("\x42") "Vor Dir liegt\n"
-SHIFT("\x24")  COLOR(BLUE) "König Zoras Thronsaal\n"
-COLOR(DEFAULT)  SHIFT("\x26") "Betritt ihn ehrfürchtig!" QUICKTEXT_DISABLE
+"German"
 ,
-QUICKTEXT_ENABLE  SHIFT("\x43") "Tout droit:\n"
-SHIFT("\x13")  COLOR(BLUE) "Salle d'audience du Roi Zora\n"
-COLOR(DEFAULT)  SHIFT("\x11") "Appliquez-vous au protocole!" QUICKTEXT_DISABLE
+"French"
 )
 
 DEFINE_MESSAGE(0x033C, TEXTBOX_TYPE_WOODEN, TEXTBOX_POS_VARIABLE,
-QUICKTEXT_ENABLE  SHIFT("\x19") "House of the Great " COLOR(RED) "Mido" COLOR(DEFAULT) "\n"
-SHIFT("\x2D") "Boss of the Kokiri" QUICKTEXT_DISABLE
+QUICKTEXT_ENABLE  SHIFT("\x2D") "The Tent of Combat\n"
+"Are you strong enough to win against\n"
+SHIFT("\xE") "the great Lizalfos? Enter if you dare!!" QUICKTEXT_DISABLE
 ,
 QUICKTEXT_ENABLE  SHIFT("\x38") "Haus von " COLOR(RED) "Mido" COLOR(DEFAULT) "\n"
 SHIFT("\x2B") "Anführer der Kokiri" QUICKTEXT_DISABLE
@@ -33881,9 +33873,8 @@ BOX_BREAK
 )
 
 DEFINE_MESSAGE(0x7014, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"I'm not dancing, you know...\n"
-"My back itches! \n"
-"Ooh! Aaah! Ooh!"
+"Yay!! Masca Festival!\n"
+"I just love festivals!"
 ,
 "Ich tanze nicht, weißt Du...\n"
 "Mir tut der Rücken weh!\n"
@@ -34082,11 +34073,22 @@ UNSKIPPABLE "Sais-tu que le " COLOR(LIGHTBLUE) "Temple du Temps" COLOR(DEFAULT) 
 )
 
 DEFINE_MESSAGE(0x701E, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Legends say that the Temple of\n"
-"Time is the entrance to the \n"
-"Sacred Realm..."
+"Are you enjoying the Masca Festival?\n"
+"I'm always excited to see which mask\n"
+"I win to take home with me!"
 BOX_BREAK
-"Did you know that?"
+"...Of course, I still think it's silly\n"
+"that they can never spell 'mask' right.\n"
+"Oh well..."
+BOX_BREAK
+"Oh, and I almost forgot,"
+BOX_BREAK
+COLOR(LIGHTBLUE) "'Don't let " COLOR(RED) "The Taker" COLOR(LIGHTBLUE) " get you!'\n"
+COLOR(DEFAULT) "...I know, I know, that's kid's stuff.\n"
+"I just had to say it."
+BOX_BREAK
+"I'm trying to get into the\n"
+"spirit of the festival, that's all!"
 ,
 "Die Legenden besagen, daß sich in\n"
 "der Zitadelle der Zeit der Zugang\n"
@@ -34867,9 +34869,11 @@ DEFINE_MESSAGE(0x7043, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x7044, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"We don't see a lot of Gerudos in\n"
-"these parts...\n"
-"Something fishy is going on!"
+"Hello kid! If you've had enough fun\n"
+"at the festival, you can walk right\n"
+"through here to head back home."
+BOX_BREAK
+"Hope we'll see you next time, too!"
 ,
 "Es ist komisch, daß Gerudos hier\n"
 "eingedrungen sind... Das kommt mir\n"
@@ -34893,8 +34897,8 @@ DEFINE_MESSAGE(0x7045, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x7046, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"I almost got kicked by that\n"
-"black horse!"
+"I hope I don't run into " COLOR(RED) "The Taker" COLOR(DEFAULT) "!\n"
+"He sounds like a scary guy!!"
 ,
 "Der schwarze Hengst dieses\n"
 "Reiters hätte mich um ein Haar\n"
@@ -34906,10 +34910,9 @@ DEFINE_MESSAGE(0x7046, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x7047, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"That guy riding on the black horse\n"
-"must have been Ganondorf, who is\n"
-"renowned as the Gerudo King of \n"
-"Thieves."
+"Come one, come all! See if you can\n"
+"make it to the end of the maze\n"
+"for a prize!"
 ,
 "Der Typ auf dem schwarzen Pferd\n"
 "war bestimmt Ganondorf, der Herr\n"
@@ -34922,7 +34925,7 @@ DEFINE_MESSAGE(0x7047, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x7048, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"What happened?!"
+"Sure is looking like a great festival!"
 ,
 "Was ist denn hier passiert?"
 ,
@@ -34958,8 +34961,12 @@ DEFINE_MESSAGE(0x704A, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 )
 
 DEFINE_MESSAGE(0x704B, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Something happened in the castle!\n"
-"Kid, you'd better be careful!"
+"Step right up! Enter the\n"
+COLOR(BLUE) "Shooting Range" COLOR(DEFAULT) " tent, and see\n"
+"if you can win a prize!"
+BOX_BREAK
+"Don't forget to open this chest\n"
+"for a slingshot!"
 ,
 "Im Schloß ist etwas Schlimmes\n"
 "passiert! Sei lieber vorsichtig,\n"
@@ -41147,7 +41154,7 @@ DEFINE_MESSAGE(0x71B8, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 
 DEFINE_MESSAGE(0x71B9, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 "Hey kid! Hope you're having fun at\n"
-" the festival! Everyone else sure is!"
+"the festival! Everyone else sure is!"
 
 ,"german","french"
 )
@@ -41163,12 +41170,12 @@ BOX_BREAK
 )
 
 DEFINE_MESSAGE(0x71BB, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"...Everyone else has been ignoring me\n"
+UNSKIPPABLE "...Everyone else has been ignoring me\n"
 "this whole time, but you keep talking\n"
 "to me. You must be a nice guy!"
 BOX_BREAK
 "Hey, come see me later\n"
-" if you're still around.\n"
+"if you're still around.\n"
 "I think I can trust you."
 
 ,"german","french"
@@ -41179,21 +41186,55 @@ DEFINE_MESSAGE(0x71BC, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 
 ,"german","french"
 )
-//
+
 DEFINE_MESSAGE(0x71BD, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 10"
+"What are you still doing here?\n"
+"Everyone else has left already.\n"
+"You should leave, too."
 
 ,"german","french"
 )
 
 DEFINE_MESSAGE(0x71BE, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 11"
+UNSKIPPABLE "...So you're still here, I see...\n"
+"Listen, I probably shouldn't even tell\n"
+"you this, but I used to work here."
+BOX_BREAK
+UNSKIPPABLE "I really don't like this place. People\n"
+"here talk about some scary stories.\n"
+"Perhaps you've heard? One is a story"
+BOX_BREAK
+UNSKIPPABLE "that parents tell their children about\n"
+"a creature called " COLOR(RED) "The Taker" COLOR(DEFAULT) " who takes\n"
+"them into the woods, never to return."
+BOX_BREAK
+UNSKIPPABLE "I dunno if it's true, but there\n"
+"definitely are some strange things\n"
+"here...rumors of people disappearing,"
+BOX_BREAK
+UNSKIPPABLE "then seeing them in the forest later,\n"
+"but their faces...\n"
+COLOR(RED) "aren't really their faces..." COLOR(DEFAULT)
+BOX_BREAK
+UNSKIPPABLE "..."
+BOX_BREAK
+UNSKIPPABLE "Hey, let me give you something."
+BOX_BREAK
+UNSKIPPABLE "I don't even know why I still have it.\n"
+"What you do with it is up to you.\n"
+"If I were you, I would throw it far"
+BOX_BREAK
+UNSKIPPABLE "away and forget everything I said.\n"
+"Either way, I don't want it anymore,\n"
+"so please take it."
 
 ,"german","french"
 )
 
 DEFINE_MESSAGE(0x71BF, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
-"Message 12"
+"What you choose to do with that\n"
+"key is up to you.\n"
+"...Choose wisely."
 
 ,"german","french"
 )

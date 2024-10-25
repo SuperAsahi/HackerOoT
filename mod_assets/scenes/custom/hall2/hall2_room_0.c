@@ -4,709 +4,478 @@
 /**
  * Header Child Day (Default)
 */
-#define LENGTH_HALL2_ROOM_0_HEADER00_OBJECTLIST 11
-#define LENGTH_HALL2_ROOM_0_HEADER00_ACTORLIST 11
 SceneCmd hall2_room_0_header00[] = {
-    SCENE_CMD_ALTERNATE_HEADER_LIST(hall2_room_0_alternateHeaders),
     SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(1),
+    SCENE_CMD_ECHO_SETTINGS(0x00),
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER00_OBJECTLIST, hall2_room_0_header00_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER00_ACTORLIST, hall2_room_0_header00_actorList),
+    SCENE_CMD_SKYBOX_DISABLES(true, true),
+    SCENE_CMD_TIME_SETTINGS(22, 0, 0),
     SCENE_CMD_END(),
 };
 
-SceneCmd* hall2_room_0_alternateHeaders[] = {
-    NULL,
-    hall2_room_0_header02,
-    hall2_room_0_header03,
-    hall2_room_0_header04,
-    hall2_room_0_header05,
-    hall2_room_0_header06,
-    hall2_room_0_header07,
-    hall2_room_0_header08,
-    hall2_room_0_header09,
-    hall2_room_0_header10,
-    hall2_room_0_header11,
-    hall2_room_0_header12,
-    hall2_room_0_header13,
-};
-
-s16 hall2_room_0_header00_objectList[LENGTH_HALL2_ROOM_0_HEADER00_OBJECTLIST] = {
-    OBJECT_KANBAN,
-    OBJECT_GS,
-    OBJECT_MAMENOKI,
-    OBJECT_KM1,
-    OBJECT_KW1,
-    OBJECT_OS_ANIME,
-    OBJECT_MD,
-    OBJECT_SA,
-    OBJECT_GI_HEART,
-    OBJECT_ST,
-    OBJECT_FA,
-};
-
-ActorEntry hall2_room_0_header00_actorList[LENGTH_HALL2_ROOM_0_HEADER00_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 45, 0, -272 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF01
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -608, 120, 1022 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(225.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF02
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 669, 0, 521 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(189.998), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF04
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 853, 100, -311 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF05
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -678, 1, -179 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(77.997), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF06
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -1472, -80, -294 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0003
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -10, 180, -22 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(68.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF0C
-    },
-
-    // Mido
-    {
-        /* Actor ID   */ ACTOR_EN_MD,
-        /* Position   */ { 1522, 0, 105 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(264.001), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0100
-    },
-
-    // Saria
-    {
-        /* Actor ID   */ ACTOR_EN_SA,
-        /* Position   */ { 18, -80, 873 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(319.999), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Skullwalltula/Golden Skulltula
-    {
-        /* Actor ID   */ ACTOR_EN_SW,
-        /* Position   */ { -1307, 153, 401 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(289.001), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xAD02
-    },
-};
-
-/**
- * Header Adult Day
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER02_OBJECTLIST 7
-#define LENGTH_HALL2_ROOM_0_HEADER02_ACTORLIST 3
-SceneCmd hall2_room_0_header02[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(1),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER02_OBJECTLIST, hall2_room_0_header02_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER02_ACTORLIST, hall2_room_0_header02_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header02_objectList[LENGTH_HALL2_ROOM_0_HEADER02_OBJECTLIST] = {
-    OBJECT_DEKUBABA,
-    OBJECT_GS,
-    OBJECT_KANBAN,
-    OBJECT_ST,
-    OBJECT_OKUTA,
-    OBJECT_DEKUNUTS,
-    OBJECT_MAMENOKI,
-};
-
-ActorEntry hall2_room_0_header02_actorList[LENGTH_HALL2_ROOM_0_HEADER02_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Skulltula
-    {
-        /* Actor ID   */ ACTOR_EN_ST,
-        /* Position   */ { 1836, 105, 135 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(270.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0001
-    },
-
-    // Skullwalltula/Golden Skulltula
-    {
-        /* Actor ID   */ ACTOR_EN_SW,
-        /* Position   */ { 1153, 251, 625 },
-        /* Rotation   */ { DEG_TO_BINANG(90.000), DEG_TO_BINANG(328.002), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xAD04
-    },
-};
-
-/**
- * Header Adult Night
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER03_OBJECTLIST 7
-#define LENGTH_HALL2_ROOM_0_HEADER03_ACTORLIST 8
-SceneCmd hall2_room_0_header03[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(1),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER03_OBJECTLIST, hall2_room_0_header03_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER03_ACTORLIST, hall2_room_0_header03_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header03_objectList[LENGTH_HALL2_ROOM_0_HEADER03_OBJECTLIST] = {
-    OBJECT_GS,
-    OBJECT_KANBAN,
-    OBJECT_MAMENOKI,
-    OBJECT_KM1,
-    OBJECT_KW1,
-    OBJECT_OS_ANIME,
-    OBJECT_ST,
-};
-
-ActorEntry hall2_room_0_header03_actorList[LENGTH_HALL2_ROOM_0_HEADER03_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 45, 0, -272 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF01
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -608, 120, 1022 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(225.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF02
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -1415, -74, -108 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF03
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 669, 0, 521 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(189.998), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF04
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 853, 100, -311 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF05
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -678, 1, -179 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(77.997), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF06
-    },
-
-    // Skullwalltula/Golden Skulltula
-    {
-        /* Actor ID   */ ACTOR_EN_SW,
-        /* Position   */ { 1153, 251, 625 },
-        /* Rotation   */ { DEG_TO_BINANG(90.000), DEG_TO_BINANG(328.002), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xAD04
-    },
-};
-
-/**
- * Header Cutscene No. 1
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER04_ACTORLIST 1
-SceneCmd hall2_room_0_header04[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(12, 0, 0),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER04_ACTORLIST, hall2_room_0_header04_actorList),
-    SCENE_CMD_END(),
-};
-
-ActorEntry hall2_room_0_header04_actorList[LENGTH_HALL2_ROOM_0_HEADER04_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 2
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER05_ACTORLIST 1
-SceneCmd hall2_room_0_header05[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(12, 0, 0),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER05_ACTORLIST, hall2_room_0_header05_actorList),
-    SCENE_CMD_END(),
-};
-
-ActorEntry hall2_room_0_header05_actorList[LENGTH_HALL2_ROOM_0_HEADER05_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 3
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER06_ACTORLIST 1
-SceneCmd hall2_room_0_header06[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(12, 0, 0),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER06_ACTORLIST, hall2_room_0_header06_actorList),
-    SCENE_CMD_END(),
-};
-
-ActorEntry hall2_room_0_header06_actorList[LENGTH_HALL2_ROOM_0_HEADER06_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 4
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER07_OBJECTLIST 6
-#define LENGTH_HALL2_ROOM_0_HEADER07_ACTORLIST 9
-SceneCmd hall2_room_0_header07[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(12, 0, 0),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER07_OBJECTLIST, hall2_room_0_header07_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER07_ACTORLIST, hall2_room_0_header07_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header07_objectList[LENGTH_HALL2_ROOM_0_HEADER07_OBJECTLIST] = {
-    OBJECT_SA,
-    OBJECT_KM1,
-    OBJECT_KW1,
-    OBJECT_MD,
-    OBJECT_OS_ANIME,
-    OBJECT_KANBAN,
-};
-
-ActorEntry hall2_room_0_header07_actorList[LENGTH_HALL2_ROOM_0_HEADER07_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 669, 0, 521 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(189.998), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF04
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -340, 0, -414 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF00
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 62, 0, -258 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(8.998), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF01
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -641, 120, 454 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(163.998), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF02
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -1472, -80, -294 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0003
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { 853, 102, -311 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF05
-    },
-
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -638, 1, -165 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(138.999), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0xFF06
-    },
-
-    // Mido
-    {
-        /* Actor ID   */ ACTOR_EN_MD,
-        /* Position   */ { 1522, 0, 105 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(264.001), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0100
-    },
-};
-
-/**
- * Header Cutscene No. 5
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER08_OBJECTLIST 9
-#define LENGTH_HALL2_ROOM_0_HEADER08_ACTORLIST 1
-SceneCmd hall2_room_0_header08[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 127),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER08_OBJECTLIST, hall2_room_0_header08_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER08_ACTORLIST, hall2_room_0_header08_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header08_objectList[LENGTH_HALL2_ROOM_0_HEADER08_OBJECTLIST] = {
-    OBJECT_SPOT04_OBJECTS,
-    OBJECT_GI_JEWEL,
-    OBJECT_MJIN,
-    OBJECT_MJIN_OKA,
-    OBJECT_SA,
-    OBJECT_KM1,
-    OBJECT_KW1,
-    OBJECT_MD,
-    OBJECT_OS_ANIME,
-};
-
-ActorEntry hall2_room_0_header08_actorList[LENGTH_HALL2_ROOM_0_HEADER08_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 6
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER09_OBJECTLIST 9
-#define LENGTH_HALL2_ROOM_0_HEADER09_ACTORLIST 1
-SceneCmd hall2_room_0_header09[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 127),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER09_OBJECTLIST, hall2_room_0_header09_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER09_ACTORLIST, hall2_room_0_header09_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header09_objectList[LENGTH_HALL2_ROOM_0_HEADER09_OBJECTLIST] = {
-    OBJECT_SPOT04_OBJECTS,
-    OBJECT_GI_JEWEL,
-    OBJECT_MJIN,
-    OBJECT_MJIN_OKA,
-    OBJECT_SA,
-    OBJECT_KM1,
-    OBJECT_KW1,
-    OBJECT_MD,
-    OBJECT_OS_ANIME,
-};
-
-ActorEntry hall2_room_0_header09_actorList[LENGTH_HALL2_ROOM_0_HEADER09_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 7
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER10_OBJECTLIST 1
-#define LENGTH_HALL2_ROOM_0_HEADER10_ACTORLIST 1
-SceneCmd hall2_room_0_header10[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 127),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER10_OBJECTLIST, hall2_room_0_header10_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER10_ACTORLIST, hall2_room_0_header10_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header10_objectList[LENGTH_HALL2_ROOM_0_HEADER10_OBJECTLIST] = {
-    OBJECT_SPOT04_OBJECTS,
-};
-
-ActorEntry hall2_room_0_header10_actorList[LENGTH_HALL2_ROOM_0_HEADER10_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 8
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER11_OBJECTLIST 3
-#define LENGTH_HALL2_ROOM_0_HEADER11_ACTORLIST 1
-SceneCmd hall2_room_0_header11[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 127),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER11_OBJECTLIST, hall2_room_0_header11_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER11_ACTORLIST, hall2_room_0_header11_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header11_objectList[LENGTH_HALL2_ROOM_0_HEADER11_OBJECTLIST] = {
-    OBJECT_SPOT04_OBJECTS,
-    OBJECT_WOOD02,
-    OBJECT_KANBAN,
-};
-
-ActorEntry hall2_room_0_header11_actorList[LENGTH_HALL2_ROOM_0_HEADER11_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 9
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER12_OBJECTLIST 5
-#define LENGTH_HALL2_ROOM_0_HEADER12_ACTORLIST 1
-SceneCmd hall2_room_0_header12[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(12, 0, 0),
-    SCENE_CMD_OBJECT_LIST(LENGTH_HALL2_ROOM_0_HEADER12_OBJECTLIST, hall2_room_0_header12_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER12_ACTORLIST, hall2_room_0_header12_actorList),
-    SCENE_CMD_END(),
-};
-
-s16 hall2_room_0_header12_objectList[LENGTH_HALL2_ROOM_0_HEADER12_OBJECTLIST] = {
-    OBJECT_SPOT04_OBJECTS,
-    OBJECT_OS_ANIME,
-    OBJECT_KM1,
-    OBJECT_KW1,
-    OBJECT_KANBAN,
-};
-
-ActorEntry hall2_room_0_header12_actorList[LENGTH_HALL2_ROOM_0_HEADER12_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-/**
- * Header Cutscene No. 10
-*/
-#define LENGTH_HALL2_ROOM_0_HEADER13_ACTORLIST 1
-SceneCmd hall2_room_0_header13[] = {
-    SCENE_CMD_ROOM_SHAPE(&hall2_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
-    SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 127),
-    SCENE_CMD_ACTOR_LIST(LENGTH_HALL2_ROOM_0_HEADER13_ACTORLIST, hall2_room_0_header13_actorList),
-    SCENE_CMD_END(),
-};
-
-ActorEntry hall2_room_0_header13_actorList[LENGTH_HALL2_ROOM_0_HEADER13_ACTORLIST] = {
-    // Kokiri
-    {
-        /* Actor ID   */ ACTOR_EN_KO,
-        /* Position   */ { -292, 0, -430 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-};
-
-RoomShapeCullable hall2_room_0_shapeHeader = {
-    ROOM_SHAPE_TYPE_CULLABLE,
-    ARRAY_COUNTU(hall2_room_0_shapeDListsEntry),
+RoomShapeNormal hall2_room_0_shapeHeader = {
+    ROOM_SHAPE_TYPE_NORMAL,
+    ARRAY_COUNT(hall2_room_0_shapeDListsEntry),
     hall2_room_0_shapeDListsEntry,
-    hall2_room_0_shapeDListsEntry + ARRAY_COUNTU(hall2_room_0_shapeDListsEntry)
+    hall2_room_0_shapeDListsEntry + ARRAY_COUNT(hall2_room_0_shapeDListsEntry)
 };
 
-RoomShapeCullableEntry hall2_room_0_shapeDListsEntry[1] = {
-    {  { 0, -197, 0 }, 3230, hall2_room_0_shapeHeader_entry_0_opaque, NULL }
+RoomShapeDListsEntry hall2_room_0_shapeDListsEntry[1] = {
+    { hall2_room_0_shapeHeader_entry_0_opaque, hall2_room_0_shapeHeader_entry_0_transparent }
 };
 
 Gfx hall2_room_0_shapeHeader_entry_0_opaque[] = {
-	gsSPDisplayList(hall2_room_0_dl_Plane_mesh_layer_Opaque),
+	gsSPDisplayList(hall2_room_0_dl_Floor_mesh_layer_Opaque),
+	gsSPDisplayList(hall2_room_0_dl_stairs_001_mesh_layer_Opaque),
 	gsSPEndDisplayList(),
 };
 
-Vtx hall2_room_0_dl_Plane_mesh_layer_Opaque_vtx_cull[8] = {
-	{{ {-2284, -197, 2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-2284, -197, 2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-2284, -197, -2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-2284, -197, -2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2284, -197, 2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2284, -197, 2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2284, -197, -2284}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {2284, -197, -2284}, 0, {0, 0}, {0, 0, 0, 0} }},
+Gfx hall2_room_0_shapeHeader_entry_0_transparent[] = {
+	gsSPDisplayList(hall2_room_0_dl_Plane_mesh_layer_Transparent),
+	gsSPEndDisplayList(),
 };
 
-Vtx hall2_room_0_dl_Plane_mesh_layer_Opaque_vtx_0[4] = {
-	{{ {-2284, -197, 2284}, 0, {-16, 1008}, {0, 127, 0, 255} }},
-	{{ {2284, -197, 2284}, 0, {1008, 1008}, {0, 127, 0, 255} }},
-	{{ {2284, -197, -2284}, 0, {1008, -16}, {0, 127, 0, 255} }},
-	{{ {-2284, -197, -2284}, 0, {-16, -16}, {0, 127, 0, 255} }},
+u64 hall2_room_0_dl_hakasitarelay_room_2Tex_006CA8_i8_i8[] = {
+	0x0029556a7242011b, 0x1e1c388b81755c56, 0x5834213a5f5b7a6b, 0x6b96969a56675869, 0x7589bdb0c57d3d6b, 0x839a8c7a61474f59, 0x695147394b3a2f37, 0x3b154f82465d2e00, 
+	0x012955706e340010, 0x1212153a49584540, 0x432c1b2735443c54, 0x6d66767952473d59, 0x566f8f8f9e884e88, 0x757e714d4a3d4b54, 0x3b4d393a4b2c2031, 0x1b003f7b815d2e01, 
+	0x012a2e6c743f0000, 0x0305071b36313233, 0x352a131926312d43, 0x5863604b3825314a, 0x3c588a83737c6470, 0x666466443b4c5739, 0x222c374a3e222314, 0x030047827a583002, 
+	0x001a0e2a753e0000, 0x0000000a1d162827, 0x271c100e1622213c, 0x343c3f2416131929, 0x2537616557606557, 0x554b2f3039304531, 0x1821393824150a00, 0x00004b857c603400, 
+	0x01352f5372400000, 0x00000007080d1a21, 0x2220110e0e1f192a, 0x3823241f1e20141d, 0x2b404b4e4e515647, 0x49452c2b312c3530, 0x22252224190a0000, 0x00004980465b3b03, 
+	0x05384d636b440000, 0x0000000000040e0f, 0x11180b0f0a0d1018, 0x271d131414131718, 0x1c2d3c373d3d3530, 0x2e3431231b24241d, 0x1b180a0e06000000, 0x00004d511a233e06, 
+	0x0537516166440000, 0x0000000001060c0f, 0x0e0d0f0e0d0e1012, 0x131e13171812171c, 0x20212d30322e2b28, 0x282a24202220191c, 0x1915110b02000000, 0x00004a71413c3d05, 
+	0x01375269643b0401, 0x010301070a0b090c, 0x0e100f0f10131514, 0x0f15171416161719, 0x1a1f1c21201f1a1a, 0x1f1c131919131316, 0x0e0e0e0907010301, 0x010a4371795b3d05, 
+	0x002c516867250801, 0x0103010404090a0a, 0x0a0c0c0d0d0f0b10, 0x1212120e0e0f0f16, 0x1719151516121212, 0x1310100e0e0e0b0a, 0x0a0a030404010301, 0x010e4e7779593600, 
+	0x042e436161440d01, 0x010306070a0d0f17, 0x1b17171a1c161a1a, 0x1b1a191c1f222633, 0x262d3d39362f2e26, 0x29302a2a29262523, 0x1e18150e0a050501, 0x010e4e716d4b3206, 
+	0x0a303e54573d0801, 0x0306070a0d121324, 0x2b25242b31262925, 0x26222026272b3744, 0x4645515b4d504a39, 0x47524c4a40374240, 0x3426221c110a0605, 0x010d45656048370a, 
+	0x092f434722380e08, 0x0d121310191e2030, 0x3b3c3d3b40363633, 0x38342f33313d5145, 0x636a5668706e6250, 0x647b71655b53524a, 0x4c4b3929211b150e, 0x0c13425f524b3709, 
+	0x0630441b22311317, 0x1a2426212a2f3447, 0x4f5258574c4c4e43, 0x4b493e3c3f4e5d56, 0x5b899e7f8e7d7475, 0x81818286807b6454, 0x64674e3f3b34281e, 0x150e395b564d3708, 
+	0x012c26233931182b, 0x2d3736303441506a, 0x7273786c6466625c, 0x6561504b585b6567, 0x6b76cbc7988b9494, 0xad809198a0897f79, 0x6a877a5d534c3a32, 0x2b22395d4d493605, 
+	0x052f404222343942, 0x4149443e43596077, 0x9da1907c8c8b837e, 0x7c7465788064897e, 0xa1b9ccbc8faabaa2, 0x9ea89a98b1959e92, 0x859aa5906d5e5952, 0x443f3e5e4c493606, 
+	0x0632424251304958, 0x5662624b4f686f86, 0xa6aba797aca6a9a4, 0x9c8a9c8884849f91, 0xdfe4e397a4c0c3b9, 0x9693b2acb4afb9b5, 0xbbc3c1b9906c7269, 0x544b395e4f2c3708, 
+	0x0530444750311a23, 0x2c353b423a3b4451, 0x635d5b5967606553, 0x4e424f5240465043, 0x737a6d45555b6b63, 0x4545545859637d8a, 0x7c89766469413834, 0x2317395b35122205, 
+	0x012f4b4c533e1019, 0x242e243f47435754, 0x5d5e5551605e5746, 0x423e336e5a50585f, 0x5a6a684a4863645c, 0x3b453d375960727c, 0x7a6b4e4a4651392d, 0x251e476253313405, 
+	0x0537525455360a0f, 0x1720212a2b4a5b59, 0x545654555a564e44, 0x4139344744525657, 0x535b5c4a465a5d62, 0x523a33334c605c69, 0x5e61653633413725, 0x1c1640615f463e06, 
+	0x06374e474d2e0d05, 0x0d12192126414749, 0x4b464b494944403f, 0x4b41352f2c404e5c, 0x584e4f41484b5054, 0x4a2e33395264514e, 0x5263622f24272d22, 0x0e06385752563d08, 
+	0x083a514f532d0e01, 0x070c11161f31353f, 0x3d3e403d3c363342, 0x52402b282440534f, 0x4d43423d3f403d38, 0x3729372a4650433e, 0x4a5347301d1e1610, 0x050437625b5b3f0a, 
+	0x063d51545a2f0e01, 0x05060a0f141a282c, 0x32302f31352f2c3d, 0x4436302b242f3739, 0x3b383b3b37343134, 0x2e282f222f303338, 0x3637382116120a05, 0x01033967615b4208, 
+	0x083d524f5d300501, 0x0104070a0f131b1c, 0x20221f292c26242e, 0x2b242c2a2326262a, 0x2a2a2b262d252225, 0x241e1c1d24292422, 0x202021170a090501, 0x01063a6e5d5b450a, 
+	0x08394f4c6b370301, 0x01030105080a0c0c, 0x0e0e0f1412131315, 0x15131a1818171718, 0x191a191619141513, 0x12100f121315130f, 0x0e0d0c0a07010301, 0x0105417b575b3f0a, 
+	0x0c2f455622440401, 0x010301040404050a, 0x0a0c0d0d0c0f0f10, 0x0d0d101413181016, 0x171615141412120e, 0x0b1112110e0e0f0b, 0x0a0a0a0404010301, 0x01034c823b4d360d, 
+	0x07343b5777330101, 0x010505070a0e1316, 0x1b211f1d27292627, 0x26232a3436312724, 0x25292824221a181a, 0x151719151d1b171b, 0x1619180d09050501, 0x01013f561a283909, 
+	0x053d484f50300101, 0x05060a0c1219222e, 0x3b3c423e453b3446, 0x45384a5250474338, 0x323d3c3735221c20, 0x201d181a24202624, 0x232a1915120d0904, 0x0104375c2a4f4507, 
+	0x0a3c51164a3e080c, 0x100f171a212c3b4a, 0x5b5a676955605762, 0x5c616b67685f635f, 0x545756564f312a2c, 0x332d27282e253236, 0x3a3b2c2c2120160f, 0x0d0d47565d3c420a, 
+	0x0d39444e72420316, 0x151525414a494c58, 0x686f706f71817c81, 0x7c8d89797b7f7d7f, 0x71736c6a6c412f3b, 0x493c3029352d3341, 0x4d473b4739362a1c, 0x15104d7f5a4e3f0d, 
+	0x0a2d3e4b66401720, 0x1a2b3f7875756d73, 0x8d8d70924da48b92, 0x98abb0a395b260a2, 0x8b8d88828548373f, 0x474e3e2a3e383d50, 0x6059324f564d4531, 0x2c224e743547310c, 
+	0x052c4052603f3836, 0x3d536ba8aea99d95, 0xabb6a3b484c1aaba, 0xa7b5cbcfcfede27b, 0xbdb2b5b0aa63535b, 0x65715e4b6249566a, 0x8377446e796c615b, 0x54324c493c493105, 
+	0x0534334c703f444f, 0x5f4a78c5cdcabe9e, 0xac805c9f7af5dae2, 0xc7e3e6eeea8fbcea, 0xd1d1d8d4c7856081, 0xa1967b718d5a5f7f, 0xa07f6093969b7982, 0x6b40313c36263a07, 
+	
 };
 
-Gfx hall2_room_0_dl_Plane_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(hall2_room_0_dl_Plane_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+u64 hall2_room_0_dl_wall_i4_i4[] = {
+	0x8888899888888888, 0x8888899888888888, 0x8888888888989987, 0x8888888888989987, 0x7888889888889887, 0x7888889888889888, 0x8788888988989888, 0x8788888988989888, 
+	0x8888889888888888, 0x8888889888888888, 0x8888898888888878, 0x8888898888888878, 0x8888888889988888, 0x8888888889988888, 0x8888889898888788, 0x8888889898888788, 
+	0x8888988898888688, 0x8888988898888688, 0x8887888999888788, 0x8887888999888788, 0x8888789888888888, 0x8888789888888888, 0x8888888898888898, 0x8888888898888898, 
+	0x8888888888888898, 0x8888888888888898, 0x8788898887888998, 0x8788898887888998, 0x8888998888888888, 0x8888998888888888, 0x8889889878889888, 0x8889889878889888, 
+	0x8888888889988888, 0x8888888889988888, 0x8888888899888888, 0x8888888899888888, 0x8888888889888888, 0x8888888889888888, 0x8888888888988888, 0x8888888888988888, 
+	0x8888888899888888, 0x8888888899888888, 0x8888888988888988, 0x8888888988888988, 0x8888888888888888, 0x8888888888888888, 0x8888889888888888, 0x8888889888888888, 
+	0x8888878988899888, 0x8888878988899888, 0x8888888988888888, 0x8888888988888888, 0x8898889888888888, 0x8898889888888888, 0x8888898888887888, 0x8888898888887888, 
+	0x8888988898888888, 0x8888988898888888, 0x8888888999878888, 0x8888888999878888, 0x8888888988888887, 0x8888888988888887, 0x8988988988878888, 0x8988988988878888, 
+	
+};
+
+Vtx hall2_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull[8] = {
+	{{ {-264, -120, 3702}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-264, -120, 3702}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-264, -120, -288}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-264, -120, -288}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {264, -120, 3702}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {264, -120, 3702}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {264, -120, -288}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {264, -120, -288}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx hall2_room_0_dl_Floor_mesh_layer_Opaque_vtx_0[4] = {
+	{{ {-264, -120, 3702}, 0, {46, 535}, {0, 127, 0, 255} }},
+	{{ {264, -120, 3702}, 0, {946, 570}, {0, 127, 0, 255} }},
+	{{ {264, -120, -288}, 0, {946, -12}, {0, 127, 0, 255} }},
+	{{ {-264, -120, -288}, 0, {46, -16}, {0, 127, 0, 255} }},
+};
+
+Gfx hall2_room_0_dl_Floor_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(hall2_room_0_dl_Floor_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_hall2_room_0_dl_f3dlite_material_113_layerOpaque[] = {
+Vtx hall2_room_0_dl_Plane_mesh_layer_Transparent_vtx_cull[8] = {
+	{{ {-129, -114, 3379}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-129, -114, 3379}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-129, -114, 3137}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-129, -114, 3137}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {113, -114, 3379}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {113, -114, 3379}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {113, -114, 3137}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {113, -114, 3137}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx hall2_room_0_dl_Plane_mesh_layer_Transparent_vtx_0[4] = {
+	{{ {-129, -114, 3379}, 0, {-16, 1008}, {0, 127, 0, 255} }},
+	{{ {113, -114, 3379}, 0, {1008, 1008}, {0, 127, 0, 255} }},
+	{{ {113, -114, 3137}, 0, {1008, -16}, {0, 127, 0, 255} }},
+	{{ {-129, -114, 3137}, 0, {-16, -16}, {0, 127, 0, 255} }},
+};
+
+Gfx hall2_room_0_dl_Plane_mesh_layer_Transparent_tri_0[] = {
+	gsSPVertex(hall2_room_0_dl_Plane_mesh_layer_Transparent_vtx_0 + 0, 4, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSPEndDisplayList(),
+};
+
+Vtx hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_cull[8] = {
+	{{ {-56, -120, -251}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-56, 223, -251}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-56, 223, -606}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-56, -120, -606}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {441, -120, -251}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {441, 223, -251}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {441, 223, -606}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {441, -120, -606}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_0[159] = {
+	{{ {-56, 21, -448}, 0, {-11, 520}, {135, 111, 80, 255} }},
+	{{ {102, 21, -448}, 0, {2037, 520}, {135, 110, 78, 255} }},
+	{{ {-56, 21, -606}, 0, {-11, 1010}, {143, 125, 109, 255} }},
+	{{ {102, -47, -336}, 0, {2032, 676}, {135, 110, 78, 255} }},
+	{{ {102, -47, -364}, 0, {2032, 612}, {135, 110, 78, 255} }},
+	{{ {-56, -47, -364}, 0, {-16, 612}, {135, 110, 78, 255} }},
+	{{ {-56, -47, -336}, 0, {-16, 676}, {135, 111, 80, 255} }},
+	{{ {-56, -97, -279}, 0, {-8, 116}, {135, 110, 78, 255} }},
+	{{ {-56, -97, -251}, 0, {-16, 164}, {135, 110, 78, 255} }},
+	{{ {102, -97, -251}, 0, {2032, 164}, {135, 110, 78, 255} }},
+	{{ {102, -97, -279}, 0, {2032, 116}, {135, 110, 78, 255} }},
+	{{ {-56, -81, -307}, 0, {-16, 948}, {135, 110, 78, 255} }},
+	{{ {-56, -81, -279}, 0, {-16, 1008}, {135, 110, 78, 255} }},
+	{{ {102, -81, -279}, 0, {2032, 1008}, {135, 110, 78, 255} }},
+	{{ {102, -81, -307}, 0, {2032, 948}, {135, 110, 78, 255} }},
+	{{ {-56, -81, -279}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -97, -279}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {102, -97, -279}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, -81, -279}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {-56, 4, -448}, 0, {-16, 116}, {135, 111, 80, 255} }},
+	{{ {-56, 4, -420}, 0, {-16, 164}, {135, 110, 78, 255} }},
+	{{ {102, 4, -420}, 0, {2024, 164}, {135, 110, 78, 255} }},
+	{{ {102, 4, -448}, 0, {2032, 116}, {135, 110, 78, 255} }},
+	{{ {-56, -13, -392}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -30, -392}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {102, -30, -392}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, -13, -392}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -13, -420}, 0, {-16, 276}, {135, 110, 78, 255} }},
+	{{ {-56, -13, -392}, 0, {-16, 324}, {135, 110, 78, 255} }},
+	{{ {102, -13, -392}, 0, {2032, 324}, {135, 110, 78, 255} }},
+	{{ {102, -13, -420}, 0, {2032, 276}, {135, 110, 78, 255} }},
+	{{ {102, -30, -364}, 0, {2032, 500}, {135, 110, 78, 255} }},
+	{{ {102, -30, -392}, 0, {2032, 452}, {135, 110, 78, 255} }},
+	{{ {-56, -30, -392}, 0, {-16, 452}, {135, 110, 78, 255} }},
+	{{ {-56, -30, -364}, 0, {-16, 500}, {135, 110, 78, 255} }},
+	{{ {-56, -64, -336}, 0, {-16, 788}, {135, 111, 80, 255} }},
+	{{ {-56, -64, -307}, 0, {-16, 868}, {135, 110, 78, 255} }},
+	{{ {102, -64, -307}, 0, {2032, 868}, {135, 110, 78, 255} }},
+	{{ {102, -64, -336}, 0, {2032, 788}, {135, 110, 78, 255} }},
+	{{ {-56, 4, -420}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -13, -420}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {102, -13, -420}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, 4, -420}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -64, -307}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -81, -307}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {102, -81, -307}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, -64, -307}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -30, -364}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -47, -364}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {102, -47, -364}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, -30, -364}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {102, 4, -448}, 0, {-16, 788}, {135, 110, 78, 255} }},
+	{{ {102, 21, -448}, 0, {-16, 676}, {135, 110, 78, 255} }},
+	{{ {-56, 21, -448}, 0, {2032, 676}, {135, 111, 80, 255} }},
+	{{ {-56, 4, -448}, 0, {2032, 788}, {135, 111, 80, 255} }},
+	{{ {-56, -47, -336}, 0, {-16, 692}, {135, 111, 80, 255} }},
+	{{ {-56, -64, -336}, 0, {-16, 772}, {135, 111, 80, 255} }},
+	{{ {102, -64, -336}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, -47, -336}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -97, -251}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {-56, -120, -251}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {102, -120, -251}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {102, -97, -251}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {187, 87, -447}, 0, {2032, 676}, {135, 110, 78, 255} }},
+	{{ {215, 87, -447}, 0, {2032, 612}, {135, 110, 78, 255} }},
+	{{ {215, 87, -606}, 0, {-16, 612}, {135, 110, 78, 255} }},
+	{{ {187, 87, -606}, 0, {-16, 676}, {135, 110, 78, 255} }},
+	{{ {130, 36, -606}, 0, {-8, 116}, {135, 110, 78, 255} }},
+	{{ {102, 36, -606}, 0, {-16, 164}, {136, 112, 83, 255} }},
+	{{ {102, 36, -447}, 0, {2032, 164}, {135, 110, 78, 255} }},
+	{{ {130, 36, -447}, 0, {2032, 116}, {135, 110, 78, 255} }},
+	{{ {158, 53, -606}, 0, {-16, 948}, {135, 110, 78, 255} }},
+	{{ {130, 53, -606}, 0, {-16, 1008}, {135, 111, 79, 255} }},
+	{{ {130, 53, -447}, 0, {2032, 1008}, {135, 110, 78, 255} }},
+	{{ {158, 53, -447}, 0, {2032, 948}, {135, 110, 78, 255} }},
+	{{ {130, 53, -606}, 0, {-16, 692}, {135, 111, 79, 255} }},
+	{{ {130, 36, -606}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {130, 36, -447}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {130, 53, -447}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {300, 138, -606}, 0, {-16, 116}, {135, 111, 79, 255} }},
+	{{ {272, 138, -606}, 0, {-16, 164}, {135, 111, 79, 255} }},
+	{{ {272, 138, -447}, 0, {2024, 164}, {135, 110, 78, 255} }},
+	{{ {300, 138, -447}, 0, {2032, 116}, {135, 110, 78, 255} }},
+	{{ {300, 155, -606}, 0, {17, -172}, {132, 104, 57, 255} }},
+	{{ {300, 155, -447}, 0, {2054, -172}, {132, 105, 59, 255} }},
+	{{ {328, 155, -606}, 0, {21, -220}, {131, 103, 53, 255} }},
+	{{ {328, 155, -447}, 0, {2058, -220}, {132, 104, 55, 255} }},
+	{{ {243, 121, -606}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {243, 104, -606}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {243, 104, -447}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {243, 121, -447}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {272, 121, -606}, 0, {-16, 276}, {135, 110, 78, 255} }},
+	{{ {243, 121, -606}, 0, {-16, 324}, {135, 110, 78, 255} }},
+	{{ {243, 121, -447}, 0, {2032, 324}, {135, 110, 78, 255} }},
+	{{ {272, 121, -447}, 0, {2032, 276}, {135, 110, 78, 255} }},
+	{{ {215, 104, -447}, 0, {2032, 500}, {135, 110, 78, 255} }},
+	{{ {243, 104, -447}, 0, {2032, 452}, {135, 110, 78, 255} }},
+	{{ {243, 104, -606}, 0, {-16, 452}, {135, 110, 78, 255} }},
+	{{ {215, 104, -606}, 0, {-16, 500}, {135, 110, 78, 255} }},
+	{{ {187, 70, -606}, 0, {-16, 788}, {135, 110, 78, 255} }},
+	{{ {158, 70, -606}, 0, {-16, 868}, {135, 110, 78, 255} }},
+	{{ {158, 70, -447}, 0, {2032, 868}, {135, 110, 78, 255} }},
+	{{ {187, 70, -447}, 0, {2032, 788}, {135, 110, 78, 255} }},
+	{{ {272, 138, -606}, 0, {-16, 692}, {135, 111, 79, 255} }},
+	{{ {272, 121, -606}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {272, 121, -447}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {272, 138, -447}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {158, 70, -606}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {158, 53, -606}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {158, 53, -447}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {158, 70, -447}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {215, 104, -606}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {215, 87, -606}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {215, 87, -447}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {215, 104, -447}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {187, 87, -606}, 0, {-16, 692}, {135, 110, 78, 255} }},
+	{{ {187, 70, -606}, 0, {-16, 772}, {135, 110, 78, 255} }},
+	{{ {187, 70, -447}, 0, {2032, 772}, {135, 110, 78, 255} }},
+	{{ {187, 87, -447}, 0, {2032, 692}, {135, 110, 78, 255} }},
+	{{ {102, 36, -606}, 0, {-16, 888}, {136, 112, 83, 255} }},
+	{{ {102, 21, -606}, 0, {-16, 1008}, {135, 111, 80, 255} }},
+	{{ {102, 21, -448}, 0, {2032, 1008}, {135, 110, 78, 255} }},
+	{{ {102, 36, -447}, 0, {2032, 888}, {135, 110, 78, 255} }},
+	{{ {102, 21, -448}, 0, {2028, 511}, {135, 110, 78, 255} }},
+	{{ {102, 21, -606}, 0, {-20, 511}, {135, 111, 80, 255} }},
+	{{ {102, 21, -606}, 0, {-20, 511}, {135, 111, 80, 255} }},
+	{{ {-56, 21, -606}, 0, {-20, -12}, {143, 125, 109, 255} }},
+	{{ {385, 206, -447}, 0, {2032, 228}, {135, 110, 77, 255} }},
+	{{ {413, 206, -447}, 0, {2032, 164}, {135, 110, 77, 255} }},
+	{{ {413, 206, -606}, 0, {-16, 164}, {135, 110, 77, 255} }},
+	{{ {385, 206, -606}, 0, {-16, 228}, {135, 110, 77, 255} }},
+	{{ {356, 172, -606}, 0, {-16, 528}, {134, 109, 74, 255} }},
+	{{ {328, 172, -606}, 0, {-16, 588}, {134, 109, 74, 255} }},
+	{{ {328, 172, -447}, 0, {2032, 588}, {134, 109, 75, 255} }},
+	{{ {356, 172, -447}, 0, {2032, 528}, {134, 109, 74, 255} }},
+	{{ {328, 172, -606}, 0, {-16, 132}, {135, 111, 81, 255} }},
+	{{ {328, 155, -606}, 0, {-16, 212}, {135, 111, 81, 255} }},
+	{{ {328, 155, -447}, 0, {2032, 212}, {135, 111, 79, 255} }},
+	{{ {328, 172, -447}, 0, {2032, 132}, {135, 111, 80, 255} }},
+	{{ {413, 223, -447}, 0, {2032, 164}, {135, 110, 77, 255} }},
+	{{ {441, 223, -447}, 0, {2032, 116}, {135, 110, 77, 255} }},
+	{{ {441, 223, -606}, 0, {-16, 116}, {135, 110, 77, 255} }},
+	{{ {413, 223, -606}, 0, {-16, 164}, {135, 110, 77, 255} }},
+	{{ {385, 189, -606}, 0, {-16, 228}, {135, 110, 77, 255} }},
+	{{ {356, 189, -606}, 0, {-16, 308}, {135, 110, 77, 255} }},
+	{{ {356, 189, -447}, 0, {2032, 308}, {135, 110, 77, 255} }},
+	{{ {385, 189, -447}, 0, {2032, 228}, {135, 110, 77, 255} }},
+	{{ {356, 189, -606}, 0, {-16, 132}, {135, 110, 78, 255} }},
+	{{ {356, 172, -606}, 0, {-16, 212}, {135, 110, 78, 255} }},
+	{{ {356, 172, -447}, 0, {2032, 212}, {135, 110, 78, 255} }},
+	{{ {356, 189, -447}, 0, {2032, 132}, {135, 110, 78, 255} }},
+	{{ {413, 223, -606}, 0, {-16, 132}, {135, 110, 78, 255} }},
+	{{ {413, 206, -606}, 0, {-16, 212}, {135, 110, 78, 255} }},
+	{{ {413, 206, -447}, 0, {2032, 212}, {135, 110, 78, 255} }},
+	{{ {413, 223, -447}, 0, {2032, 132}, {135, 110, 78, 255} }},
+	{{ {385, 206, -606}, 0, {-16, 132}, {135, 110, 78, 255} }},
+	{{ {385, 189, -606}, 0, {-16, 212}, {135, 110, 78, 255} }},
+	{{ {385, 189, -447}, 0, {2032, 212}, {135, 110, 78, 255} }},
+	{{ {385, 206, -447}, 0, {2032, 132}, {135, 110, 78, 255} }},
+};
+
+Gfx hall2_room_0_dl_stairs_001_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_0 + 0, 31, 0),
+	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
+	gsSP2Triangles(3, 5, 6, 0, 7, 8, 9, 0),
+	gsSP2Triangles(7, 9, 10, 0, 11, 12, 13, 0),
+	gsSP2Triangles(11, 13, 14, 0, 15, 16, 17, 0),
+	gsSP2Triangles(15, 17, 18, 0, 19, 20, 21, 0),
+	gsSP2Triangles(19, 21, 22, 0, 23, 24, 25, 0),
+	gsSP2Triangles(23, 25, 26, 0, 27, 28, 29, 0),
+	gsSP1Triangle(27, 29, 30, 0),
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_0 + 31, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_0 + 63, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(19, 20, 16, 0, 19, 21, 20, 0),
+	gsSP2Triangles(22, 20, 21, 0, 22, 21, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_0 + 95, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_0 + 127, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPEndDisplayList(),
+};
+
+Vtx hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_1[21] = {
+	{{ {-56, -97, -279}, 0, {362, 851}, {135, 110, 78, 255} }},
+	{{ {-56, -81, -279}, 0, {426, 813}, {135, 110, 78, 255} }},
+	{{ {-56, -81, -307}, 0, {362, 706}, {135, 110, 78, 255} }},
+	{{ {-56, -64, -336}, 0, {362, 562}, {135, 111, 80, 255} }},
+	{{ {-56, -64, -307}, 0, {426, 668}, {135, 110, 78, 255} }},
+	{{ {-56, -120, -251}, 0, {341, 1008}, {135, 110, 78, 255} }},
+	{{ {-56, -97, -251}, 0, {426, 957}, {135, 110, 78, 255} }},
+	{{ {-56, -47, -364}, 0, {362, 417}, {135, 110, 78, 255} }},
+	{{ {-56, -47, -336}, 0, {426, 524}, {135, 111, 80, 255} }},
+	{{ {-56, 4, -448}, 0, {362, -16}, {135, 111, 80, 255} }},
+	{{ {-56, -30, -392}, 0, {362, 273}, {135, 110, 78, 255} }},
+	{{ {-56, -30, -364}, 0, {426, 379}, {135, 110, 78, 255} }},
+	{{ {-56, -13, -420}, 0, {362, 128}, {135, 110, 78, 255} }},
+	{{ {-56, -13, -392}, 0, {426, 235}, {135, 110, 78, 255} }},
+	{{ {-56, 4, -420}, 0, {426, 90}, {135, 110, 78, 255} }},
+	{{ {-56, -59, -448}, 0, {127, 125}, {135, 110, 78, 255} }},
+	{{ {-56, -59, -409}, 0, {216, 274}, {135, 110, 78, 255} }},
+	{{ {-56, -120, -251}, 0, {341, 1008}, {135, 110, 78, 255} }},
+	{{ {-56, -120, -409}, 0, {-16, 413}, {135, 112, 82, 255} }},
+	{{ {102, -120, -251}, 0, {341, 1008}, {135, 110, 78, 255} }},
+	{{ {102, -120, -251}, 0, {341, 1008}, {135, 110, 78, 255} }},
+};
+
+Gfx hall2_room_0_dl_stairs_001_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_1 + 0, 21, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(2, 4, 3, 0, 5, 0, 3, 0),
+	gsSP2Triangles(5, 6, 0, 0, 5, 3, 7, 0),
+	gsSP2Triangles(3, 8, 7, 0, 7, 9, 5, 0),
+	gsSP2Triangles(7, 10, 9, 0, 7, 11, 10, 0),
+	gsSP2Triangles(10, 12, 9, 0, 10, 13, 12, 0),
+	gsSP2Triangles(12, 14, 9, 0, 9, 15, 16, 0),
+	gsSP2Triangles(9, 16, 17, 0, 16, 18, 17, 0),
+	gsSP2Triangles(9, 17, 5, 0, 17, 19, 5, 0),
+	gsSP1Triangle(17, 20, 19, 0),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_hall2_room_0_dl_floor_mat_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 0, 49, 42, 117, 255),
+	gsDPSetPrimColor(0, 0, 139, 139, 139, 255),
 	gsSPEndDisplayList(),
 };
 
-Gfx hall2_room_0_dl_Plane_mesh_layer_Opaque[] = {
+Gfx mat_hall2_room_0_dl_trans01_layerTransparent[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_XLU_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 0, 199, 73),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_hall2_room_0_dl_stairs_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, hall2_room_0_dl_hakasitarelay_room_2Tex_006CA8_i8_i8),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 1023, 256),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
+	gsDPSetTileSize(0, 0, 0, 252, 124),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_hall2_room_0_dl_siding_textured_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_16b, 1, hall2_room_0_dl_wall_i4_i4),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 255, 1024),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_4b, 2, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
+	gsDPSetTileSize(0, 0, 0, 124, 124),
+	gsSPEndDisplayList(),
+};
+
+Gfx hall2_room_0_dl_Floor_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(hall2_room_0_dl_Plane_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(hall2_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_hall2_room_0_dl_f3dlite_material_113_layerOpaque),
-	gsSPDisplayList(hall2_room_0_dl_Plane_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_hall2_room_0_dl_floor_mat_layerOpaque),
+	gsSPDisplayList(hall2_room_0_dl_Floor_mesh_layer_Opaque_tri_0),
+	gsSPEndDisplayList(),
+};
+
+Gfx hall2_room_0_dl_Plane_mesh_layer_Transparent[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(hall2_room_0_dl_Plane_mesh_layer_Transparent_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_hall2_room_0_dl_trans01_layerTransparent),
+	gsSPDisplayList(hall2_room_0_dl_Plane_mesh_layer_Transparent_tri_0),
+	gsSPEndDisplayList(),
+};
+
+Gfx hall2_room_0_dl_stairs_001_mesh_layer_Opaque[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_hall2_room_0_dl_stairs_layerOpaque),
+	gsSPDisplayList(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_hall2_room_0_dl_siding_textured_layerOpaque),
+	gsSPDisplayList(hall2_room_0_dl_stairs_001_mesh_layer_Opaque_tri_1),
 	gsSPEndDisplayList(),
 };
 
