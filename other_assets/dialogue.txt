@@ -74,31 +74,33 @@ Thank you for staying close by me."
 
 
 
-Lab
-Checkable spot 1
-"A long held belief around the Masca Festival is that there is a creature around here called 'The Taker'. Many believe it's just a superstition, however we can now confirm that it definitely exists. As far as what exactly 'it' is will require much more research..."
+ - Lab
+Checkable spot 1 (Message ID 62)
+"A long held belief connected to the Masca Festival is that there is a creature around here called 'The Taker'. Many believe it's just a superstition, however we can now confirm that it definitely exists. As far as what exactly 'it' is will require more research..."
 
-Checkable spot 2
+Checkable spot 2 (Message ID 63)
 "'Masca' - Latin
-Meaning spectre, nightmare, mask. (It would appear the original meaning held the idea of concealing one's face to protect from a certain monster."
+Meaning spectre, nightmare, mask. (It would appear the original meaning held the idea of concealing one's face to protect from a monster.)"
 
-Checkable spot 3
-"The Taker has been around for a lot longer than anyone here realizes. Stories around it go back 100s of years. It would seem that it originally was 
+Checkable spot 3 (Message ID 64)
+"The Taker has been around for a lot longer than anyone here realizes. Stories around it go back 100s of years. We're not entirely sure where it came from, but it would seem to not be of Earth..."
+
+Checkable spot 4 (Message ID 65)
+"Opened up on the screen are some research notes:
+'...the object had reappeared on the Princeton’s Aegis SPY 1 radar at our CAP point. This...was far superior in performance to my brand-new F/A-18F and did not operate with any of the known aerodynamic principles that we expect...'"
+
+Checkable spot 5 (Message ID 66)
 
 
+Checkable spot 6 (Message ID 67)
 
-We're not entirely sure where it came from, but it would seem to not be of Earth..."
 
-Checkable spot 4
-" 
+Checkable spot 7 (Message ID 68)
+"The Taker had a different name originally. It was called the 'Face Stealer'. Our research indicates that the creature takes the face of those it comes in contact with, and keeps the original host in its 'den', gradually drawing energy from them, until the host itself becomes a macabre creature, desperately trying to get it's face back from anyone they happen upon. We've captured some of these 'hosts', and are hoping to study them to learn more about the Face Stealer. Our superiors say that the ends justifies the means. Whatever this alien creature is, we must do whatever we can to contain it. Before it's too late..."
 
-Checkable spot 5
+Checkable spot 8 (Message ID 69)
+"...Is anyone still here? To anyone reading this, GET OUT IMMEDIATELY!! Most of our research assistants have become creatures themselves. The Face Stealer is too powerful. I keep calling the emergency line, but no one is answering. I hear a noise...please, if anyone is there, come help me befo"
 
-Checkable spot 6
-
-Checkable spot 7
-
-Checkable spot 8
 
 Checkable spot 9
 

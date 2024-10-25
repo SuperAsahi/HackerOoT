@@ -478,7 +478,7 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 
             }
         } else {
-                Debug_Print(3, "test");
+                //Debug_Print(3, "test");
                 if (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f) {
                 Zelda_SetupWalkToPlayer(this, play);
                 }
