@@ -87,7 +87,7 @@ Checkable spot 3 (Message ID 64)
 
 Checkable spot 4 (Message ID 65)
 "Opened up on the screen are some research notes:
-'...the object had reappeared on the Princeton’s Aegis SPY 1 radar at our CAP point. This...was far superior in performance to my brand-new F/A-18F and did not operate with any of the known aerodynamic principles that we expect...'"
+'...the object had reappeared on the Princeton’s Aegis SPY 1 radar at our CAP point. This Tic Tac Object had just traveled 60 miles in a very short period of time (less than a minute), was far superior in performance to my brand-new F/A-18F and did not operate with any of the known aerodynamic principles that we expect for objects that fly in our atmosphere.'"
 
 Checkable spot 5 (Message ID 66)
 
