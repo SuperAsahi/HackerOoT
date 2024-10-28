@@ -287,8 +287,10 @@ void EnRd_Idle(EnRd* this, PlayState* play) {
         }
     }
 
-    if ((play->gameplayFrames & 0x5F) == 0) {
+    if (this->actor.params != 0x1) {
+        if ((play->gameplayFrames & 0x5F) == 0) {
         Actor_PlaySfx(&this->actor, NA_SE_EN_REDEAD_CRY);
+    }
     }
 }
 

@@ -3,7 +3,7 @@
  * Overlay: ovl_Zelda
  * Description: A custom child Zelda for use with my mod
  * 
- * Params 0x9 - Zelda stays idle until switch is activated.
+ * Params 0x1 - Zelda stays idle until switch is activated.
  * 
  */
 
@@ -82,10 +82,13 @@ typedef enum {
     NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS = 0x71B6,
     NPCTEST_MESSAGE_CHOICE_LOVE_EM = 0x71B7,
     NPCTEST_MESSAGE_CHOICE_ABSOLUTELY = 0x71B8,
-    NPCTEST_MESSAGE_6 = 0x71B9,
-    NPCTEST_MESSAGE_7 = 0x71BA,
-    NPCTEST_MESSAGE_8 = 0x71BB,
-    NPCTEST_MESSAGE_9 = 0x71BC,
+    NPCTEST_MESSAGE_1 = 0x71C1,
+    NPCTEST_MESSAGE_2 = 0x71C2,
+    NPCTEST_MESSAGE_3 = 0x71C3,
+    NPCTEST_MESSAGE_4 = 0x71C4,
+    NPCTEST_MESSAGE_5 = 0x71C5,
+    NPCTEST_MESSAGE_6 = 0x71C6,
+    NPCTEST_MESSAGE_7 = 0x71C7,
 } ZeldaMessageId;
 
 typedef enum {
@@ -383,29 +386,18 @@ void Zelda_UpdateFace(Zelda* this) {
 
 u16 Zelda_GetNextTextId(PlayState* play, Actor* thisx) {
     Zelda* this = (Zelda*)thisx;
-    if (this->actor.params == 0x9) {
-        return 0x71C0;
-    //if (LINK_IS_ADULT) {
-        //this->mouthExpression = ZELDA_MOUTH_HAPPY;
-        //return NPCTEST_MESSAGE_DO_YOU_LIKE_TUTORIALS;
-    } else {
-        if (GET_INFTABLE(INFTABLE_E0)) {
-            return NPCTEST_MESSAGE_COME_BACK_WAY_LATER;
-        } else {
-            switch (this->actor.params) {
-                case (0x7):
-                    return NPCTEST_MESSAGE_7;
-                    break;
-                case (0x8):
-                    return NPCTEST_MESSAGE_8;
-                    break;
-                case (0x9):
-                    return NPCTEST_MESSAGE_9;
-                    break;
-            }
-
-            return NPCTEST_MESSAGE_COME_BACK_LATER;
-        }
+    switch (this->actor.params) {
+        case (0x2):
+            return NPCTEST_MESSAGE_2;
+            break;
+        case (0x3):
+            return NPCTEST_MESSAGE_3;
+            break;
+        case (0x4):
+            return NPCTEST_MESSAGE_4;
+            break;
+        default:
+            return NPCTEST_MESSAGE_1;
     }
 }
 
@@ -468,12 +460,11 @@ void Zelda_Idle(Zelda* this, PlayState* play) {
 
     Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 450, 250);
 
-        if (this->actor.params == 0x9) {
+        if (this->actor.params == 0x1) {
 
         if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
 
                 //Zelda_Idle(this, play);
-                //}
                 Zelda_SetupWalkToPlayer(this, play);
 
             }
@@ -508,13 +499,19 @@ void Zelda_WalkToPlayer(Zelda* this, PlayState* play) {
 
     //Debug_Print(3, "walk to player");
 
-    if (this->actor.params == 0x9) {
+    if (this->actor.params == 1) {
             if ((Flags_GetSwitch(play, SWITCH_FLAG(this))) && (Actor_WorldDistXYZToActor(&this->actor, &player->actor) >= 80.0f)) {
                 //Debug_Print(3, "walking");
             Math_SmoothStepToF(&this->actor.world.pos.x, player->actor.world.pos.x, 0.5f, 4.2f, 0.0f);
             Math_SmoothStepToF(&this->actor.world.pos.z, player->actor.world.pos.z, 0.5f, 4.2f, 0.0f);
             Math_SmoothStepToF(&this->actor.world.pos.y, player->actor.world.pos.y, 0.2f, 0.4f, 0.0f);
             Math_SmoothStepToS(&this->actor.shape.rot.y, this->actor.yawTowardsPlayer, 1, 900, 600);
+
+            Debug_Print(2, "current frame: %u", play->gameplayFrames);
+
+            if ((play->gameplayFrames & 0x5F) == 0) {
+        Actor_PlaySfx(&this->actor, NA_SE_EN_SHADEST_PRAY);
+                }
 
 
                     //Math_SmoothStepToS(&this->actor.world.pos.x, &player->actor, 1, 200, 0);
